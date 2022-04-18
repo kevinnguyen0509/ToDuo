@@ -30,29 +30,43 @@
 
         <div id="LastAddedContainer" class="text-center">
             <div id="BoardAndRecentlySwipeContainer">
-                <i class="fa fa-heart CategoryListIcons glow boardSwipeIcons" id="RencetlyAddedDiamond" title="Recently Added"></i>
-                <i class="fa fa-diamond CategoryListIcons boardSwipeIcons" id="RencetlyAddedDiamond" title="Add Something"></i>
-                <i class="fa fa-trello CategoryListIcons boardSwipeIcons" id="RencetlyAddedDiamond" title="Add These Boards"></i>
+                <i class="fa fa-heart CategoryListIcons glow boardSwipeIcons" id="RencetlyAddedHeart" title="Recently Added"></i>
+                <i class="fa fa-diamond CategoryListIcons boardSwipeIcons" id="RencetlyAddedDiamond" title="Add Something" data-toggle="modal" data-target="#AddAdventureModal"></i>
+                <i class="fa fa-trello CategoryListIcons boardSwipeIcons" id="AddToSelectedBoards" title="Add To These Boards"></i>
             </div>
 
             <hr class="activeRed" />
         </div>
 
-        <div id="RecentlyAddedContainer">
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
-            <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+        @*        <div id="RecentlyAddedContainer">
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+                <div id="RecentlyAddedImgContainer"><img src="https://www.twowanderingsoles.com/wp-content/uploads/2021/07/Best2BThings2Bto2BDo2Bin2BWashington2BState2BColchuck2BLake2BEnchantments.jpg" class="RecentlyAddedImages" /></div>
+            </div>*@
+
+        <div id="SelectBoardToAddToContainer">
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+            <div id="RecentlyAddedImgContainer"><img src="https://hidden-spire-05318.herokuapp.com/img/assets/sushi.jpg" class="RecentlyAddedImages" /></div>
+
         </div>
     </div>
 
@@ -104,19 +118,18 @@
                         </div>
 
                         <div id="SwipeDetailsContainer">
-                            <i class="fa fa-map SwipeIcons"> Tacoma, WA</i>
+                            <i class="fa fa-map-marker SwipeIcons"> Tacoma, WA</i>
+                        </div>
+                        <div id="btnContainer">
+                            <div class="SmallCircleButton redo"><i class="fa fa-redo SmallCircleIcon"></i></div>
+                            <div class="LargeCircleButton cancelBtn"><i class="fa fa-ban LargeCircleIcon"></i></div>
+                            <div class="LargeCircleButton addBtn"><i class="fa fa-heart LargeCircleIcon"></i></div>
+                            <div class="SmallCircleButton info"><i class="fa fa-info SmallCircleIcon "></i></div>
+                        </div>
 
-                        </div>                      
-                            <div id="btnContainer">
-                                <div class="SmallCircleButton redo"><i class="fa fa-redo SmallCircleIcon"></i></div>
-                                <div class="LargeCircleButton cancelBtn"><i class="fa fa-ban LargeCircleIcon"></i></div>
-                                <div class="LargeCircleButton addBtn"><i class="fa fa-heart LargeCircleIcon"></i></div>
-                                <div class="SmallCircleButton info"><i class="fa fa-info SmallCircleIcon "></i></div>
-                            </div>
+        
 
-
-
-</div>
+                    </div>
                 </div>
 
             </div>
@@ -127,5 +140,74 @@
 
 
 
-</div>
+        <!-- Modal -->
+    <div class="modal fade" id="AddAdventureModal" tabindex="-1" role="dialog" aria-labelledby="AddAdventureModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                
+                <div class="modal-header" style="border-bottom: none;">
+
+                    <button type="button" id="SaveAdventuresBtn" class="btn">Add ToDuoList</button>
+
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="ModalContentContainer">
+                        <div class="ModalLeftSide">
+                            <div id="ModalDragAndDropImageContainer">
+                                <i class="fa fa-camera-retro " id="DragAndDropModalIcon" title="Drag And Drop"></i>
+                                <h4 id="uploadText">Drag and Drop or Click To Upload</h4>
+                            </div>
+                            <div class="AddTagsContainer">
+                                <input type="text" class="form-control descriptionsModal" placeholder="Save image from link instead" />
+                                <i class="fa fa-globe-asia CategoryListIcons TagAddIcon"></i>
+                            </div>
+                        </div>
+
+                        <div class="ModalRightSide">
+                            <input type="text" class="form-control" placeholder="Add Your Title" />
+                            <div class="PersonWhoAddedContainer">
+                                <div class="thumbnailProfilePicture">
+                                    <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/62646854_2556822510996604_1564912398479917056_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=QFFzDnlEVCgAX8yrNau&_nc_ht=scontent-sea1-1.xx&oh=00_AT8PdlhSTFd1qQJ2IzGF20ZZwxa5bgFdJTtHwgXyoTSvsw&oe=62719A34" class="BannerImages ProfilePicture" />
+                                </div>
+                                <div class="PersonWhoAddedDetails noMargins">
+                                    <h6 class="noMargins bold">Kevin Nguyen</h6>
+                                    <p class="noMargins">10 boards</p>
+                                    <p class="noMargins">04/17/2022</p>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control descriptionsModal" placeholder="Any Description About this?" />
+
+                            <div class="col-md-6 AddTagsContainer">
+                                <input type="text" class="form-control descriptionsModal" placeholder="Location" />
+                                <i class="fa fa-map-marker CategoryListIcons TagAddIcon"></i>
+                            </div>
+
+                            <div class="col-md-6 AddTagsContainer">
+                                <input type="text" class="form-control descriptionsModal" placeholder="Add Tags" />
+                                <i class="fa fa-tags CategoryListIcons TagAddIcon"></i>
+                            </div>
+
+                            <div class="col-md-12 taglblContainer">
+                                <ul id="TagWrapper">
+                                    <li class="tagItemContainer tagTitle">Seattle  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                    <li class="tagItemContainer tagTitle">Parks  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                    <li class="tagItemContainer tagTitle">Food Trucks  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                    <li class="tagItemContainer tagTitle">outdoors  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                    <li class="tagItemContainer tagTitle">DateSpot  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            
+        </div>
+    </div>
 
