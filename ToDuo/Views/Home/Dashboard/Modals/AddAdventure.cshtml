@@ -1,0 +1,71 @@
+﻿        <!-- Modal -->
+<div class="modal fade" id="AddAdventureModal" tabindex="-1" role="dialog" aria-labelledby="AddAdventureModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header" style="border-bottom: none;">
+
+                <button type="button" id="SaveAdventuresBtn" class="btn">Add ToDuoList</button>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ModalContentContainer">
+                    <div class="ModalLeftSide">
+                        <div id="ModalDragAndDropImageContainer">
+                            <i class="fa fa-camera-retro " id="DragAndDropModalIcon" title="Drag And Drop"></i>
+                            <h4 id="uploadText">Drag and Drop or Click To Upload</h4>
+                        </div>
+                        <div class="AddTagsContainer">
+                            <input type="text" class="form-control descriptionsModal" placeholder="Save image from link instead" />
+                            <i class="fa fa-globe-asia CategoryListIcons TagAddIcon"></i>
+                        </div>
+                    </div>
+
+                    <div class="ModalRightSide">
+                        <input type="text" class="form-control" placeholder="Add Your Title" />
+                        <div class="PersonWhoAddedContainer">
+                            <div class="thumbnailProfilePicture">
+                                <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909__340.png" class="BannerImages ProfilePicture" />
+                            </div>
+                            <div class="PersonWhoAddedDetails noMargins">
+                                <h6 class="noMargins bold">Kevin Nguyen</h6>
+                                <p class="noMargins">10 boards</p>
+                                <p class="noMargins">04/17/2022</p>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control descriptionsModal" placeholder="Any Description About this?" />
+
+                        <div class="col-md-6 AddTagsContainer">
+                            <input type="text" class="form-control descriptionsModal" placeholder="Location" />
+                            <i class="fa fa-map-marker CategoryListIcons TagAddIcon"></i>
+                        </div>
+
+                        <div class="col-md-6 AddTagsContainer">
+                            <input type="text" class="form-control descriptionsModal" placeholder="Add Tags" />
+                            <i class="fa fa-tags CategoryListIcons TagAddIcon"></i>
+                        </div>
+
+                        <div class="col-md-12 taglblContainer">
+                            <ul id="TagWrapper">
+                                <li class="tagItemContainer tagTitle">Seattle  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                <li class="tagItemContainer tagTitle">Parks  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                <li class="tagItemContainer tagTitle">Food Trucks  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                <li class="tagItemContainer tagTitle">outdoors  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                                <li class="tagItemContainer tagTitle">DateSpot  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+

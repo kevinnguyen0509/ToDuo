@@ -198,7 +198,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Dashboard\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
@@ -215,6 +215,9 @@
     <Content Include="webfonts\fa-brands-400.woff" />
     <Content Include="webfonts\fa-brands-400.ttf" />
     <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="Views\Home\Dashboard\LeftSideBar\LeftSideMenu.cshtml" />
+    <Content Include="Views\Home\Dashboard\RightSide\RightSection.cshtml" />
+    <Content Include="Views\Home\Dashboard\Modals\AddAdventure.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
