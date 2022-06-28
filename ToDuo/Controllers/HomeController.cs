@@ -12,6 +12,12 @@ namespace ToDuo.Controllers
         public static string IndexPath = "~/Views/Home/Dashboard/Index.cshtml";
         public ActionResult Index()
         {
+            HttpCookie CurrentUserCookie = Request.Cookies["ToDuoUserCookie"];
+
+
+            if (CurrentUserCookie == null)
+                return RedirectToAction("Login");
+
             return View(IndexPath);
         }
 

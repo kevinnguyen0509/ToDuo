@@ -8,6 +8,8 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    @Html.Hidden("HiddenCurrentUrl", Url.Content("~"))
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -21,17 +23,18 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("My Boards", "Index", "Home")</li>
                     <li>@Html.ActionLink("Login", "Login", "Home") </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container-fluid body-content" >
+    <div class="container-fluid body-content">
         @RenderBody()
-@*        <hr />*@
-@*        <footer>
-            <p>&copy; @DateTime.Now.Year - Kevin Nguyen</p>
-        </footer>*@
+        @*        <hr />*@
+        @*        <footer>
+                <p>&copy; @DateTime.Now.Year - Kevin Nguyen</p>
+            </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")

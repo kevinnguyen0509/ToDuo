@@ -105,7 +105,8 @@
     height: 100%;
 }
 
-#UsernameInputTxt {
+#EmailInputTxt,
+#PasswordInputTxt {
     height: 50px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
