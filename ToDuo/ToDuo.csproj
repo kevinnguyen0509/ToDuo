@@ -158,8 +158,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Default\Site.css" />
-    <Content Include="Scripts\Custom\DashBoard\Model\LoginModel.js" />
-    <Content Include="Scripts\Custom\DashBoard\Views\Login.js" />
+    <Content Include="Scripts\Custom\Authentication\Model\LoginModel.js" />
+    <Content Include="Scripts\Custom\Authentication\Views\Login.js" />
     <Content Include="Scripts\Default\bootstrap.js" />
     <Content Include="Scripts\Default\bootstrap.min.js" />
     <Content Include="fonts\FontAwesome.otf" />
@@ -226,6 +226,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\Custom\DashBoard\Model\" />
+    <Folder Include="Scripts\Custom\DashBoard\Views\" />
     <Folder Include="Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
