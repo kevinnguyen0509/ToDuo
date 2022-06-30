@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 });
 
-
+//This checks the login credentials the user attempts to login with
 function checkUserLoginCredentials() {
     LoginForm.addEventListener('submit', function (e) {
         e.preventDefault();

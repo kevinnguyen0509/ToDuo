@@ -8,7 +8,8 @@ namespace ToDuo.Controllers
 {
     public class HomeController : Controller
     {
-        public static string LoginViewPath = "~/Views/Login/Login.cshtml";
+        public static string LoginViewPath = "~/Views/Authentication/Login/Login.cshtml";
+        public static string SignupViewPath = "~/Views/Authentication/Signup/Signup.cshtml";
         public static string IndexPath = "~/Views/Home/Dashboard/Index.cshtml";
         public ActionResult Index()
         {
@@ -21,9 +22,15 @@ namespace ToDuo.Controllers
             return View(IndexPath);
         }
 
+        /****************Authentication********************/
         public ActionResult Login()
         {
             return View(LoginViewPath);
+        }
+
+        public ActionResult Signup()
+        {
+            return View(SignupViewPath);
         }
 
     }

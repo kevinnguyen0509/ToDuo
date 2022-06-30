@@ -2,12 +2,13 @@
     position: relative;
     width: 100%;
     margin-top: 200px;
+    
     /*    border: 1px dotted pink;*/
 }
 
 #LoginContainer {
     width: 350px;
-    height: 350px;
+    height: 100%;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
     margin-left: auto;
@@ -106,7 +107,9 @@
 }
 
 #EmailInputTxt,
-#PasswordInputTxt {
+#PasswordInputTxt,
+#FirstNameInputTxt,
+#LastNameInputTxt{
     height: 50px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -116,3 +119,16 @@
     font-size: 30px;
     color: #fff;
 }
+
+.signupOption {
+    justify-content: center;
+    color: #7097A8;
+    margin-bottom: 0px;
+}
+
+    .signupOption a {
+        margin: 0px;
+        color: #7097A8;
+        text-decoration: none;
+        cursor: pointer;
+    }
