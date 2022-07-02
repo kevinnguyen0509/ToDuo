@@ -20,22 +20,21 @@ namespace ToDuo.Controllers
 
             if (PasswordIsCorrect)
             {
-                //Create cookie, Add the ID and PartnerID that belongs with Logged in user
-                //Set it to expire in 90 days.
-                HttpCookie CurrentUserCookie = new HttpCookie("ToDuoUserCookie");
-                CurrentUserCookie.Values.Add("ID", UserFromDatabase.ID.ToString());
-                CurrentUserCookie.Values.Add("PartnerID", UserFromDatabase.PartnerID);
-                CurrentUserCookie.Expires = DateTime.Now.AddDays(90);
-                Response.Cookies.Add(CurrentUserCookie);
-
+                UserFromDatabase.CreateCookie90Days(UserFromDatabase);
                 return Json("Success", JsonRequestBehavior.AllowGet);
-
             }
             else
             {
                 return Json("Failed", JsonRequestBehavior.AllowGet);
             }
 
+        }
+
+        //Checks and creates new user if no user exists with email
+        public JsonResult SignUserUp(User user)
+        {
+            User UserModel = new User();
+            return Json(UserModel.CreateUser(user), JsonRequestBehavior.AllowGet);
         }
     }
 }
