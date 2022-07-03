@@ -23,11 +23,11 @@ namespace ToDuo
                       "~/Scripts/Default/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/Default/bootstrap.css",
-                      "~/Content/Default/site.css",
+                      "~/Content/Vendor/Default/bootstrap.css",
+                      "~/Content/Vendor/Default/site.css",
                       "~/Content/font-awesome.min.css",
-                      "~/Content/all.css",
-                      "~/Content/v4-shims.css"));
+                      "~/Content/font-awesome.css"
+                      ));
         }
     }
 }

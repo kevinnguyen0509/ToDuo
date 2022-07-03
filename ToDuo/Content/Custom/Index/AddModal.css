@@ -1,0 +1,5 @@
+﻿#ModalDragAndDropImageContainer {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Entire background image always stays in view */
+}
