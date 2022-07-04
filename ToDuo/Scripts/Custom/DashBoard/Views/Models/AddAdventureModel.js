@@ -10,7 +10,7 @@ var uploadedImageURI = null;
 
 $(document).ready(function () {
     attachSaveAddAdventureListener();//When save button is clicked
-    attachDragAndDropAddAdventureListener();
+    //attachDragAndDropAddAdventureListener();
     attachImageUrlListener();
 });
 
@@ -18,7 +18,7 @@ function attachImageUrlListener() {
     let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
     AddAdventureImageTxt.addEventListener('keyup', function () {
         ImageDropArea.innerHTML = '';
-        document.querySelector("#ModalDragAndDropImageContainer").style.backgroundImage = ``;
+        //document.querySelector("#ModalDragAndDropImageContainer").style.backgroundImage = ``;
         let imageFromAnotherWebsite = `<img src="${AddAdventureImageTxt.value}" class="BannerImages"/>`
         ImageDropArea.insertAdjacentHTML('afterbegin', imageFromAnotherWebsite);
     });
@@ -82,3 +82,4 @@ function readImage(file){
     });
     reader.readAsDataURL(file);
 }
+

@@ -20,18 +20,18 @@
                 <div class="ModalContentContainer">
                     <div class="ModalLeftSide">
                         <div id="ModalDragAndDropImageContainer">
-                                <i class="fa fa-camera-retro " id="DragAndDropModalIcon" title="Drag And Drop"></i>
-                                <h4 id="uploadText">Drag and Drop To Upload</h4>
+                                <i class="fa fa-camera-retro " id="DragAndDropModalIcon" title="Adventure Place Holder"></i>
+                                <h4 id="uploadText">Paste Image Address Below!</h4>
                             
                         </div>
                         <div class="AddTagsContainer">
-                            <input type="text" class="form-control descriptionsModal" placeholder="Paste image URL from website instead?" id="AddAdventureImageTxt"/>
+                            <input type="text" class="form-control descriptionsModal" placeholder="Paste image URL from website Here" id="AddAdventureImageTxt"/>
                             <i class="fa fa-globe-asia CategoryListIcons TagAddIcon"></i>
                         </div>
                     </div>
 
                     <div class="ModalRightSide">
-                        <input type="text" class="form-control" placeholder="Add Your Title" id="AddAdventureTitleTxt" required/>
+                        <input type="text" class="form-control" placeholder="Add Your Title" id="AddAdventureTitleTxt" required />
                         <div class="PersonWhoAddedContainer">
                             <div class="thumbnailProfilePicture">
                                 <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
@@ -43,14 +43,19 @@
                             </div>
                         </div>
                         <input type="text" class="form-control descriptionsModal" placeholder="Any Description About this?" id="AddAdventureDescriptionTxt" />
+                        <div class="col-md-12 AddTagsContainer">
+                            <input type="text" class="form-control descriptionsModal" placeholder="Website URL" id="AddAdventureWebsiteTxt" required/>
+                            <i class="fa fa-globe CategoryListIcons TagAddIcon"></i>
+                        </div>
+                       
 
                         <div class="col-md-6 AddTagsContainer">
-                            <input type="text" class="form-control descriptionsModal" placeholder="Location/City" id="AddAdventureLocationTxt" required/>
+                            <input type="text" class="form-control descriptionsModal" placeholder="Location/City" id="AddAdventureLocationTxt" required />
                             <i class="fa fa-map-marker CategoryListIcons TagAddIcon"></i>
                         </div>
 
                         <div class="col-md-6 AddTagsContainer">
-                            <input type="text" class="form-control descriptionsModal" placeholder="Tags" id="AddAdventureTagsTxt" required/>
+                            <input type="text" class="form-control descriptionsModal" placeholder="Tags" id="AddAdventureTagsTxt" required />
                             <i class="fa fa-tags CategoryListIcons TagAddIcon"></i>
                         </div>
 
@@ -74,3 +79,4 @@
     </div>
 </div>
 
+<script type="module" src="~/Scripts/Custom/DashBoard/Views/Models/AddAdventureModel.js"></script>
