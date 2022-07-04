@@ -8,12 +8,24 @@ const ImageDropArea = document.getElementById('ModalDragAndDropImageContainer')
 var uploadedImageURI = null;
 
 
+
 $(document).ready(function () {
     attachSaveAddAdventureListener();//When save button is clicked
     //attachDragAndDropAddAdventureListener();
+    attachDragAndDropModalIconListener();
     attachImageUrlListener();
 });
 
+
+function attachDragAndDropModalIconListener() {
+    let DragAndDropModalIcon = document.getElementById('DragAndDropModalIcon');
+    let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
+    DragAndDropModalIcon.addEventListener('click', function () {
+        AddAdventureImageTxt.focus();
+    });
+}
+
+//Listens for image url to be pasted in to display
 function attachImageUrlListener() {
     let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
     AddAdventureImageTxt.addEventListener('keyup', function () {
@@ -23,6 +35,8 @@ function attachImageUrlListener() {
         ImageDropArea.insertAdjacentHTML('afterbegin', imageFromAnotherWebsite);
     });
 }
+
+
 
 function attachSaveAddAdventureListener() {
     SaveAdventuresBtn.addEventListener('click', function () {
