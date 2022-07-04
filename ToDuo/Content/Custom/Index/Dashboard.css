@@ -150,6 +150,7 @@ hr {
 .RecentlyAddedImages,
 #RecentlyAddedImgContainer {
     border-radius: 5px;
+    cursor: pointer
 }
 #RecentlyAddedImgContainer {
     margin: 1% 1%;

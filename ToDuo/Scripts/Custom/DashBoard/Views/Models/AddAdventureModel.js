@@ -1,4 +1,5 @@
-﻿
+﻿//<img src="https://hidden-spire-05318.herokuapp.com/img/assets/cooking.jpg" class="BannerImages"/>
+
 //Button Elements
 let SaveAdventuresBtn = document.getElementById('SaveAdventuresBtn');
 
@@ -10,7 +11,18 @@ var uploadedImageURI = null;
 $(document).ready(function () {
     attachSaveAddAdventureListener();//When save button is clicked
     attachDragAndDropAddAdventureListener();
+    attachImageUrlListener();
 });
+
+function attachImageUrlListener() {
+    let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
+    AddAdventureImageTxt.addEventListener('keyup', function () {
+        ImageDropArea.innerHTML = '';
+        document.querySelector("#ModalDragAndDropImageContainer").style.backgroundImage = ``;
+        let imageFromAnotherWebsite = `<img src="${AddAdventureImageTxt.value}" class="BannerImages"/>`
+        ImageDropArea.insertAdjacentHTML('afterbegin', imageFromAnotherWebsite);
+    });
+}
 
 function attachSaveAddAdventureListener() {
     SaveAdventuresBtn.addEventListener('click', function () {
@@ -61,7 +73,7 @@ function attachDragAndDropAddAdventureListener() {
 }
 
 
-
+//Reads results as URI
 function readImage(file){
     const reader = new FileReader();
     reader.addEventListener('load', (event) => {

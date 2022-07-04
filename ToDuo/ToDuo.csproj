@@ -136,6 +136,17 @@
     <Content Include="Content\Custom\Index\Dashboard.css" />
     <Content Include="Content\Custom\Shared\SharedClasses.css" />
     <Content Include="Content\Custom\Signup\Signup.css" />
+    <Content Include="Content\Images\AppImages\bar.jpg" />
+    <Content Include="Content\Images\AppImages\cooking.jpg" />
+    <Content Include="Content\Images\AppImages\CountryRoad.jpg" />
+    <Content Include="Content\Images\AppImages\Cruise.jpg" />
+    <Content Include="Content\Images\AppImages\DarkSushi.jpg" />
+    <Content Include="Content\Images\AppImages\FarmHouse.jpeg" />
+    <Content Include="Content\Images\AppImages\Glamping.jpg" />
+    <Content Include="Content\Images\AppImages\hotel.jpg" />
+    <Content Include="Content\Images\AppImages\minigolf.jpg" />
+    <Content Include="Content\Images\AppImages\NoProfilePicture.jpg" />
+    <Content Include="Content\Images\AppImages\RoadMap.jpg" />
     <Content Include="Content\Vendor\Default\bootstrap-theme.css" />
     <Content Include="Content\Vendor\Default\bootstrap-theme.min.css" />
     <Content Include="Content\Vendor\Default\bootstrap.css" />
