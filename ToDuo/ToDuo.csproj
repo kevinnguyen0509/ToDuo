@@ -134,6 +134,7 @@
   <ItemGroup>
     <Content Include="Content\Custom\Index\AddModal.css" />
     <Content Include="Content\Custom\Index\Dashboard.css" />
+    <Content Include="Content\Custom\Shared\FormValidation.css" />
     <Content Include="Content\Custom\Shared\SharedClasses.css" />
     <Content Include="Content\Custom\Signup\Signup.css" />
     <Content Include="Content\Images\AppImages\bar.jpg" />

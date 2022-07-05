@@ -26,7 +26,8 @@ namespace ToDuo
                       "~/Content/Vendor/Default/bootstrap.css",
                       "~/Content/Vendor/Default/site.css",
                       "~/Content/font-awesome.min.css",
-                      "~/Content/font-awesome.css"
+                      "~/Content/font-awesome.css",
+                      "~/Content/Custom/Shared/FormValidation.css"
                       ));
         }
     }

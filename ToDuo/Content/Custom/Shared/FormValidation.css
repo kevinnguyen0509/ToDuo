@@ -1,0 +1,14 @@
+﻿.ErrorEmptyTxt {
+    border: 3px solid #b14431 !important;
+    animation-name: fadeInAndOut;
+    animation-duration: .75s;
+    animation-timing-function: step-end;
+    animation-iteration-count: 3;
+
+}
+
+@keyframes fadeInAndOut{
+    50% {
+        opacity: 0.5;
+    } 
+}

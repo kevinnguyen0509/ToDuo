@@ -1,4 +1,9 @@
-﻿//<img src="https://hidden-spire-05318.herokuapp.com/img/assets/cooking.jpg" class="BannerImages"/>
+﻿import { FormValidation } from '../../../Validation/FormValidation.js'
+
+//<img src="https://hidden-spire-05318.herokuapp.com/img/assets/cooking.jpg" class="BannerImages"/>
+
+//Classes
+const FormValidationOptions = new FormValidation();
 
 //Button Elements
 let SaveAdventuresBtn = document.getElementById('SaveAdventuresBtn');
@@ -16,7 +21,7 @@ $(document).ready(function () {
     attachImageUrlListener();
 });
 
-
+//clicking on photo image will focus the imagetxt
 function attachDragAndDropModalIconListener() {
     let DragAndDropModalIcon = document.getElementById('DragAndDropModalIcon');
     let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
@@ -46,20 +51,12 @@ function attachSaveAddAdventureListener() {
         let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');
         let AddAdventureLocationTxt = document.getElementById('AddAdventureLocationTxt');
         let AddAdventureTagsTxt = document.getElementById('AddAdventureTagsTxt');
-        
+        let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
 
-        if ((AddAdventureImageTxt.value.trim() == '' || AddAdventureImageTxt.value.trim() == null) && (uploadedImageURI == '' || uploadedImageURI == null)) {//User did not upload an image
-            alert('You need to upload an image.')
-        }
-        else if (uploadedImageURI == '' || uploadedImageURI == null) {//User tried to upload an img URL link use AddAdventureImageTxt as the image location to save
-            let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
-            console.log(AddAdventureTitleTxt.value, AddAdventureDescriptionTxt.value, AddAdventureLocationTxt.value,
-                AddAdventureTagsTxt.value, AddAdventureImageTxt.value);
-        }
-        else {//User dragged and dropped use the uploadedImageURI variable as the image location to save
-            console.log(AddAdventureTitleTxt.value, AddAdventureDescriptionTxt.value, AddAdventureLocationTxt.value,
-                AddAdventureTagsTxt.value, uploadedImageURI);
-        }
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureTitleTxt);
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureImageTxt);
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureLocationTxt);
+
 
     });
 }
