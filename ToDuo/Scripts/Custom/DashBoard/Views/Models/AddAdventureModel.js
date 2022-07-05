@@ -9,17 +9,42 @@ const FormValidationOptions = new FormValidation();
 let SaveAdventuresBtn = document.getElementById('SaveAdventuresBtn');
 
 //Image Uploader Elements
+//var uploadedImageURI = null; Used Later for the drag and drop
 const ImageDropArea = document.getElementById('ModalDragAndDropImageContainer')
-var uploadedImageURI = null;
 
 
 
+/***********Main Class**************/
 $(document).ready(function () {
     attachSaveAddAdventureListener();//When save button is clicked
     //attachDragAndDropAddAdventureListener();
     attachDragAndDropModalIconListener();
     attachImageUrlListener();
 });
+
+
+
+/*********************Functions***************************/
+
+//Creates a Save listener to save to new adventure to the database
+function attachSaveAddAdventureListener() {
+    SaveAdventuresBtn.addEventListener('click', function () {
+
+        //Get Model Text Box Elemetns 
+        let AddAdventureTitleTxt = document.getElementById('AddAdventureTitleTxt');
+        let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');
+        let AddAdventureLocationTxt = document.getElementById('AddAdventureLocationTxt');
+        let AddAdventureTagsTxt = document.getElementById('AddAdventureTagsTxt');
+        let AddAdventureWebsiteTxt = document.getElementById('AddAdventureWebsiteTxt');
+        let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
+
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureTitleTxt);
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureImageTxt);
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureLocationTxt);
+
+
+    });
+}
 
 //clicking on photo image will focus the imagetxt
 function attachDragAndDropModalIconListener() {
@@ -30,7 +55,7 @@ function attachDragAndDropModalIconListener() {
     });
 }
 
-//Listens for image url to be pasted in to display
+//Listens for image url to be pasted in to display then displays image on the screen
 function attachImageUrlListener() {
     let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
     AddAdventureImageTxt.addEventListener('keyup', function () {
@@ -43,26 +68,13 @@ function attachImageUrlListener() {
 
 
 
-function attachSaveAddAdventureListener() {
-    SaveAdventuresBtn.addEventListener('click', function () {
-
-        //Get Model Text Box Elemetns 
-        let AddAdventureTitleTxt = document.getElementById('AddAdventureTitleTxt');
-        let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');
-        let AddAdventureLocationTxt = document.getElementById('AddAdventureLocationTxt');
-        let AddAdventureTagsTxt = document.getElementById('AddAdventureTagsTxt');
-        let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
-
-        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureTitleTxt);
-        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureImageTxt);
-        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureLocationTxt);
 
 
-    });
-}
 
-
-function attachDragAndDropAddAdventureListener() {
+/*
+ * Used for later. This is the Drag and drop method
+ * 
+ * function attachDragAndDropAddAdventureListener() {
     ImageDropArea.addEventListener('dragover', function (e) {
         ImageDropArea.innerHTML = '';
         e.stopPropagation();
@@ -78,7 +90,7 @@ function attachDragAndDropAddAdventureListener() {
         let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
         AddAdventureImageTxt.value = '';
         const fileList = event.dataTransfer.files;
-        /*document.querySelector("#AddAdventureImageTxt").value = fileList[0].name;*/
+        *//*document.querySelector("#AddAdventureImageTxt").value = fileList[0].name;*//*
         readImage(fileList[0]);
     });
 }
@@ -94,3 +106,4 @@ function readImage(file){
     reader.readAsDataURL(file);
 }
 
+*/
