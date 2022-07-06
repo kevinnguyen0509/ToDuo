@@ -42,7 +42,6 @@ function attachSaveAddAdventureListener() {
         FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureImageTxt);
         FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureLocationTxt);
 
-
     });
 }
 
