@@ -2,13 +2,20 @@
     border: 3px solid #b14431 !important;
     animation-name: fadeInAndOut;
     animation-duration: .75s;
-    animation-timing-function: step-end;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: 3;
 
 }
 
 @keyframes fadeInAndOut{
+    0% {
+        opacity: 0;
+    }
     50% {
-        opacity: 0.5;
-    } 
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
