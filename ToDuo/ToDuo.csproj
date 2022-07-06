@@ -135,6 +135,8 @@
     <Content Include="Content\Custom\Index\AddModal.css" />
     <Content Include="Content\Custom\Index\Dashboard.css" />
     <Content Include="Content\Custom\Shared\FormValidation.css" />
+    <Content Include="Content\Custom\Shared\Loading.css" />
+    <Content Include="Content\Custom\Shared\Overlay.css" />
     <Content Include="Content\Custom\Shared\SharedClasses.css" />
     <Content Include="Content\Custom\Signup\Signup.css" />
     <Content Include="Content\Images\AppImages\bar.jpg" />
@@ -201,6 +203,8 @@
     <Content Include="Views\Home\Dashboard\RightSide\RightSection.cshtml" />
     <Content Include="Views\Home\Dashboard\Modals\AddAdventure.cshtml" />
     <Content Include="Views\Authentication\Signup\Signup.cshtml" />
+    <Content Include="Views\Shared\UtilComponents\_LoadingOverlay.cshtml" />
+    <Content Include="Views\Shared\UtilComponents\_Loading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

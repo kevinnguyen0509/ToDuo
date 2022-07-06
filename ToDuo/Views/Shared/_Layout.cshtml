@@ -9,6 +9,7 @@
 </head>
 <body>
     @Html.Hidden("HiddenCurrentUrl", Url.Content("~"))
+    @Html.Partial("~/Views/Shared/UtilComponents/_LoadingOverlay.cshtml")
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">

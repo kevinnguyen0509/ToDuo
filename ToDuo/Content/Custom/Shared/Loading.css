@@ -1,0 +1,118 @@
+﻿#LoadingContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background: rgb(18 17 17 / 0.85);
+    top: 40%; /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    z-index: 805;
+    border-radius: 5px;
+    padding: 20px;
+}
+.LoadingContainerBudget {
+    display: flex;
+    align-items: center;
+}
+
+#loadingDotaContainerHolder {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.loadingDotContainer {
+    width: 35px;
+    height: 35px;
+}
+
+.loadingDot3 {
+    width: 100%;
+    height: 100%;
+    border-radius: 255px;
+    background: #7097A8;
+}
+
+.loadingDot2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 255px;
+    background: #992915;
+
+}
+
+.loadingDot {
+    width: 100%;
+    height: 100%;
+    border-radius: 255px;
+    background: #d9c595;
+}
+/****************Animations***********************/
+.LoadingDotAnimation {
+    animation: shrinkGrow 6s infinite;
+}
+
+.LoadingDotAnimation2 {
+    animation: shrinkGrow 6s infinite;
+    animation-delay: 0.30s;
+}
+
+.LoadingDotAnimation3 {
+    animation: shrinkGrow 6s infinite;
+    animation-delay: 0.60s;
+}
+
+.swaySideToSide {
+    animation: swaySideToSide 5s infinite;
+    animation-delay: 0.60s;
+}
+
+@keyframes shrinkGrow {
+    0% {
+        height: 100%;
+        width: 100%;
+    }
+
+    25% {
+        height: 0%;
+        width: 0%;
+    }
+
+    50% {
+        height: 100%;
+        width: 100%;
+    }
+
+    75% {
+        height: 0%;
+        width: 0%;
+    }
+
+    100% {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@keyframes swaySideToSide {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg)
+    }
+
+    75% {
+        transform: rotate(-10deg)
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
