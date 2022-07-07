@@ -56,8 +56,8 @@ namespace ToDuo.Models.Users
         public void CreateCookie90Days(User User)
         {
             HttpCookie CurrentUserCookie = new HttpCookie("ToDuoUserCookie");
-            CurrentUserCookie.Values.Add("ID", User.NewId.ToString());
-            CurrentUserCookie.Values.Add("PartnerID", null);
+            CurrentUserCookie.Values.Add("ID", User.ID.ToString());
+            CurrentUserCookie.Values.Add("PartnerID", User.PartnerID == null? "0" : User.PartnerID);
             CurrentUserCookie.Expires = DateTime.Now.AddDays(90);
             HttpContext.Current.Response.Cookies.Add(CurrentUserCookie);
         }

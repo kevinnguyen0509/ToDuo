@@ -34,20 +34,33 @@ namespace ToDuo.DataFactory.SaveData
             SQLComm.Parameters.AddWithValue("@FirstName", User.Firstname);
             SQLComm.Parameters.AddWithValue("@LastName", User.LastName);
 
-            SQLRec = SQLComm.ExecuteReader();
-
-            if (SQLRec.Read())
+            try
             {
-                resultMessage.ReturnMessage = SQLRec.GetString(SQLRec.GetOrdinal("ReturnMessage"));
-                resultMessage.ReturnStatus = SQLRec.GetString(SQLRec.GetOrdinal("ReturnStatus"));
-                resultMessage.NewId = SQLRec.GetInt32(SQLRec.GetOrdinal("NewId"));
+                SQLRec = SQLComm.ExecuteReader();
+                if (SQLRec.Read())
+                {
+                    resultMessage.ReturnMessage = SQLRec.GetString(SQLRec.GetOrdinal("ReturnMessage"));
+                    resultMessage.ReturnStatus = SQLRec.GetString(SQLRec.GetOrdinal("ReturnStatus"));
+                    resultMessage.NewId = SQLRec.GetInt32(SQLRec.GetOrdinal("NewId"));
+                }
+                else
+                {
+                    resultMessage.ReturnMessage = SQLRec.GetString(SQLRec.GetOrdinal("ReturnMessage"));
+                    resultMessage.ReturnStatus = SQLRec.GetString(SQLRec.GetOrdinal("ReturnStatus"));
+                    resultMessage.NewId = SQLRec.GetInt32(SQLRec.GetOrdinal("NewId"));
+                }
+                SQLRec.Close();
             }
-            else
+            catch (Exception e)
             {
-
+                resultMessage.ReturnMessage = e.Message;
+                resultMessage.ReturnStatus = "Failed";
+                resultMessage.NewId = -1;
             }
-            SQLRec.Close();
-            SQLConn.Close();
+            finally
+            {
+                SQLConn.Close();
+            }
 
             return resultMessage;
         }

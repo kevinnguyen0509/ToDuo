@@ -122,13 +122,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataFactory\GetData\GetUserData.cs" />
-    <Compile Include="DataFactory\SaveData\SaveUserData.cs" />
+    <Compile Include="Controllers\JsonController.cs" />
+    <Compile Include="DataFactory\UserTable\GetData\GetUserData.cs" />
+    <Compile Include="DataFactory\AdventureTable\SaveData\SaveAdventureData.cs" />
+    <Compile Include="DataFactory\UserTable\SaveData\SaveUserData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseClasses\ActivityBaseModel.cs" />
     <Compile Include="Models\BaseClasses\ResultMessage.cs" />
-    <Compile Include="Models\Users\User.cs" />
+    <Compile Include="Models\Interfaces\IForm.cs" />
+    <Compile Include="Models\Models\TableModels\AdventureModel.cs" />
+    <Compile Include="Models\Models\Users\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,7 +171,8 @@
     <Content Include="Scripts\Custom\Authentication\Model\SignupModel.js" />
     <Content Include="Scripts\Custom\Authentication\Views\Login.js" />
     <Content Include="Scripts\Custom\Authentication\Views\Signup.js" />
-    <Content Include="Scripts\Custom\DashBoard\Views\Models\AddAdventureModel.js" />
+    <Content Include="Scripts\Custom\DashBoard\Modals\Model\AdventureModel.js" />
+    <Content Include="Scripts\Custom\DashBoard\Modals\Views\AddAdventureModel.js" />
     <Content Include="Scripts\Custom\Validation\FormValidation.js" />
     <Content Include="Scripts\Default\bootstrap.js" />
     <Content Include="Scripts\Default\bootstrap.min.js" />
@@ -208,7 +214,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\Custom\DashBoard\Model\" />
+    <Folder Include="DataFactory\AdventureTable\GetData\" />
+    <Folder Include="Views\Json\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

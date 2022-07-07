@@ -1,12 +1,12 @@
 ﻿import { FormValidation } from '../../../Validation/FormValidation.js'
+import { AdventureModel } from '../Model/AdventureModel.js'
 
 //<img src="https://hidden-spire-05318.herokuapp.com/img/assets/cooking.jpg" class="BannerImages"/>
 
 //Classes
 const FormValidationOptions = new FormValidation();
+const AdventureModelOptions = new AdventureModel();
 
-//Button Elements
-let SaveAdventuresBtn = document.getElementById('SaveAdventuresBtn');
 
 //Image Uploader Elements
 //var uploadedImageURI = null; Used Later for the drag and drop
@@ -28,9 +28,14 @@ $(document).ready(function () {
 
 //Creates a Save listener to save to new adventure to the database
 function attachSaveAddAdventureListener() {
-    SaveAdventuresBtn.addEventListener('click', function () {
 
-        //Get Model Text Box Elemetns 
+    //Button Elements
+    let AdventureForm = document.getElementById('AdventureForm');
+
+    AdventureForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        //Get Model Text Box Elementns 
         let AddAdventureTitleTxt = document.getElementById('AddAdventureTitleTxt');
         let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');
         let AddAdventureLocationTxt = document.getElementById('AddAdventureLocationTxt');
@@ -42,6 +47,19 @@ function attachSaveAddAdventureListener() {
         FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureImageTxt);
         FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureLocationTxt);
 
+        let TitleEmpty = FormValidationOptions.TextBoxIsEmpty(AddAdventureTitleTxt);
+        let LocationEmpty = FormValidationOptions.TextBoxIsEmpty(AddAdventureLocationTxt);
+        let AdventureImageEmpty = FormValidationOptions.TextBoxIsEmpty(AddAdventureLocationTxt);
+
+        if (!TitleEmpty && !LocationEmpty && !AdventureImageEmpty) {
+            AdventureModelOptions.saveAdventure(AdventureForm).then(function (resultMessage) {
+                if (resultMessage.ReturnStatus == 'Success') {
+                    AdventureModelOptions.resetAdventureForm();
+                }
+            })
+            //Clear Adventure Form
+
+        }
     });
 }
 

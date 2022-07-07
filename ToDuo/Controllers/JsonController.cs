@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using ToDuo.Models.BaseClasses;
+using ToDuo.Models.Models.TableModels;
+using ToDuo.Models.Users;
+
+namespace ToDuo.Controllers
+{
+    public class JsonController : Controller
+    {
+        User user = new User();
+        // GET: Json
+        public JsonResult AddAdventure(AdventureModel AdventureModel)
+        {
+            User currentUser = user.GetLoggedInUserCookie();
+            AdventureModel.OwnerID = currentUser.ID;
+            ResultMessage resultMessage = AdventureModel.SaveAdventure(AdventureModel);
+            
+            return Json(resultMessage, JsonRequestBehavior.AllowGet);
+        }
+    }
+}

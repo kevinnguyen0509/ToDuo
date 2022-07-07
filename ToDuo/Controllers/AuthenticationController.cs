@@ -20,6 +20,7 @@ namespace ToDuo.Controllers
 
             if (PasswordIsCorrect)
             {
+                UserFromDatabase.PartnerID = UserFromDatabase.PartnerID.Trim();
                 UserFromDatabase.CreateCookie90Days(UserFromDatabase);
                 return Json("Success", JsonRequestBehavior.AllowGet);
             }
