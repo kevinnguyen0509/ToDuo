@@ -2,7 +2,9 @@
 import { AdventureModel } from '../Model/AdventureModel.js'
 
 //<img src="https://hidden-spire-05318.herokuapp.com/img/assets/cooking.jpg" class="BannerImages"/>
-
+/*let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');
+let AddAdventureTagsTxt = document.getElementById('AddAdventureTagsTxt');
+let AddAdventureWebsiteTxt = document.getElementById('AddAdventureWebsiteTxt');*/
 //Classes
 const FormValidationOptions = new FormValidation();
 const AdventureModelOptions = new AdventureModel();
@@ -11,7 +13,7 @@ const AdventureModelOptions = new AdventureModel();
 //Image Uploader Elements
 //var uploadedImageURI = null; Used Later for the drag and drop
 const ImageDropArea = document.getElementById('ModalDragAndDropImageContainer')
-
+let TagsArray = [];
 
 
 /***********Main Class**************/
@@ -20,6 +22,7 @@ $(document).ready(function () {
     //attachDragAndDropAddAdventureListener();
     attachDragAndDropModalIconListener();
     attachImageUrlListener();
+    CreateTagFeedback();
 });
 
 
@@ -35,13 +38,11 @@ function attachSaveAddAdventureListener() {
     AdventureForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        //Get Model Text Box Elementns 
-        let AddAdventureTitleTxt = document.getElementById('AddAdventureTitleTxt');
-        let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');
+        //Get Model Text Box Elements that shouldn't be blank
+        let AddAdventureTitleTxt = document.getElementById('AddAdventureTitleTxt');     
         let AddAdventureLocationTxt = document.getElementById('AddAdventureLocationTxt');
-        let AddAdventureTagsTxt = document.getElementById('AddAdventureTagsTxt');
-        let AddAdventureWebsiteTxt = document.getElementById('AddAdventureWebsiteTxt');
         let AddAdventureImageTxt = document.getElementById('AddAdventureImageTxt');
+        let AddAdventureTagsTxt = document.getElementById('AddAdventureTagsTxt');
 
         FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureTitleTxt);
         FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureImageTxt);
@@ -52,15 +53,51 @@ function attachSaveAddAdventureListener() {
         let AdventureImageEmpty = FormValidationOptions.TextBoxIsEmpty(AddAdventureLocationTxt);
 
         if (!TitleEmpty && !LocationEmpty && !AdventureImageEmpty) {
+            let tagString = '';
+            for (let i = 0; i < TagsArray.length; i++) {
+                if (TagsArray[i] != null && TagsArray[i] != '') {
+                    tagString = tagString + ',' + TagsArray[i]
+                }         
+            }
+            AddAdventureTagsTxt.value = tagString;
             AdventureModelOptions.saveAdventure(AdventureForm).then(function (resultMessage) {
                 if (resultMessage.ReturnStatus == 'Success') {
                     AdventureModelOptions.resetAdventureForm();
+                    $('#AddAdventureModal').modal('toggle');
+                    tagString = '';
+                    TagsArray = [];
                 }
             })
             //Clear Adventure Form
 
         }
     });
+}
+
+function CreateTagFeedback() {
+    let AddAdventureTagsTxt = document.getElementById('AddAdventureTagsTxt');
+    let TagWrapperContainer = document.getElementById('TagWrapper');
+    
+    
+    AddAdventureTagsTxt.addEventListener('keypress', function (e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            TagsArray.push(AddAdventureTagsTxt.value);
+            TagWrapperContainer.innerHTML = '';
+            AddAdventureTagsTxt.value = '';
+            for (let i = 0; i < TagsArray.length; i++) {
+                let tag = `<li class="tagItemContainer tagTitle">${TagsArray[i]}  <i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>`;
+                if (TagsArray[i] != '')
+                    TagWrapperContainer.insertAdjacentHTML('beforeend', tag);
+            }
+            
+
+
+        }
+        
+        
+
+    })
 }
 
 //clicking on photo image will focus the imagetxt

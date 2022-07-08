@@ -327,7 +327,9 @@ hr {
 }
 
 /***********Modal Dialog***********/
-.modal-dialog{
+
+
+.modal-dialog {
     padding: 0px 0px;
     display: flex;
     justify-content: center;

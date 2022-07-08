@@ -26,7 +26,8 @@ export class AdventureModel {
         let ModalDragAndDropImageContainer = document.getElementById('ModalDragAndDropImageContainer');
         let resetImageDropArea = `<i class="fa fa-camera-retro " id="DragAndDropModalIcon" title="Adventure Place Holder"></i>
                                 <h4 id="uploadText">Paste Image Address Below!</h4>`
-
+        let TagWrapperContainer = document.getElementById('TagWrapper');
+        TagWrapperContainer.innerHTML = '';
         AddAdventureTitleTxt.value = '';
         AddAdventureDescriptionTxt.value = '';
         AddAdventureLocationTxt.value = '';
