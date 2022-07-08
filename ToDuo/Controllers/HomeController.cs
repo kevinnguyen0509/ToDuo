@@ -13,6 +13,7 @@ namespace ToDuo.Controllers
         public static string LoginViewPath = "~/Views/Authentication/Login/Login.cshtml";
         public static string SignupViewPath = "~/Views/Authentication/Signup/Signup.cshtml";
         public static string IndexPath = "~/Views/Home/Dashboard/Index.cshtml";
+        public static string LeftSideRecentlyAddedPath = "~/Views/Home/Dashboard/LeftSideBar/_RecentlyAdded.cshtml";
         public ActionResult Index()
         {
             //Models
@@ -30,6 +31,19 @@ namespace ToDuo.Controllers
             };
 
             return View(IndexPath, IndexVM);
+        }
+        //Left Side
+        public ActionResult _LeftSideRecentlyAdded()
+        {
+            HttpCookie CurrentUserCookie = Request.Cookies["ToDuoUserCookie"];
+            AdventureModel adventureModel = new AdventureModel();
+            int OwnerID = Int32.Parse(CurrentUserCookie.Values["ID"]);
+
+            IndexVM IndexVM = new IndexVM
+            {
+                AdventureList = adventureModel.GetList(OwnerID)
+            };
+            return PartialView(LeftSideRecentlyAddedPath, IndexVM);
         }
 
         /****************Authentication********************/

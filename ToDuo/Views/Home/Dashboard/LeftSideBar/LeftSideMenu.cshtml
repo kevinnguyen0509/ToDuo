@@ -1,4 +1,5 @@
-﻿<div class="LeftNavBarBanner activeRed">
+﻿
+<div class="LeftNavBarBanner activeRed">
     <h4>Welcome, Kevin!</h4>
 </div>
 
@@ -22,7 +23,7 @@
 <div id="LastAddedContainer" class="text-center">
     <div id="BoardAndRecentlySwipeContainer">
         <i class="fa fa-heart CategoryListIcons glow boardSwipeIcons" id="RencetlyAddedHeart" title="Recently Added"></i>
-        <i class="fa fa-diamond CategoryListIcons boardSwipeIcons" id="RencetlyAddedDiamond" title="Add Something" data-toggle="modal" data-target="#AddAdventureModal"></i>
+        <i class="fa fa-diamond CategoryListIcons boardSwipeIcons" id="RecentlyAddedDiamond" title="Add Something" data-toggle="modal" data-target="#AddAdventureModal"></i>
         <i class="fa fa-trello CategoryListIcons boardSwipeIcons" id="AddToSelectedBoards" title="Add To These Boards"></i>
     </div>
 
@@ -30,26 +31,6 @@
 </div>
 
 <div id="RecentlyAddedContainer">
-    @foreach (var Adventure in Model.AdventureList)
-    {
-    
-        <div id="RecentlyAddedImgContainer"><img src="@Adventure.ImageURL" class="RecentlyAddedImages" /></div>
-    
-        
-    }
+    @Html.Partial("~/Views/Home/Dashboard/LeftSideBar/_RecentlyAdded.cshtml", Model)
 </div>
 
-
-@*<div id="SelectBoardToAddToContainer">
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-
-
-    </div>*@

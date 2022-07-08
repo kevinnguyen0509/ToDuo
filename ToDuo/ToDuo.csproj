@@ -213,6 +213,8 @@
     <Content Include="Views\Authentication\Signup\Signup.cshtml" />
     <Content Include="Views\Shared\UtilComponents\_LoadingOverlay.cshtml" />
     <Content Include="Views\Shared\UtilComponents\_Loading.cshtml" />
+    <Content Include="Views\Home\Dashboard\Modals\_DetailsAdventure.cshtml" />
+    <Content Include="Views\Home\Dashboard\LeftSideBar\_RecentlyAdded.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

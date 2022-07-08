@@ -1,0 +1,8 @@
+﻿@model ToDuo.Models.ViewModels.IndexVM
+@foreach (var Adventure in Model.AdventureList)
+{
+    <div id="RecentlyAddedImgContainer" class="RecentlyAddedItem" itemid="@Adventure.ID" ownerid="@Adventure.OwnerID" title="@Adventure.Title" Imageurl="@Adventure.ImageURL"
+         description="@Adventure.Description" websiteurl="@Adventure.WebsiteUrl" createdDate="@Adventure.CreatedDate.ToString("MM/dd/yyyy")" location="@Adventure.Location"
+         tags ="@Adventure.Tags"data-toggle="modal" data-target="#DetailsAdventureModal"><img src="@Adventure.ImageURL" class="RecentlyAddedImages" />
+    </div>
+}

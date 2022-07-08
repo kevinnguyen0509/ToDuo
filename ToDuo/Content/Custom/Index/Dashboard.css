@@ -349,6 +349,7 @@ hr {
 }
 
 #SaveAdventuresBtn,
+#DetailSaveAdventuresBtn,
 #AddImageFromLinkModalButton {
     background: #992915;
     transition: all .5s ease;
@@ -485,6 +486,7 @@ hr {
     height: 100px;
     width: 100%;
     padding: 0px;
+    overflow-y: auto;
     
 }
 
@@ -505,7 +507,8 @@ hr {
     font-weight: bold;
 }
 
-#TagWrapper{
+#TagWrapper,
+#DetailTagWrapper {
     display: flex;
     flex-wrap: wrap;
 }
