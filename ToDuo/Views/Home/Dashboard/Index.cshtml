@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ToDuo.Models.ViewModels.IndexVM
+
+@{
     ViewBag.Title = "Home Page";
     <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/Dashboard.css" />
 }
@@ -7,7 +9,7 @@
 
 
     <div id="LeftNavBar">
-        @Html.Partial("~/Views/Home/Dashboard/LeftSideBar/LeftSideMenu.cshtml")
+        @Html.Partial("~/Views/Home/Dashboard/LeftSideBar/LeftSideMenu.cshtml", Model)
     </div>
 
     <div id="RightSection">

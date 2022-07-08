@@ -7,7 +7,7 @@
         <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
     </div>
 </div>
-
+@model ToDuo.Models.ViewModels.IndexVM
 <div id="NavCategoryContainer">
     <ul class="CategoryBackground">
         <li class="activeRed">All Adventures <i class="fa fa-globe-asia CategoryListIcons"></i></li>
@@ -30,30 +30,26 @@
 </div>
 
 <div id="RecentlyAddedContainer">
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/CountryRoad.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/bar.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/RoadMap.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/minigolf.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/cooking.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Cruise.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/hotel.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/CountryRoad.jpg" class="RecentlyAddedImages" /></div>
-
+    @foreach (var Adventure in Model.AdventureList)
+    {
+    
+        <div id="RecentlyAddedImgContainer"><img src="@Adventure.ImageURL" class="RecentlyAddedImages" /></div>
+    
+        
+    }
 </div>
 
 
 @*<div id="SelectBoardToAddToContainer">
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
-    <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
+        <div id="RecentlyAddedImgContainer"><img src="~/Content/Images/AppImages/Glamping.jpg" class="RecentlyAddedImages" /></div>
 
 
-</div>*@
+    </div>*@

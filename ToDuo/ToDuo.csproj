@@ -123,6 +123,7 @@
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsonController.cs" />
+    <Compile Include="DataFactory\AdventureTable\GetData\GetAdventureData.cs" />
     <Compile Include="DataFactory\UserTable\GetData\GetUserData.cs" />
     <Compile Include="DataFactory\AdventureTable\SaveData\SaveAdventureData.cs" />
     <Compile Include="DataFactory\UserTable\SaveData\SaveUserData.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Models\Interfaces\IForm.cs" />
     <Compile Include="Models\Models\TableModels\AdventureModel.cs" />
     <Compile Include="Models\Models\Users\User.cs" />
+    <Compile Include="Models\ViewModels\IndexVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -214,7 +216,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataFactory\AdventureTable\GetData\" />
     <Folder Include="Views\Json\" />
   </ItemGroup>
   <ItemGroup>

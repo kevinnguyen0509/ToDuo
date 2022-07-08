@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ToDuo.Models.Models.TableModels;
+using ToDuo.Models.ViewModels;
 
 namespace ToDuo.Controllers
 {
@@ -13,13 +15,21 @@ namespace ToDuo.Controllers
         public static string IndexPath = "~/Views/Home/Dashboard/Index.cshtml";
         public ActionResult Index()
         {
+            //Models
             HttpCookie CurrentUserCookie = Request.Cookies["ToDuoUserCookie"];
-
+            AdventureModel adventureModel = new AdventureModel();
 
             if (CurrentUserCookie == null)
                 return RedirectToAction("Login");
+            //Cookie Info
+            int OwnerID = Int32.Parse(CurrentUserCookie.Values["ID"]);
 
-            return View(IndexPath);
+            IndexVM IndexVM = new IndexVM
+            {
+                AdventureList = adventureModel.GetList(OwnerID)
+            };
+
+            return View(IndexPath, IndexVM);
         }
 
         /****************Authentication********************/
