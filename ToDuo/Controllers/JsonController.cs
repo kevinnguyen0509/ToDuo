@@ -21,5 +21,15 @@ namespace ToDuo.Controllers
             
             return Json(resultMessage, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult GetAdventure()
+        {
+            AdventureModel adventureModel = new AdventureModel();
+            User currentUser = user.GetLoggedInUserCookie();
+            int OwnerID = currentUser.ID;
+            List<AdventureModel> Adventures = adventureModel.GetList(OwnerID);
+
+            return Json(Adventures, JsonRequestBehavior.AllowGet);
+        }
     }
 }

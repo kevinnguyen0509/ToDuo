@@ -16,6 +16,17 @@ export class AdventureModel {
         return result;
     }
 
+    async GetAdventures() {
+        const result = await $.ajax({
+            method: 'POST',
+            url: baseUrl + 'Json/GetAdventure',
+            success: function (Adventures) {
+                return Adventures;
+            }
+        });
+        return result;
+    }
+
     resetAdventureForm() {
         let AddAdventureTitleTxt = document.getElementById('AddAdventureTitleTxt');
         let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');

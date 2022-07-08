@@ -62,6 +62,16 @@ function attachSaveAddAdventureListener() {
             AddAdventureTagsTxt.value = tagString;
             AdventureModelOptions.saveAdventure(AdventureForm).then(function (resultMessage) {
                 if (resultMessage.ReturnStatus == 'Success') {
+                    //Get list of new adventures and reset left sidebar recently added.
+                    AdventureModelOptions.GetAdventures().then(function (Adventures) {
+                        let RecentlyAddedContainer = document.getElementById('RecentlyAddedContainer');
+                        RecentlyAddedContainer.innerText = '';
+                        for (let i = 0; i < Adventures.length; i++) {
+                            let RecentlyAddedElement = `<div id="RecentlyAddedImgContainer"><img src="${Adventures[i].ImageURL}" class="RecentlyAddedImages" /></div>`;
+                            RecentlyAddedContainer.insertAdjacentHTML('beforeend', RecentlyAddedElement);
+                        }
+                    });
+
                     AdventureModelOptions.resetAdventureForm();
                     $('#AddAdventureModal').modal('toggle');
                     tagString = '';
