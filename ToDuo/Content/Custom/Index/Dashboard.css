@@ -467,9 +467,14 @@ hr {
 .descriptionsModal{
     font-size: 12px;
     padding-right: 20px;
+    
 }
 
-.AddTagsContainer{
+#DetailAddAdventureDescriptionTxt {
+    resize:vertical;
+}
+
+.AddTagsContainer {
     display: flex;
     align-items: center;
     margin: 10px 0px;
