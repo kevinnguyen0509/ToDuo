@@ -9,8 +9,6 @@ let CardModelOptions = new CardModel();
 let cardInfoHolder = document.getElementById('cardInfoHolder')
 
 $(document).ready(function () {
-
-
     RenderShuffledAdventureCards();
 });
 
