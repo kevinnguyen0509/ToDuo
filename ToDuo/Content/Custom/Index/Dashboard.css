@@ -25,6 +25,7 @@
 
 #RightSection {
     min-width: 85%;
+
 }
 RightBanner
     #RightSectionBanner {
@@ -162,15 +163,22 @@ hr {
 #RightSectionBottomContainer{
     width: 100%;
     height: 100%;
+    position: relative;
 }
 /*Card Swipe*/
-#CardSwipeContainer {
+.CardSwipeContainer,
+.card{
     width: 450px;
     height: 500px;
     border-radius: 5px;
-   
+    position: absolute;
 }
-.swipeImage{
+
+#btnContainer{
+    position: absolute;
+    bottom: -200px;
+}
+.swipeImage {
     border-radius: 5px 5px 0px 0px;
 }
 #SwipeContentPartialView {
