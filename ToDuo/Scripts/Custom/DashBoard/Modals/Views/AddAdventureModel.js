@@ -24,12 +24,13 @@ let TagsArray = [];
 $(document).ready(function () {
     AddRecentlyAddedListener();
     attachSaveAddAdventureListener();//When save button is clicked
-    attachEditAdventureListener();
-    //attachDragAndDropAddAdventureListener();
+    attachEditAdventureListener();    
     attachDragAndDropModalIconListener();
     attachImageUrlListener();
     CreateTagFeedback();
     CreateNewAdventureBtnListener();
+
+    //attachDragAndDropAddAdventureListener();
     
 });
 

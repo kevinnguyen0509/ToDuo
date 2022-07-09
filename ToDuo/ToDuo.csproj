@@ -174,7 +174,9 @@
     <Content Include="Scripts\Custom\Authentication\Views\Login.js" />
     <Content Include="Scripts\Custom\Authentication\Views\Signup.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Model\AdventureModel.js" />
+    <Content Include="Scripts\Custom\DashBoard\Modals\Model\CardModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Views\AddAdventureModel.js" />
+    <Content Include="Scripts\Custom\DashBoard\Modals\Views\CardView.js" />
     <Content Include="Scripts\Custom\Validation\FormValidation.js" />
     <Content Include="Scripts\Default\bootstrap.js" />
     <Content Include="Scripts\Default\bootstrap.min.js" />

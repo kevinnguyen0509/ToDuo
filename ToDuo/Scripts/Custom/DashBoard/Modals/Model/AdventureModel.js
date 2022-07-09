@@ -28,6 +28,17 @@ export class AdventureModel {
         return result;
     }
 
+    async GetShuffledAdventures() {
+        const result = await $.ajax({
+            method: 'POST',
+            url: baseUrl + 'Json/GetShuffledAdventure',
+            success: function (Adventures) {
+                return Adventures;
+            }
+        });
+        return result;
+    }
+
     async GetAdventures() {
         const result = await $.ajax({
             method: 'POST',
