@@ -12,12 +12,20 @@ namespace ToDuo.Models.Models.TableModels
     public class AdventureModel : ActivityBaseModel, IForm<AdventureModel>
     {
         SaveAdventureData saveData = new SaveAdventureData();
+        GetAdventureData getData = new GetAdventureData();
 
         public List<AdventureModel> GetList(int OwnerID)
         {
-            GetAdventureData getData = new GetAdventureData();
+            
             List<AdventureModel> Adventures = getData.GetAdventures(OwnerID);
             return Adventures;
+        }
+
+        public List<AdventureModel> GetShuffledList()
+        {
+            List<AdventureModel> AdventureList = getData.GetShuffledAdventure();
+            AdventureList = this.Shuffle(AdventureList);
+            return AdventureList;
         }
 
         public ResultMessage SaveAdventure(AdventureModel FormModel)
@@ -30,6 +38,21 @@ namespace ToDuo.Models.Models.TableModels
         {
             ResultMessage resultMessage = saveData.UpdateAdventure(FormModel);
             return resultMessage;           
+        }
+
+        private List<AdventureModel> Shuffle(List<AdventureModel> AdventureList)
+        {
+            Random rng = new Random();  
+            int n = AdventureList.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                AdventureModel value = AdventureList[k];
+                AdventureList[k] = AdventureList[n];
+                AdventureList[n] = value;
+            }
+            return AdventureList;
         }
     }
 }

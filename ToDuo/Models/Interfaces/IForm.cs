@@ -12,5 +12,6 @@ namespace ToDuo.Models.Interfaces
         ResultMessage SaveAdventure(T FormModel);
         ResultMessage UpdateItem(T FormModel);
         List<T> GetList(int OwnerID);
+        List<T> GetShuffledList();
     }
 }

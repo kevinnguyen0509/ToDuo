@@ -39,5 +39,13 @@ namespace ToDuo.Controllers
 
             return Json(Adventures, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult GetShuffledAdventure()
+        {
+            AdventureModel adventureModel = new AdventureModel();
+            List<AdventureModel> Adventures = adventureModel.GetShuffledList();
+
+            return Json(Adventures, JsonRequestBehavior.AllowGet);
+        }
     }
 }

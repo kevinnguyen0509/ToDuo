@@ -24,6 +24,7 @@ namespace ToDuo.Controllers
                 return RedirectToAction("Login");
             //Cookie Info
             int OwnerID = Int32.Parse(CurrentUserCookie.Values["ID"]);
+            List<AdventureModel> AdventuresShuffled = adventureModel.GetShuffledList();
 
             IndexVM IndexVM = new IndexVM
             {

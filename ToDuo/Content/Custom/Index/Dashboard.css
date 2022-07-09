@@ -211,7 +211,7 @@ hr {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10px;
     border-radius: 0px 0px 5px 5px;
-    max-height: 220px;
+    max-height: 60px;
 
     overflow-y: hidden;
 }
