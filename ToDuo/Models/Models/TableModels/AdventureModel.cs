@@ -25,5 +25,11 @@ namespace ToDuo.Models.Models.TableModels
             ResultMessage resultMessage = saveData.SaveAdventure(FormModel);
             return resultMessage;
         }
+
+        public ResultMessage UpdateItem(AdventureModel FormModel)
+        {
+            ResultMessage resultMessage = saveData.UpdateAdventure(FormModel);
+            return resultMessage;           
+        }
     }
 }

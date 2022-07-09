@@ -10,6 +10,7 @@ namespace ToDuo.Models.Interfaces
     interface IForm<T>
     {
         ResultMessage SaveAdventure(T FormModel);
+        ResultMessage UpdateItem(T FormModel);
         List<T> GetList(int OwnerID);
     }
 }

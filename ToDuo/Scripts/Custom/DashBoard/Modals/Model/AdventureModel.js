@@ -16,6 +16,18 @@ export class AdventureModel {
         return result;
     }
 
+    async UpdateAdventure(form, ItemID) {
+        const result = await $.ajax({
+            method: 'POST',
+            url: baseUrl + 'Json/UpdateAdventure',
+            data: $(form).serialize() + `&AdventureID=${ItemID}`,
+            success: function (ResultMessage) {
+                return ResultMessage;
+            }
+        });
+        return result;
+    }
+
     async GetAdventures() {
         const result = await $.ajax({
             method: 'POST',

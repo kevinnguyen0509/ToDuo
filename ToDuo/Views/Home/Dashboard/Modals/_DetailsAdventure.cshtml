@@ -4,18 +4,25 @@
     <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/AddModal.css" />
 }
 <!-- Modal -->
-<div class="modal fade" id="DetailsAdventureModal" tabindex="-1" role="dialog" aria-labelledby="AddAdventureModal" aria-hidden="true">
+<div class="modal fade" id="DetailsAdventureModal" tabindex="-1" role="dialog" aria-labelledby="DetailsAdventureModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="/Json/AddAdventure" method="post" id="AdventureForm">
+            <form action="/Json/UpdateAdventure" method="post" id="DetailsAdventureForm">
                 <div class="modal-header" style="border-bottom: none;">
+                    <div class="col-md-3" style="padding-left: 0px;">
+                        <button type="submit" id="DetailSaveAdventuresBtn" class="btn" itemid="0">Save</button>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h3 class="modal-title" id="editpostlbl">Edit This Post</h3>
+                    </div>
 
-                    <button type="submit" id="DetailSaveAdventuresBtn" class="btn">Save</button>
+                    <div class="col-md-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body">
 

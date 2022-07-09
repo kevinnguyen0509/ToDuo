@@ -10,3 +10,18 @@
     resize: vertical;
 }
 
+#editpostlbl {
+    color: #992915;
+    font-weight: bolder;
+}
+
+.tagItemContainer {
+    cursor: pointer;
+}
+
+    .tagItemContainer:hover {
+        text-decoration: line-through;
+        text-decoration-thickness: 2px;
+        text-decoration-color: #992915;
+    }
+

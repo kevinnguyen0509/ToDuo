@@ -5,7 +5,7 @@ import { AdventureModel } from '../Model/AdventureModel.js'
 /*let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');
 let AddAdventureTagsTxt = document.getElementById('AddAdventureTagsTxt');
 let AddAdventureWebsiteTxt = document.getElementById('AddAdventureWebsiteTxt');*/
-
+window.alert = function () { };
 let baseUrl = document.getElementById('HiddenCurrentUrl').value;
 
 //Classes
@@ -24,11 +24,13 @@ let TagsArray = [];
 $(document).ready(function () {
     AddRecentlyAddedListener();
     attachSaveAddAdventureListener();//When save button is clicked
+    attachEditAdventureListener();
     //attachDragAndDropAddAdventureListener();
     attachDragAndDropModalIconListener();
     attachImageUrlListener();
     CreateTagFeedback();
     CreateNewAdventureBtnListener();
+    
 });
 
 
@@ -77,11 +79,63 @@ function attachSaveAddAdventureListener() {
                     tagString = ''; //Erases tags stored in string that was sent off
                     TagsArray = [];//Erases old tags from last save
                 }
-            })
+            });
 
         }
     });
 }
+
+
+//Creates a Save listener to save to new adventure to the database
+function attachEditAdventureListener() {
+
+    //Button Elements
+    let DetailsAdventureForm = document.getElementById('DetailsAdventureForm');
+
+    DetailsAdventureForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        //Get Model Text Box Elements that shouldn't be blank
+        let ItemID = document.getElementById('DetailSaveAdventuresBtn').getAttribute('itemid');
+        let AddAdventureTitleTxt = document.getElementById('DetailAddAdventureTitleTxt');
+        let AddAdventureLocationTxt = document.getElementById('DetailAddAdventureLocationTxt');
+        let AddAdventureImageTxt = document.getElementById('DetailAddAdventureImageTxt');
+        let AddAdventureTagsTxt = document.getElementById('DetailAddAdventureTagsTxt');
+
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureTitleTxt);
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureImageTxt);
+        FormValidationOptions.CheckIfTextboxIsEmpty(AddAdventureLocationTxt);
+
+        let TitleEmpty = FormValidationOptions.TextBoxIsEmpty(AddAdventureTitleTxt);
+        let LocationEmpty = FormValidationOptions.TextBoxIsEmpty(AddAdventureLocationTxt);
+        let AdventureImageEmpty = FormValidationOptions.TextBoxIsEmpty(AddAdventureLocationTxt);
+
+        if (!TitleEmpty && !LocationEmpty && !AdventureImageEmpty) {
+            let tagString = '';
+            for (let i = 0; i < TagsArray.length; i++) {
+                if (TagsArray[i] != null && TagsArray[i] != '') {
+                    tagString = tagString + ',' + TagsArray[i]
+                }
+            }
+            AddAdventureTagsTxt.value = tagString;
+            AdventureModelOptions.UpdateAdventure(DetailsAdventureForm, ItemID).then(function (resultMessage) {
+                if (resultMessage.ReturnStatus == 'Success') {
+                    //Update Recently Added List
+                    $("#RecentlyAddedContainer").load(baseUrl + 'Home/_LeftSideRecentlyAdded', function () {
+                        AddRecentlyAddedListener();
+                    });
+
+                    $('#DetailsAdventureModal').modal('toggle');
+                    tagString = ''; //Erases tags stored in string that was sent off
+                    TagsArray = [];//Erases old tags from last save
+                }
+            });
+
+        }
+    });
+}
+
+
 
 function AddRecentlyAddedListener() {
     let RecentlyAddedImgContainer = document.querySelectorAll('.RecentlyAddedItem');
@@ -90,9 +144,7 @@ function AddRecentlyAddedListener() {
             TagsArray = [];
             
             let DetailSaveAdventuresBtn = document.getElementById('DetailSaveAdventuresBtn');
-           
-
-            let ItemID = RecentlyAddedImgContainer[i].getAttribute('itemid');
+            let ItemID = RecentlyAddedImgContainer[i].getAttribute('itemid');      
             let ownerid = RecentlyAddedImgContainer[i].getAttribute('ownerid');
             let title = RecentlyAddedImgContainer[i].getAttribute('title');
             let Imageurl = RecentlyAddedImgContainer[i].getAttribute('Imageurl');
@@ -101,6 +153,9 @@ function AddRecentlyAddedListener() {
             let createdDate = RecentlyAddedImgContainer[i].getAttribute('createdDate');
             let location = RecentlyAddedImgContainer[i].getAttribute('location');
             let tags = RecentlyAddedImgContainer[i].getAttribute('tags').split(',');
+
+            //Set Save button to itemID so we can grab it when saving the edit
+            DetailSaveAdventuresBtn.setAttribute('itemid', ItemID)
 
             for (let i = 1; i < tags.length; i++) {
                 TagsArray.push(tags[i]);
@@ -122,8 +177,6 @@ function AddRecentlyAddedListener() {
 
             let TagIcons = document.querySelectorAll('.DetailTagItemIcon');
             attachTagElementRemover(TagIcons)
-
-
         });
     }
 }
