@@ -27,20 +27,12 @@ function RenderShuffledAdventureCards(){
    AdventureModelOptions.GetShuffledAdventures().then(function (ShuffledAdventures) {
 
        DealOutCards(CurrentCard, CardDeckLimit, ShuffledAdventures);//Deals out a set of cards.
-       CurrentCard++; //After rendering you have to change the global current Card position
+       CurrentCard++; //After rendering you HAVE to change the global current Card position by 1 otherwise the first click won't move to the next card
        AddRightSwipe(CurrentCard, CardDeckLimit, ShuffledAdventures);
-
-
-
-
-
-        console.log(ShuffledAdventures);
+       console.log(ShuffledAdventures);
         
     });
 }
-
-
-
 
 /*********************Helpers*******************************/
 
@@ -52,13 +44,12 @@ function AddRightSwipe(CurrentCard, CardDeckLimit, Cardlist) {
             CardDeckLimit = CardDeckLimit + DrawMoreCards;
             DealOutCards(CurrentCard, CardDeckLimit, Cardlist)
 
+            //Remove current card element and move the class FrontCard to the next card in the list
             console.log(Cardlist[CurrentCard]);
             console.log("Current Card Index: ", CurrentCard);
             CurrentCard++;
         }
-/*        else if (CurrentCard >= CardDeckLimit) {
-            consol.
-        }*/
+
         else {//Make the limit the amount of cards available cause this is all we can deal out
 
             if (CurrentCard >= Cardlist.length) {//Tell the user thats all the results
@@ -69,15 +60,16 @@ function AddRightSwipe(CurrentCard, CardDeckLimit, Cardlist) {
                 CardDeckLimit = Cardlist.length;
                 DealOutCards(CurrentCard, CardDeckLimit, Cardlist);
 
-                
+                //Remove current card element and move the class FrontCard to the next card in the list
                 console.log(Cardlist[CurrentCard]);
                 console.log(CurrentCard);
                 CurrentCard++;
             }
             else {
+                //Remove current card element and move the class FrontCard to the next card in the list
                 console.log(Cardlist[CurrentCard]);
                 console.log(CurrentCard);
-                //console.log(CardDeckLimit);
+
                 CurrentCard++;
             }
 
