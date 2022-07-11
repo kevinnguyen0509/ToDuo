@@ -141,6 +141,7 @@
   <ItemGroup>
     <Content Include="Content\Custom\Index\AddModal.css" />
     <Content Include="Content\Custom\Index\Dashboard.css" />
+    <Content Include="Content\Custom\Shared\Animations\CardAnimations.css" />
     <Content Include="Content\Custom\Shared\FormValidation.css" />
     <Content Include="Content\Custom\Shared\Loading.css" />
     <Content Include="Content\Custom\Shared\Overlay.css" />

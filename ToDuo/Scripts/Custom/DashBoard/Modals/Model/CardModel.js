@@ -21,7 +21,22 @@ export class CardModel {
         }
     }
 
+    rightSwipeAnimation(CardList) {
+
+        CardList[0].classList.remove('FrontCard');
+        CardList[0].classList.add('SwipeRightAnimation');
+        setTimeout(function () { CardList[0].remove() }, 800);
+       
+        CardList[1].classList.remove('BackCard');
+        CardList[1].classList.add('FrontCard');
+    }
+
 }
+
+function removeCard(CardToRemove) {
+    CardToRemove.remove();
+}
+
 function CreateCard(Card) {
     let CardModel = CreateCardModel(Card);
  

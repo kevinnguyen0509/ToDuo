@@ -2,9 +2,9 @@
 import { CardModel } from '../Model/CardModel.js'
 
 //GlobalVariables
-let CardDeckLimit = 100; //Amount of Cards first dealt out. It will increase every time this limit gets hit
-const DrawMoreCards = 100; //Amount to increase by when Card DeckLimit is hit
-let CurrentCard = 0;//Current Index in card deck
+let CardDeckLimit = 50; //Amount of Cards first dealt out. It will increase every time this limit gets hit
+const DrawMoreCards = 50; //Amount to increase by when Card DeckLimit is hit
+let CurrentCardGlobal = 0;//Current Index in card deck. 0 is the starting point
 
 //Classes
 let AdventureModelOptions = new AdventureModel();
@@ -15,6 +15,7 @@ let cardInfoHolder = document.getElementById('cardInfoHolder')
 
 //Buttons
 let RightSwipe = document.getElementById('RightSwipe');
+let RightArrow = 39;
 
 $(document).ready(function () {
     RenderShuffledAdventureCards();
@@ -26,67 +27,97 @@ $(document).ready(function () {
 function RenderShuffledAdventureCards(){
    AdventureModelOptions.GetShuffledAdventures().then(function (ShuffledAdventures) {
 
-       DealOutCards(CurrentCard, CardDeckLimit, ShuffledAdventures);//Deals out a set of cards.
-       CurrentCard++; //After rendering you HAVE to change the global current Card position by 1 otherwise the first click won't move to the next card
-       AddRightSwipe(CurrentCard, CardDeckLimit, ShuffledAdventures);
+       //Set up Cards to swipe
+       DealOutCards(CardDeckLimit, ShuffledAdventures);//Deals out a set of cards.
+       CurrentCardGlobal++; //After rendering you HAVE to change the global current Card position by 1 otherwise the first click won't move to the next card
+
+       //Add Listeners
+       RightSwipeClickListener(ShuffledAdventures);
+       RightArrowSwipeListener(ShuffledAdventures);
+
        console.log(ShuffledAdventures);
         
     });
 }
 
-/*********************Helpers*******************************/
-
-function AddRightSwipe(CurrentCard, CardDeckLimit, Cardlist) {
-    //Right Swipe Feature
+function RightSwipeClickListener(Cardlist) {
     RightSwipe.addEventListener('click', function () {
-        //If CurrentCard hit the end of the current deck AND current cardIndex + 100 less than the cards availiable then draw 100 more
-        if ((CurrentCard >= CardDeckLimit) && ((CurrentCard + DrawMoreCards) < Cardlist.length)) {
-            CardDeckLimit = CardDeckLimit + DrawMoreCards;
-            DealOutCards(CurrentCard, CardDeckLimit, Cardlist)
-
-            //Remove current card element and move the class FrontCard to the next card in the list
-            console.log(Cardlist[CurrentCard]);
-            console.log("Current Card Index: ", CurrentCard);
-            CurrentCard++;
-        }
-
-        else {//Make the limit the amount of cards available cause this is all we can deal out
-
-            if (CurrentCard >= Cardlist.length) {//Tell the user thats all the results
-                console.log("Its the very end");
-            }
-
-            else if (CurrentCard >= CardDeckLimit) {//Last amounts we can deal out. 
-                CardDeckLimit = Cardlist.length;
-                DealOutCards(CurrentCard, CardDeckLimit, Cardlist);
-
-                //Remove current card element and move the class FrontCard to the next card in the list
-                console.log(Cardlist[CurrentCard]);
-                console.log(CurrentCard);
-                CurrentCard++;
-            }
-            else {
-                //Remove current card element and move the class FrontCard to the next card in the list
-                console.log(Cardlist[CurrentCard]);
-                console.log(CurrentCard);
-
-                CurrentCard++;
-            }
-
-        }
-
-    })
+        RightSwipeAction(Cardlist);
+    });
 }
 
-function DealOutCards(CurrentCard, CardDeckLimit, CardDeckList) {
+function RightArrowSwipeListener(Cardlist) {
+    document.addEventListener('keyup', function (e) {
+        if (e.keyCode == RightArrow) { //If Right Arrow is pressed
+            RightSwipeAction(Cardlist);
+        }
+    });
+}
+
+/*********************Helpers*******************************/
+
+function RightSwipeAction(Cardlist) {
+    //If CurrentCard hit the end of the current deck AND current cardIndex + 100 less than the cards availiable then draw 100 more
+    if ((CurrentCardGlobal >= CardDeckLimit) && ((CurrentCardGlobal + DrawMoreCards) < Cardlist.length)) {
+        CardDeckLimit = CardDeckLimit + DrawMoreCards;
+        DealOutCards(CardDeckLimit, Cardlist)
+
+        //Remove current card element and move the class FrontCard to the next card in the list
+        console.log(Cardlist[CurrentCardGlobal]);
+        console.log("Current Card Index: ", CurrentCardGlobal);
+        CurrentCardGlobal++;
+
+    }
+
+    else {//Make the limit the amount of cards available cause this is all we can deal out
+
+        if (CurrentCardGlobal == Cardlist.length) {//Tell the user thats all the results
+            console.log("Its the very end");
+
+
+        }
+
+        else if (CurrentCardGlobal >= CardDeckLimit) {//Last amounts we can deal out.
+            CardDeckLimit = Cardlist.length;
+            DealOutCards(CardDeckLimit, Cardlist);
+
+            //Remove current card element and move the class FrontCard to the next card in the list
+            console.log(Cardlist[CurrentCardGlobal]);
+            console.log(CurrentCardGlobal);
+            CurrentCardGlobal++;
+
+        }
+        else {
+          
+/*            console.log(Cardlist[CurrentCardGlobal]);
+            console.log(CurrentCardGlobal);*/
+              //Remove current card element and move the class FrontCard to the next card in the list
+            AddAndSwitchToNextCard();
+
+            CurrentCardGlobal++;
+
+        }
+
+    }
+}
+
+function AddAndSwitchToNextCard() {
+    let CardList = document.querySelectorAll('.card');
+    CardModelOptions.rightSwipeAnimation(CardList);
+
+}
+
+
+
+function DealOutCards(CardDeckLimit, CardDeckList) {
     //Shuffling the cards and Dealing them out
     if (CardDeckLimit < CardDeckList.length) {//Deal out till CardDeckLimit is hit
-        for (let i = CurrentCard; i < CardDeckLimit; i++) {
+        for (let i = CurrentCardGlobal; i < CardDeckLimit; i++) {
             CardModelOptions.RenderCard(CardDeckList[i], cardInfoHolder);
         }
     }
     else {//Means Card limit is less than CardDeckLimit so ether there isn't a lot of cards, or we are near the end of the deck
-        for (let i = CurrentCard; i < CardDeckList.length; i++) {
+        for (let i = CurrentCardGlobal; i < CardDeckList.length; i++) {
             CardModelOptions.RenderCard(CardDeckList[i], cardInfoHolder);
         }
     }
