@@ -25,7 +25,7 @@ namespace ToDuo.DataFactory.AdventureTable.GetData
 
 
             /*string SQL = "SELECT * FROM dbo.GeneralLiabilityClaims";*/
-            string SQL = "[dbo.ssp_BudgetSheet_GetAllAdventures]";
+            string SQL = "[dbo].[dbo.ssp_ToDuo_GetAllAdventures]";
             SQLComm = new SqlCommand(SQL, SQLConn);
             SQLComm.CommandType = CommandType.StoredProcedure;
             SQLComm.Parameters.AddWithValue("@OwnerID", OwnerID);
@@ -70,7 +70,7 @@ namespace ToDuo.DataFactory.AdventureTable.GetData
             SQLConn.Open();
 
             /*string SQL = "SELECT * FROM dbo.GeneralLiabilityClaims";*/
-            string SQL = "[dbo].[dbo.ssp_BudgetSheet_GetAdventureCards]";
+            string SQL = "[dbo].[dbo.ssp_ToDuo_GetAdventureCards]";
             SQLComm = new SqlCommand(SQL, SQLConn);
             SQLComm.CommandType = CommandType.StoredProcedure;
 

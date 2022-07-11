@@ -243,7 +243,7 @@ hr {
     margin-bottom: 25px;
     width: 55px;
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.40) 0px 5px 8px;
     cursor: pointer;
 }
 .SmallCircleIcon {
@@ -257,7 +257,7 @@ hr {
     border-radius: 100px;
     width: 75px;
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.60) 0px 5px 8px;
     cursor: pointer;
 }
 .LargeCircleIcon {
