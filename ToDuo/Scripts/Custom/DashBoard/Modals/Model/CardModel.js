@@ -25,11 +25,13 @@ export class CardModel {
 
         CardList[0].classList.remove('FrontCard');
         CardList[0].classList.add('SwipeRightAnimation');
-        setTimeout(function () { CardList[0].remove() }, 800);
+        setTimeout(function () { CardList[0].remove() }, 500);
        
         CardList[1].classList.remove('BackCard');
         CardList[1].classList.add('FrontCard');
     }
+
+
 
 }
 

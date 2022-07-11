@@ -2,8 +2,8 @@
 import { CardModel } from '../Model/CardModel.js'
 
 //GlobalVariables
-let CardDeckLimit = 50; //Amount of Cards first dealt out. It will increase every time this limit gets hit
-const DrawMoreCards = 50; //Amount to increase by when Card DeckLimit is hit
+let CardDeckLimit = 1; //Amount of Cards first dealt out. It will increase every time this limit gets hit
+const DrawMoreCards = 1; //Amount to increase by when Card DeckLimit is hit
 let CurrentCardGlobal = 0;//Current Index in card deck. 0 is the starting point
 
 //Classes
@@ -63,8 +63,9 @@ function RightSwipeAction(Cardlist) {
         DealOutCards(CardDeckLimit, Cardlist)
 
         //Remove current card element and move the class FrontCard to the next card in the list
-        console.log(Cardlist[CurrentCardGlobal]);
-        console.log("Current Card Index: ", CurrentCardGlobal);
+/*        console.log(Cardlist[CurrentCardGlobal]);
+        console.log("Current Card Index: ", CurrentCardGlobal);*/
+        AddAndSwitchToNextCard();
         CurrentCardGlobal++;
 
     }
@@ -72,7 +73,14 @@ function RightSwipeAction(Cardlist) {
     else {//Make the limit the amount of cards available cause this is all we can deal out
 
         if (CurrentCardGlobal == Cardlist.length) {//Tell the user thats all the results
-            console.log("Its the very end");
+           
+            try {
+                console.log("Its the very end");
+                AddAndSwitchToNextCard();
+            } catch (error) {
+                console.log("Its the very end");
+            }
+           
 
 
         }
@@ -82,8 +90,9 @@ function RightSwipeAction(Cardlist) {
             DealOutCards(CardDeckLimit, Cardlist);
 
             //Remove current card element and move the class FrontCard to the next card in the list
-            console.log(Cardlist[CurrentCardGlobal]);
-            console.log(CurrentCardGlobal);
+/*            console.log(Cardlist[CurrentCardGlobal]);
+            console.log(CurrentCardGlobal);*/
+            AddAndSwitchToNextCard();
             CurrentCardGlobal++;
 
         }
@@ -93,7 +102,6 @@ function RightSwipeAction(Cardlist) {
             console.log(CurrentCardGlobal);*/
               //Remove current card element and move the class FrontCard to the next card in the list
             AddAndSwitchToNextCard();
-
             CurrentCardGlobal++;
 
         }
@@ -106,6 +114,8 @@ function AddAndSwitchToNextCard() {
     CardModelOptions.rightSwipeAnimation(CardList);
 
 }
+
+
 
 
 
