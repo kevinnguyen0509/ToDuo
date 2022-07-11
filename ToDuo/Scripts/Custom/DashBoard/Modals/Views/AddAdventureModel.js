@@ -138,7 +138,7 @@ function attachEditAdventureListener() {
 
 
 
-function AddRecentlyAddedListener() {
+export function AddRecentlyAddedListener() {
     let RecentlyAddedImgContainer = document.querySelectorAll('.RecentlyAddedItem');
     for (let i = 0; i < RecentlyAddedImgContainer.length; i++) {
         RecentlyAddedImgContainer[i].addEventListener('click', function () {
@@ -189,7 +189,7 @@ function CreateNewAdventureBtnListener() {
     });
 }
 
-function attachTagElementRemover(TagElementList) {
+export function attachTagElementRemover(TagElementList) {
     for (let i = 0; i < TagElementList.length; i++) {
         TagElementList[i].addEventListener('click', function () {
             let elementBeingDeleted = TagElementList[i].getAttribute('tagcontent');
@@ -216,7 +216,7 @@ function CreateTagFeedback() {
     })
 }
 
-function ReCreateDetailTagFeedback() {
+export function ReCreateDetailTagFeedback() {
     let DetailAddAdventureTagsTxt = document.getElementById('DetailAddAdventureTagsTxt');
     let DetailTagWrapperContainer = document.getElementById('DetailTagWrapper');
     RecreateDetailsTags(DetailTagWrapperContainer, DetailAddAdventureTagsTxt); //Rerenders tags feedback when adding tags
@@ -255,7 +255,7 @@ function attachImageUrlListener() {
     });
 }
 
-function AttachDetailsImageURLListener() {
+export function AttachDetailsImageURLListener() {
     let DetailAddAdventureImageTxt = document.getElementById('DetailAddAdventureImageTxt');
     DetailAddAdventureImageTxt.addEventListener('keyup', function () {
         DetailImageDropArea.innerHTML = '';
@@ -265,7 +265,7 @@ function AttachDetailsImageURLListener() {
     });
 }
 
-function ReplaceDetailImageListener(imageurl) {
+export function ReplaceDetailImageListener(imageurl) {
     DetailImageDropArea.innerHTML = '';
     let imageFromAnotherWebsite = `<img src="${imageurl}" class="BannerImages"/>`
     DetailImageDropArea.insertAdjacentHTML('afterbegin', imageFromAnotherWebsite);

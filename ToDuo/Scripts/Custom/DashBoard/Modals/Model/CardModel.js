@@ -1,4 +1,9 @@
-﻿let baseUrl = document.getElementById('HiddenCurrentUrl').value;
+﻿import { AdventureModel } from '../Model/AdventureModel.js'
+import { AddRecentlyAddedListener } from '../Views/AddAdventureModel.js'
+
+
+let baseUrl = document.getElementById('HiddenCurrentUrl').value;
+let AdventureModelOptions = new AdventureModel();
 
 export class CardModel {
     constructor() {
@@ -22,6 +27,16 @@ export class CardModel {
     }
 
     rightSwipeAnimation(CardList) {
+        let ID = CardList[0].getAttribute('cardid') *1;
+        AdventureModelOptions.saveSwipeAdventure(ID).then(function (ResultMessage) {
+            if (ResultMessage.NewId != -2) { //-2 means its been added before so we don't need to refresh
+                //Refresh Recently Added
+                $("#RecentlyAddedContainer").load(baseUrl + 'Home/_LeftSideRecentlyAdded', function () {
+                    AddRecentlyAddedListener();
+                });
+            }
+            
+        });
 
         CardList[0].classList.remove('FrontCard');
         CardList[0].classList.add('SwipeRightAnimation');
@@ -35,14 +50,11 @@ export class CardModel {
 
 }
 
-function removeCard(CardToRemove) {
-    CardToRemove.remove();
-}
 
 function CreateCard(Card) {
     let CardModel = CreateCardModel(Card);
  
-    let HtmlCardString = `<div class="card">
+    let HtmlCardString = `<div class="card" cardid="${CardModel.ID}">
                         <img src="${Card.ImageURL}" class="BannerImages swipeImage" />
                         <div id="SwipeTitleContainer" class="SwipeTitleContainer">
                             <h5 id="SwipeTitle" class="noMargins">${CardModel.Title}</h5>

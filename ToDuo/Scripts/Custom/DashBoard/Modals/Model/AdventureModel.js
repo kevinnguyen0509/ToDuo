@@ -16,6 +16,18 @@ export class AdventureModel {
         return result;
     }
 
+    async saveSwipeAdventure(ID) {
+        const result = await $.ajax({
+            method: 'POST',
+            url: baseUrl + 'Json/AddSwipeAdventure',
+            data: { ID },
+            success: function (ResultMessage) {
+                return ResultMessage;
+            }
+        });
+        return result;
+    }
+
     async UpdateAdventure(form, ItemID) {
         const result = await $.ajax({
             method: 'POST',

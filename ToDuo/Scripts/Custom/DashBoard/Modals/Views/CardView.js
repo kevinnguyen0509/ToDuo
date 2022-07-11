@@ -32,27 +32,28 @@ function RenderShuffledAdventureCards(){
        CurrentCardGlobal++; //After rendering you HAVE to change the global current Card position by 1 otherwise the first click won't move to the next card
 
        //Add Listeners
-       RightSwipeClickListener(ShuffledAdventures);
-       RightArrowSwipeListener(ShuffledAdventures);
+       RightClickAndSwipeListeners(ShuffledAdventures);
 
        console.log(ShuffledAdventures);
         
     });
 }
 
-function RightSwipeClickListener(Cardlist) {
+function RightClickAndSwipeListeners(Cardlist) {
+
+    //Listens to Add Button Click
     RightSwipe.addEventListener('click', function () {
         RightSwipeAction(Cardlist);
     });
-}
 
-function RightArrowSwipeListener(Cardlist) {
+    //Listens to Right Arrow Swipe
     document.addEventListener('keyup', function (e) {
         if (e.keyCode == RightArrow) { //If Right Arrow is pressed
             RightSwipeAction(Cardlist);
         }
     });
 }
+
 
 /*********************Helpers*******************************/
 

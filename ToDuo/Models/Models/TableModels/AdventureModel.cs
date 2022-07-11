@@ -6,6 +6,7 @@ using ToDuo.DataFactory.AdventureTable.GetData;
 using ToDuo.DataFactory.SaveData;
 using ToDuo.Models.BaseClasses;
 using ToDuo.Models.Interfaces;
+using ToDuo.Models.Users;
 
 namespace ToDuo.Models.Models.TableModels
 {
@@ -31,6 +32,16 @@ namespace ToDuo.Models.Models.TableModels
         public ResultMessage SaveAdventure(AdventureModel FormModel)
         {
             ResultMessage resultMessage = saveData.SaveAdventure(FormModel);
+            return resultMessage;
+        }
+
+        public ResultMessage SaveSwipeAdventure(int ID)
+        {
+            User CurrentUser = new User();
+            CurrentUser = CurrentUser.GetLoggedInUserCookie();
+            int OwnerID = CurrentUser.ID;
+
+            ResultMessage resultMessage = saveData.SaveSwipeAdventure(ID, OwnerID);
             return resultMessage;
         }
 

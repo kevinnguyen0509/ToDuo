@@ -22,6 +22,14 @@ namespace ToDuo.Controllers
             return Json(resultMessage, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult AddSwipeAdventure(int ID)
+        {
+            AdventureModel AdventureModel = new AdventureModel();            
+            ResultMessage resultMessage = AdventureModel.SaveSwipeAdventure(ID);
+
+            return Json(resultMessage, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult UpdateAdventure(AdventureModel AdventureModel, int AdventureID)
         {
             AdventureModel.ID = AdventureID;

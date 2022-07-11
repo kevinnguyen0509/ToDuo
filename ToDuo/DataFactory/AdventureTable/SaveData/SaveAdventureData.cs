@@ -68,6 +68,58 @@ namespace ToDuo.DataFactory.SaveData
             return resultMessage;
         }
 
+        public ResultMessage SaveSwipeAdventure(int ID, int OwnerID)
+        {
+            ResultMessage resultMessage = new ResultMessage();
+
+            SqlConnection SQLConn = new SqlConnection();
+            SqlCommand SQLComm = new SqlCommand();
+            SqlDataReader SQLRec;
+
+            SQLConn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ToDuoConnection"].ConnectionString;
+            SQLConn.Open();
+
+            string SQLSSP = "[dbo].[ssp_ToDuo_SaveSwipeAdventure]";
+            SQLComm = new SqlCommand(SQLSSP, SQLConn);
+            SQLComm.CommandType = CommandType.StoredProcedure;
+
+            SQLComm.Parameters.AddWithValue("@ID", ID);
+            SQLComm.Parameters.AddWithValue("@OwnerID", OwnerID);
+ 
+
+            try
+            {
+
+                SQLRec = SQLComm.ExecuteReader();
+                if (SQLRec.Read())
+                {
+                    resultMessage.ReturnMessage = SQLRec.GetString(SQLRec.GetOrdinal("ReturnMessage"));
+                    resultMessage.ReturnStatus = SQLRec.GetString(SQLRec.GetOrdinal("ReturnStatus"));
+                    resultMessage.NewId = SQLRec.GetInt32(SQLRec.GetOrdinal("NewId"));
+                }
+                else
+                {
+                    resultMessage.ReturnMessage = SQLRec.GetString(SQLRec.GetOrdinal("ReturnMessage"));
+                    resultMessage.ReturnStatus = SQLRec.GetString(SQLRec.GetOrdinal("ReturnStatus"));
+                    resultMessage.NewId = SQLRec.GetInt32(SQLRec.GetOrdinal("NewId"));
+                }
+                SQLRec.Close();
+            }
+            catch (Exception e)
+            {
+                resultMessage.ReturnMessage = e.Message;
+                resultMessage.ReturnStatus = "Failed";
+                resultMessage.NewId = -1;
+
+            }
+            finally
+            {
+                SQLConn.Close();
+            }
+
+            return resultMessage;
+        }
+
         public ResultMessage UpdateAdventure(AdventureModel adventureModel)
         {
             ResultMessage resultMessage = new ResultMessage();
