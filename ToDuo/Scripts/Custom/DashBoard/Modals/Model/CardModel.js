@@ -10,9 +10,14 @@ export class CardModel {
 
     }
 
-    RenderCard(Card, cardInfoHolder) {
+    RenderCardBeforeEnd(Card, cardInfoHolder) {
         let CardToInsert = CreateCard(Card);
         cardInfoHolder.insertAdjacentHTML('beforeend', CardToInsert);
+    }
+
+    RenderCardAfterBegin(Card, cardInfoHolder) {
+        let CardToInsert = CreateCard(Card);
+        cardInfoHolder.insertAdjacentHTML('afterbegin', CardToInsert);
     }
 
     attachFrontAndBackCards(CardElementList) {
@@ -27,7 +32,8 @@ export class CardModel {
     }
 
     rightSwipeAnimation(CardList) {
-        let ID = CardList[0].getAttribute('cardid') *1;
+        let ID = CardList[0].getAttribute('cardid') * 1;
+        
         AdventureModelOptions.saveSwipeAdventure(ID).then(function (ResultMessage) {
             if (ResultMessage.NewId != -2) { //-2 means its been added before so we don't need to refresh
                 //Refresh Recently Added
@@ -44,6 +50,26 @@ export class CardModel {
        
         CardList[1].classList.remove('BackCard');
         CardList[1].classList.add('FrontCard');
+    }
+
+    LeftSwipeAnimation(CardList) {
+
+        CardList[0].classList.remove('FrontCard');
+        CardList[0].classList.add('SwipeLeftAnimation');
+        setTimeout(function () { CardList[0].remove() }, 500);
+
+        CardList[1].classList.remove('BackCard');
+        CardList[1].classList.add('FrontCard');
+    }
+
+    UndoSwipeAnimation(CardList) {
+        for (let i = 0; i < CardList.length; i++) {
+            CardList[i].remove();
+        }
+/*        CardList[1].classList.remove('FrontCard');
+        CardList[1].classList.add('SwipeLeftAnimation');
+        setTimeout(function () { CardList[1].remove() }, 500);
+        CardList[0].classList.add('FrontCard');*/
     }
 
 
