@@ -144,6 +144,7 @@
     <Content Include="Content\Custom\Shared\Animations\CardAnimations.css" />
     <Content Include="Content\Custom\Shared\FormValidation.css" />
     <Content Include="Content\Custom\Shared\Loading.css" />
+    <Content Include="Content\Custom\Shared\Modal\MoreInfoModal.css" />
     <Content Include="Content\Custom\Shared\Overlay.css" />
     <Content Include="Content\Custom\Shared\SharedClasses.css" />
     <Content Include="Content\Custom\Signup\Signup.css" />
@@ -218,6 +219,7 @@
     <Content Include="Views\Shared\UtilComponents\_Loading.cshtml" />
     <Content Include="Views\Home\Dashboard\Modals\_DetailsAdventure.cshtml" />
     <Content Include="Views\Home\Dashboard\LeftSideBar\_RecentlyAdded.cshtml" />
+    <Content Include="Views\Home\Dashboard\Modals\_MoreInfoAdventureModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

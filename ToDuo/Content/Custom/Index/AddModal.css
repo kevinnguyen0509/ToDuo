@@ -1,9 +1,25 @@
-﻿#ModalDetailDragAndDropImageContainer,
-#ModalDragAndDropImageContainer {
+﻿/*
+    https://www.pinterest.com/pin/305681893460042013/
+    #7097A8 Gothic
+    #ABD1DC Aqua island
+    #d9c595 Pancho
+    #ECD59F Pancho - light
+    #C6A477 Laser
+    #F6F0F0 SmokeyWhite background
+    #eeeeee Section colors
+    #242834 - Navy
+    #992915 - brown red
+    #b14431 - light brown red
+*/
+
+#ModalDetailDragAndDropImageContainer,
+#ModalDragAndDropImageContainer,
+#ModalInfoDragAndDropImageContainer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; /* Entire background image always stays in view */
     height: 330px;
+    
 }
 
 #AddAdventureDescriptionTxt {

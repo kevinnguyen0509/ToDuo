@@ -1,0 +1,95 @@
+﻿
+
+
+@{
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/AddModal.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Shared/Modal/MoreInfoModal.css" />
+}
+<!-- Modal -->
+<div class="modal fade" id="InfoAdventureModal" tabindex="-1" role="dialog" aria-labelledby="InfoAdventureModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="/Json/UpdateAdventure" method="post" id="DetailsAdventureForm">
+                <div class="modal-header" style="border-bottom: none;">
+                    <div class="col-md-3" style="padding-left: 0px;">
+                        <button type="submit" id="DetailSaveAdventuresBtn" class="btn" itemid="0">Save</button>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h3 class="modal-title" id="infopostlbl">More Info!</h3>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="modal-body">
+
+                    <div class="ModalContentContainer">
+                        <div class="ModalLeftSide">
+                            <div id="ModalInfoDragAndDropImageContainer">
+                                <!--Image goes here-->
+                                <img src="https://www.metroparkstacoma.org/wp-content/uploads/2019/05/wright-park-trilogypond-1090x545.jpg" class="BannerImages"/>
+
+                            </div>
+
+                        </div>
+
+                        <div class="ModalRightSide" id="ModalRightSideContainer">
+                            <h4 id="InfoAdventureTitleLbl" class="InfoModalText">This is the Title that will go here</h4>
+                            <div class="PersonWhoAddedContainer">
+                                <div class="thumbnailProfilePicture">
+                                    <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
+                                </div>
+                                <div class="PersonWhoAddedDetails noMargins">
+                                    <h6 class="noMargins bold" id="DetailOwnerName">Kevin Nguyen</h6>
+                                    <p class="noMargins" id="DetailBoardAmount">10 boards</p>
+                                    <p class="noMargins" id="DetailCreatedDate">04/17/2022</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 id="DescriptionContainer" class="InfoModalText">
+                                    Goldendale Observatory State Park is an educational facility on the northern side of Goldendale,
+                                    Washington, notable for its unusually large public telescope. The state park occupies five acres atop
+                                    a 2,100-foot hill. Access is via a winding paved road th
+                                </h5>
+                            </div>
+
+
+                            <div class="col-md-7 AddTagsContainer">
+
+                                
+                                <h5 class="txtLbls">
+                                    <i class="fa fa-map-marker CategoryListIcons TagAddIcon icons">2001 W Garfield St, Seattle, WA 98119</i>
+                                    
+                                </h5>
+                            </div>
+
+                            <div class="col-md-5 AddTagsContainer">
+
+                                <a href="#" id="infoLink" target="_blank"><i class="fa fa-globe CategoryListIcons icons"></i></a>
+                                <h5 class="txtLbls">Website address</h5>
+                            </div>
+
+
+
+
+                            <div class="col-md-12 taglblContainer">
+                                <ul id="DetailTagWrapper">
+                                    <!--Comes from addAdventureModel.js-->
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

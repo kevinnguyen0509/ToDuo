@@ -40,9 +40,9 @@ function RenderShuffledAdventureCards(){
        RightClickAndSwipeListeners(ShuffledAdventures);
        LeftClickAndSwipeListeners(ShuffledAdventures);
        UndoSwipeActionListener(ShuffledAdventures);
-
+       MoreInfoActionSwipeListener(ShuffledAdventures)
        console.log(ShuffledAdventures);
-
+       
         
     });
 }
@@ -76,7 +76,23 @@ function LeftClickAndSwipeListeners(Cardlist) {
     });
 }
 
+function UndoSwipeActionListener(Cardlist) {
+    RedoSwipe.addEventListener('click', function () {
+        UndowSwipeAction(Cardlist)
+    });
 
+    //Listens to Right Arrow Swipe
+    document.addEventListener('keyup', function (e) {
+        if (e.keyCode == DownArrow) { //If Right Arrow is pressed
+            UndowSwipeAction(Cardlist)
+
+        }
+    });
+}
+
+function MoreInfoActionSwipeListener(Cardlist) {
+    $('#InfoAdventureModal').modal('show');
+}
 
 
 /*********************Helpers*******************************/
@@ -197,20 +213,6 @@ function SwitchToNextCard() {
     let CardList = document.querySelectorAll('.card');
     CardModelOptions.LeftSwipeAnimation(CardList);
 
-}
-
-function UndoSwipeActionListener(Cardlist) {
-    RedoSwipe.addEventListener('click', function () {
-        UndowSwipeAction(Cardlist)
-    });
-
-    //Listens to Right Arrow Swipe
-    document.addEventListener('keyup', function (e) {
-        if (e.keyCode == DownArrow) { //If Right Arrow is pressed
-            UndowSwipeAction(Cardlist)
-            
-        }
-    });
 }
 
 function UndowSwipeAction(Cardlist) {
