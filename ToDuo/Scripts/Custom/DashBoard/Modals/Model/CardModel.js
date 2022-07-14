@@ -74,13 +74,16 @@ export class CardModel {
 
 
 
+
 }
 
 
 function CreateCard(Card) {
     let CardModel = CreateCardModel(Card);
- 
-    let HtmlCardString = `<div class="card" cardid="${CardModel.ID}">
+
+    let HtmlCardString = `<div class="card" cardid="${CardModel.ID}" cardImage="${CardModel.ImageURL}" cardtitle="${CardModel.Title}" 
+                                            carddescription="${CardModel.Description}" cardlocation="${CardModel.Location}" cardwebsite="${CardModel.WebsiteUrl}"
+                                            cardtag="${CardModel.Tags}">
                         <img src="${Card.ImageURL}" class="BannerImages swipeImage" />
                         <div id="SwipeTitleContainer" class="SwipeTitleContainer">
                             <h5 id="SwipeTitle" class="noMargins">${CardModel.Title}</h5>
@@ -99,6 +102,7 @@ function CreateCardModel(Card) {
         ID: Card.ID,
         ImageURL: Card.ImageURL,
         Location: Card.Location,
+        Description: Card.Description,
         OwnerID: Card.OwnerID,
         Tags: Card.Tags,
         Title: Card.Title,

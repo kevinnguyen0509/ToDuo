@@ -12,7 +12,7 @@
             <form action="/Json/UpdateAdventure" method="post" id="DetailsAdventureForm">
                 <div class="modal-header" style="border-bottom: none;">
                     <div class="col-md-3" style="padding-left: 0px;">
-                        <button type="submit" id="DetailSaveAdventuresBtn" class="btn" itemid="0">Save</button>
+                        @*<button type="submit" id="DetailSaveAdventuresBtn" class="btn" itemid="0">Save</button>*@
                     </div>
                     <div class="col-md-6 text-center">
                         <h3 class="modal-title" id="infopostlbl">More Info!</h3>
@@ -32,7 +32,7 @@
                         <div class="ModalLeftSide">
                             <div id="ModalInfoDragAndDropImageContainer">
                                 <!--Image goes here-->
-                                <img src="https://www.metroparkstacoma.org/wp-content/uploads/2019/05/wright-park-trilogypond-1090x545.jpg" class="BannerImages"/>
+                                <img id="infoImage" src="https://www.metroparkstacoma.org/wp-content/uploads/2019/05/wright-park-trilogypond-1090x545.jpg" class="BannerImages"/>
 
                             </div>
 
@@ -40,6 +40,8 @@
 
                         <div class="ModalRightSide" id="ModalRightSideContainer">
                             <h4 id="InfoAdventureTitleLbl" class="InfoModalText">This is the Title that will go here</h4>
+
+
                             <div class="PersonWhoAddedContainer">
                                 <div class="thumbnailProfilePicture">
                                     <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
@@ -51,7 +53,7 @@
                                 </div>
                             </div>
                             <div>
-                                <h5 id="DescriptionContainer" class="InfoModalText">
+                                <h5 id="infoDescriptionContainer" class="InfoModalText">
                                     Goldendale Observatory State Park is an educational facility on the northern side of Goldendale,
                                     Washington, notable for its unusually large public telescope. The state park occupies five acres atop
                                     a 2,100-foot hill. Access is via a winding paved road th
@@ -63,23 +65,26 @@
 
                                 
                                 <h5 class="txtLbls">
-                                    <i class="fa fa-map-marker CategoryListIcons TagAddIcon icons">2001 W Garfield St, Seattle, WA 98119</i>
+                                    <i class="fa fa-map-marker CategoryListIcons TagAddIcon icons" id="InfoLocations">2001 W Garfield St, Seattle, WA 98119</i>
                                     
                                 </h5>
                             </div>
 
                             <div class="col-md-5 AddTagsContainer">
 
-                                <a href="#" id="infoLink" target="_blank"><i class="fa fa-globe CategoryListIcons icons"></i></a>
-                                <h5 class="txtLbls">Website address</h5>
+                                <a href="#" id="infoLink" target="_blank">
+                                    <i class="fa fa-globe CategoryListIcons icons"></i>
+                                    <h5 class="txtLbls">Website address</h5>
+                                </a>
                             </div>
 
 
 
 
                             <div class="col-md-12 taglblContainer">
-                                <ul id="DetailTagWrapper">
-                                    <!--Comes from addAdventureModel.js-->
+                                <ul id="InfoDetailTagWrapper">
+                                    <!--Comes from CardView.js-->
+      
                                 </ul>
                             </div>
 

@@ -17,6 +17,7 @@ let cardInfoHolder = document.getElementById('cardInfoHolder')
 let RightSwipe = document.getElementById('RightSwipe');
 let LeftSwipe = document.getElementById('LeftSwipe');
 let RedoSwipe = document.getElementById('RedoSwipe');
+let InfoButton = document.getElementById('InfoButton');
 let RightArrow = 39;
 let LeftArrow = 37;
 let DownArrow = 40;
@@ -91,11 +92,61 @@ function UndoSwipeActionListener(Cardlist) {
 }
 
 function MoreInfoActionSwipeListener(Cardlist) {
-    $('#InfoAdventureModal').modal('show');
+    InfoButton.addEventListener('click', function () {
+        MoreInfoAcions(Cardlist);
+    });
+
+    //Listens to Right Arrow Swipe
+    document.addEventListener('keyup', function (e) {
+        if (e.keyCode == UpArrow) { //If Right Arrow is pressed
+            e.preventDefault();
+            MoreInfoAcions(Cardlist);
+
+        }
+    });
+    
 }
 
 
 /*********************Helpers*******************************/
+function MoreInfoAcions() {
+    let frontCard = document.querySelector('.FrontCard');
+    let cardImage = frontCard.getAttribute('cardImage');
+    let cardtitle = frontCard.getAttribute('cardtitle');
+    let carddescription = frontCard.getAttribute('carddescription');
+    let cardlocation = frontCard.getAttribute('cardlocation');
+    let cardwebsite = frontCard.getAttribute('cardwebsite');
+    let cardtags = frontCard.getAttribute('cardtag').split(',');
+
+    let infoImage = document.getElementById('infoImage');
+    let InfoAdventureTitleLbl = document.getElementById('InfoAdventureTitleLbl');
+    let infoDescriptionContainer = document.getElementById('infoDescriptionContainer');
+    let InfoLocations = document.getElementById('InfoLocations');
+    let infoLink = document.getElementById('infoLink');
+    let DetailTagWrapper = document.getElementById('InfoDetailTagWrapper');
+
+    infoImage.src = cardImage;
+    InfoAdventureTitleLbl.innerHTML = cardtitle;
+    infoDescriptionContainer.innerHTML = carddescription;
+    InfoLocations.innerHTML = cardlocation;
+    infoLink.href = cardwebsite;
+    DetailTagWrapper.innerHTML = '';
+
+    for (let i = 0; i < cardtags.length; i++) {
+        if (cardtags[i] != null && cardtags[i] != '') {
+
+            let tag = `<li class="tagItemContainer tagTitle DetailTagItemIcon" tagcontent="${cardtags[i]}">${cardtags[i]}<i class="fa fa-tags CategoryListIcons TagItemIcon"></i></li>`
+            DetailTagWrapper.insertAdjacentHTML('afterbegin', tag);
+        }
+    }
+
+    
+
+
+    $('#InfoAdventureModal').modal('show');
+   
+
+}
 
 function RightSwipeAction(Cardlist) {
     //If CurrentCard hit the end of the current deck AND current cardIndex + 100 less than the cards availiable then draw 100 more
