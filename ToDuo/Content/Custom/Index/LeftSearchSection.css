@@ -1,0 +1,146 @@
+﻿/*
+    https://www.pinterest.com/pin/305681893460042013/
+    #7097A8 Gothic
+    #ABD1DC Aqua island
+    #d9c595 Pancho
+    #ECD59F Pancho - light
+    #C6A477 Laser
+    #F6F0F0 SmokeyWhite background
+    #eeeeee Section colors
+    #242834 - Navy
+    #992915 - brown red
+    #b14431 - light brown red
+*/
+
+#LeftSearchContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin-bottom: 180px;
+    padding: 0px 10px;
+}
+
+
+
+
+#LeftLocationIcon, #LeftSearchIcon {
+    color: #992915;
+    margin-top: 0px;
+    font-size: 22px;
+    padding-left: -10px;
+    cursor: pointer;
+}
+
+#LeftSearchBar{
+    display: flex;
+    justify-content: center;
+}
+
+#LeftSearchTxt {
+    border-radius: 50px;
+    font-size: 14px;
+    height: 20px;
+    padding: 13px;
+    border: none;
+    width: 90%;
+    transition: all .5s ease;
+    padding-right: 25px;
+}
+
+    #LeftSearchTxt:focus {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        width: 100%;
+    }
+
+#LeftCategoriesContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+}
+.roundRadius {
+    border-radius: 50px;
+    padding: 3px 8px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    transition: all .3s ease;
+}
+.category0 {
+    background: #ABD1DC;
+}
+
+    .category0:hover {
+        background: #9dcedc;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+
+.category1 {
+    background: #992915;
+}
+
+.category1:hover {
+    background: #e53e20;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.category2 {
+    background: #C6A477;
+}
+
+    .category2:hover {
+        background: #eec58f;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+
+.category3 {
+    background: #7097A8;
+}
+
+    .category3:hover {
+        background: #c9e8f1;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+
+.category4 {
+    background: #242834;
+    
+}
+
+.category4:hover {
+    background: #6a779c;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#LeftCategoriesContainer > h5 {
+    display: flex;
+    margin: 0px;
+}
+
+    #LeftSearchIcon {
+        display: flex;
+        align-items: center;
+        margin-left: -22px;
+        font-size: 16px
+    }
+
+    /*********Location*********/
+    #LeftLocationContainer {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        
+    }
+
+    #LeftLocationContainer > h5 {
+        margin: 0px;
+        margin-left: 5px;
+        color: #992915;
+        font-weight: bold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+.pointer{
+    cursor: pointer;
+}

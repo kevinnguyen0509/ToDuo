@@ -1,4 +1,6 @@
-﻿
+﻿@{ 
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/LeftSearchSection.css"/>
+}
 <div class="LeftNavBarBanner activeRed">
     <h4>Welcome, Kevin!</h4>
 </div>
@@ -11,20 +13,37 @@
 @model ToDuo.Models.ViewModels.IndexVM
 <div id="NavCategoryContainer">
     <ul class="CategoryBackground">
-        <li class="activeRed">All Adventures <i class="fa fa-globe-asia CategoryListIcons"></i></li>
-        <li>Resturants <i class="fa fa-cutlery CategoryListIcons"></i></li>
-        <li>Home/Decor <i class="fa fa-bed CategoryListIcons"></i></li>
-        <li>Activities <i class="fa fa-car CategoryListIcons"></i></li>
-        <li>Recipe Ideas <i class="fa fa-book CategoryListIcons"></i></li>
-        <li>Hiking <i class="fa fa-tree CategoryListIcons"></i></li>
+        <li class="activeRed">All Adventures <i class="fa fa-map-o CategoryListIcons" style="color:#fff;"></i></li>
     </ul>
+
+    <div id="LeftSearchContainer" class="CategoryBackground">
+        <div id="LeftSearchBar">
+            <input type="text" id="LeftSearchTxt" class="form-control" placeholder="Explore Other Tags!" />
+            <i id="LeftSearchIcon" class="fa fa-search CategoryListIcons"></i>
+        </div>
+        
+        <div id="LeftCategoriesContainer">
+            <h5 class="category0 roundRadius pointer categoryChoice">Resturant +</h5>
+            <h5 class="category1 roundRadius pointer categoryChoice">Home-Decor +</h5>
+            <h5 class="category2 roundRadius pointer categoryChoice">Activities +</h5>
+            <h5 class="category3 roundRadius pointer categoryChoice">Hiking +</h5>
+            <h5 class="category4 roundRadius pointer categoryChoice">Recipes +</h5>
+
+        </div>
+
+        <div id="LeftLocationContainer">
+            <i id="LeftLocationIcon" class="fa fa-map-marker CategoryListIcons pointer"></i>
+            <h5 class="pointer">Location</h5>
+        </div>
+
+    </div>
 </div>
 
 <div id="LastAddedContainer" class="text-center">
     <div id="BoardAndRecentlySwipeContainer">
         <i class="fa fa-heart CategoryListIcons glow boardSwipeIcons" id="RencetlyAddedHeart" title="Recently Added"></i>
         <i class="fa fa-diamond CategoryListIcons boardSwipeIcons" id="RecentlyAddedDiamond" title="Add Something" data-toggle="modal" data-target="#AddAdventureModal"></i>
-        <i class="fa fa-trello CategoryListIcons boardSwipeIcons" id="AddToSelectedBoards" title="Add To These Boards"></i>
+      @*  <i class="fa fa-trello CategoryListIcons boardSwipeIcons" id="AddToSelectedBoards" title="Add To These Boards"></i>*@
     </div>
 
     <hr class="activeRed" />
