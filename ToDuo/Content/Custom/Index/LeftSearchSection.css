@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     padding: 0px;
-    margin-bottom: 180px;
+    margin-bottom: 0px;
     padding: 0px 10px;
 }
 
@@ -26,7 +26,7 @@
 #LeftLocationIcon, #LeftSearchIcon {
     color: #992915;
     margin-top: 0px;
-    font-size: 22px;
+    font-size: 30px;
     padding-left: -10px;
     cursor: pointer;
 }
@@ -60,6 +60,7 @@
     margin-top: 10px;
 
 }
+
 .roundRadius {
     border-radius: 50px;
     padding: 3px 8px;
@@ -95,11 +96,11 @@
     }
 
 .category3 {
-    background: #7097A8;
+    background: #b75236;
 }
 
     .category3:hover {
-        background: #c9e8f1;
+        background: #ea6a47;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     }
 
@@ -130,10 +131,12 @@
         display: flex;
         align-items: center;
         margin-top: 10px;
+        margin-bottom: 10px;
+
         
     }
 
-    #LeftLocationContainer > h5 {
+    #LeftLocationContainer > h4 {
         margin: 0px;
         margin-left: 5px;
         color: #992915;
@@ -143,4 +146,32 @@
 
 .pointer{
     cursor: pointer;
+}
+#LeftSearchTagWrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+#LeftSearchTagWrapper > li {
+    justify-content: flex-start;
+    border-radius: 50px;
+    background: #7097A8 !important;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+    #LeftSearchTagWrapper > li:hover {
+        text-decoration: line-through;
+        text-decoration-color: #242834;
+    }
+    .SearchTagIcon {
+        color: #fff;
+        margin-left: 5px;
+    }
+
+.errorBorder {
+    border: 2px solid #992915  
+}
+
+#SearchErrorMessage {
+    color: #992915;
 }

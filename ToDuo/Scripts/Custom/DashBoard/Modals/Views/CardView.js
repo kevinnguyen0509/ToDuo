@@ -22,9 +22,11 @@ let RightArrow = 39;
 let LeftArrow = 37;
 let DownArrow = 40;
 let UpArrow = 38;
+let EnterButton = 13
 
 $(document).ready(function () {
     RenderShuffledAdventureCards();
+    RenderSearchAdventureCards();
 
 });
 
@@ -46,6 +48,71 @@ function RenderShuffledAdventureCards(){
        
         
     });
+}
+
+function RenderSearchAdventureCards() {
+    let TypingTimer;
+    let LeftSearchTxt = document.getElementById('LeftSearchTxt');
+    let LeftSearchTagWrapper = document.getElementById('LeftSearchTagWrapper');
+    let categoryChoice = document.querySelectorAll('.categoryChoice');
+
+    categoryChoice.forEach(categoryChoice => {
+        let categoryContent = categoryChoice.getAttribute('categoryContent');
+        categoryChoice.addEventListener('click', function () {
+            let LeftSearchTag = document.querySelectorAll('.LeftSearchTag');
+            let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent=" ${categoryContent}">
+                                    ${categoryContent} <i class="fa fa-tags   SearchTagIcon"></i>
+                              </li>`
+            if (LeftSearchTag.length >= 5)
+            {
+                alert('You have a limit of 5 tags')
+                clearTimeout(TypingTimer);
+                TypingTimer = setTimeout(doneTypingSearch, 3500);
+            }
+            else
+            {
+                LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue);
+                clearTimeout(TypingTimer);
+                TypingTimer = setTimeout(doneTypingSearch, 3500);
+            }
+
+        });
+    })
+
+    LeftSearchTxt.addEventListener('keyup', function (e) {
+        
+        let LeftSearchTag = document.querySelectorAll('.LeftSearchTag');
+        let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent=" ${LeftSearchTxt.value}">
+                                    ${LeftSearchTxt.value} <i class="fa fa-tags   SearchTagIcon"></i>
+                              </li>`
+
+        //If Enter is pressed and we are focused on search add the tag
+        if (LeftSearchTxt.focus && e.keyCode == EnterButton) {
+            if (LeftSearchTag.length >= 5) {
+                alert('You have a limit of 5 tags')
+                clearTimeout(TypingTimer);
+                TypingTimer = setTimeout(doneTypingSearch, 3500);
+            }
+            else {
+                LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue)
+                TypingTimer = setTimeout(doneTypingSearch, 3500);
+            }
+
+            //Clear search bar and refocus on it
+            LeftSearchTxt.value = '';
+            LeftSearchTxt.focus();
+        }
+    });
+
+    
+    //if not done typing restart timer
+    LeftSearchTxt.addEventListener('keydown', function (e) {
+        clearTimeout(TypingTimer);
+    });
+}
+
+function doneTypingSearch() {
+    console.log('3.5 secs passed with no typing')
 }
 
 function RightClickAndSwipeListeners(Cardlist) {

@@ -525,7 +525,8 @@ hr {
 
 #TagWrapper,
 #DetailTagWrapper,
-#InfoDetailTagWrapper {
+#InfoDetailTagWrapper,
+LeftSearchTagWrapper {
     display: flex;
     flex-wrap: wrap;
 }

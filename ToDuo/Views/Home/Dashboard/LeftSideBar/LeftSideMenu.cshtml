@@ -1,5 +1,6 @@
 ﻿@{ 
     <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/LeftSearchSection.css"/>
+
 }
 <div class="LeftNavBarBanner activeRed">
     <h4>Welcome, Kevin!</h4>
@@ -21,19 +22,49 @@
             <input type="text" id="LeftSearchTxt" class="form-control" placeholder="Explore Other Tags!" />
             <i id="LeftSearchIcon" class="fa fa-search CategoryListIcons"></i>
         </div>
-        
+
         <div id="LeftCategoriesContainer">
-            <h5 class="category0 roundRadius pointer categoryChoice">Resturant +</h5>
-            <h5 class="category1 roundRadius pointer categoryChoice">Home-Decor +</h5>
-            <h5 class="category2 roundRadius pointer categoryChoice">Activities +</h5>
-            <h5 class="category3 roundRadius pointer categoryChoice">Hiking +</h5>
-            <h5 class="category4 roundRadius pointer categoryChoice">Recipes +</h5>
+            <h5 class="category0 roundRadius pointer categoryChoice" categoryContent ="Resturant">+ Resturant</h5>
+            <h5 class="category1 roundRadius pointer categoryChoice" categoryContent ="Home-Decor">+ Home-Decor</h5>
+            <h5 class="category2 roundRadius pointer categoryChoice" categoryContent ="Activities">+ Activities</h5>
+            <h5 class="category3 roundRadius pointer categoryChoice" categoryContent ="Hiking">+ Hiking</h5>
+            <h5 class="category4 roundRadius pointer categoryChoice" categoryContent ="Recipes">+ Recipes</h5>
 
         </div>
 
         <div id="LeftLocationContainer">
             <i id="LeftLocationIcon" class="fa fa-map-marker CategoryListIcons pointer"></i>
-            <h5 class="pointer">Location</h5>
+            <h4 class="pointer">Location</h4>
+        </div>
+
+       
+
+        <div id="LeftTagContainer">
+            <ul id="LeftSearchTagWrapper" class="">
+                <span id="SearchErrorMessage" class="hide">
+                    You Are Only 5 Filters Max
+                </span>
+                <!--Comes from addAdventureModel.js-->
+@*                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
+                    outdoors <i class="fa fa-tags   SearchTagIcon"></i>
+                </li>
+
+                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
+                    Hiking <i class="fa fa-tags   SearchTagIcon"></i>
+                </li>
+
+                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
+                    Park <i class="fa fa-tags   SearchTagIcon"></i>
+                </li>
+
+                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
+                    Park <i class="fa fa-tags   SearchTagIcon"></i>
+                </li>
+
+                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
+                    water <i class="fa fa-tags   SearchTagIcon"></i>
+                </li>*@
+            </ul>
         </div>
 
     </div>
