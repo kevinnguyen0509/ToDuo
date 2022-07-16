@@ -6,6 +6,7 @@ using ToDuo.DataFactory.AdventureTable.GetData;
 using ToDuo.DataFactory.SaveData;
 using ToDuo.Models.BaseClasses;
 using ToDuo.Models.Interfaces;
+using ToDuo.Models.Models.Components;
 using ToDuo.Models.Users;
 
 namespace ToDuo.Models.Models.TableModels
@@ -20,6 +21,12 @@ namespace ToDuo.Models.Models.TableModels
             
             List<AdventureModel> Adventures = getData.GetAdventures(OwnerID);
             return Adventures;
+        }
+
+        public List<AdventureModel> GetFilteredList(List<string> TagArray)
+        {
+            List<AdventureModel> AdventureFilterResults = getData.GetTagSearchAdventure(TagArray);
+            return AdventureFilterResults;
         }
 
         public List<AdventureModel> GetShuffledList()

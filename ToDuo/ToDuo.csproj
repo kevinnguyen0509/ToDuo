@@ -133,8 +133,10 @@
     <Compile Include="Models\BaseClasses\ActivityBaseModel.cs" />
     <Compile Include="Models\BaseClasses\ResultMessage.cs" />
     <Compile Include="Models\Interfaces\IForm.cs" />
+    <Compile Include="Models\Models\Components\TagFilterModel.cs" />
     <Compile Include="Models\Models\TableModels\AdventureModel.cs" />
     <Compile Include="Models\Models\Users\User.cs" />
+    <Compile Include="Models\Util\DataValidator.cs" />
     <Compile Include="Models\ViewModels\IndexVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

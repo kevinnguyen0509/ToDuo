@@ -82,7 +82,7 @@ function RenderSearchAdventureCards() {
     LeftSearchTxt.addEventListener('keyup', function (e) {
         
         let LeftSearchTag = document.querySelectorAll('.LeftSearchTag');
-        let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent=" ${LeftSearchTxt.value}">
+        let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="${LeftSearchTxt.value}">
                                     ${LeftSearchTxt.value} <i class="fa fa-tags   SearchTagIcon"></i>
                               </li>`
 
@@ -111,8 +111,25 @@ function RenderSearchAdventureCards() {
     });
 }
 
+/**************This will filter the search************** */
 function doneTypingSearch() {
-    console.log('3.5 secs passed with no typing')
+    let LeftSearchTagElementArray = document.querySelectorAll('.LeftSearchTag');
+    let SearchTagArray = [];
+
+    for (let i = 0; i < LeftSearchTagElementArray.length; i++) {
+        if (LeftSearchTagElementArray[i] != null) {
+            SearchTagArray.push(LeftSearchTagElementArray[i].getAttribute('tagcontent'));
+        }
+        else {
+            SearchTagArray.push(null);
+        }
+    }
+
+    AdventureModelOptions.GetFilteredList(SearchTagArray).then(function (Adventures) {
+        console.log(Adventures);
+    });
+   
+
 }
 
 function RightClickAndSwipeListeners(Cardlist) {

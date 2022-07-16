@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ToDuo.Models.BaseClasses;
 using ToDuo.Models.Models.TableModels;
 using ToDuo.Models.Users;
+using ToDuo.Models.Util;
 
 namespace ToDuo.Controllers
 {
@@ -54,6 +55,16 @@ namespace ToDuo.Controllers
             List<AdventureModel> Adventures = adventureModel.GetShuffledList();
 
             return Json(Adventures, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetFilteredList(List<string> TagArray)
+        {
+            AdventureModel adventureModel = new AdventureModel();
+            DataValidator dataValidator = new DataValidator();
+            TagArray = dataValidator.FormatTagArray(TagArray);
+            List<AdventureModel> AdventureFilterResults = adventureModel.GetFilteredList(TagArray);
+
+            return Json(AdventureFilterResults, JsonRequestBehavior.AllowGet);
         }
     }
 }
