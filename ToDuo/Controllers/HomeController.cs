@@ -14,6 +14,7 @@ namespace ToDuo.Controllers
         public static string SignupViewPath = "~/Views/Authentication/Signup/Signup.cshtml";
         public static string IndexPath = "~/Views/Home/Dashboard/Index.cshtml";
         public static string LeftSideRecentlyAddedPath = "~/Views/Home/Dashboard/LeftSideBar/_RecentlyAdded.cshtml";
+        public static string RightSidePath = "~/Views/Home/Dashboard/RightSide/RightSection.cshtml";
         public ActionResult Index()
         {
             //Models
@@ -44,6 +45,11 @@ namespace ToDuo.Controllers
                 AdventureList = adventureModel.GetList(OwnerID)
             };
             return PartialView(LeftSideRecentlyAddedPath, IndexVM);
+        }
+
+        public ActionResult _RightSideIndexPartialView()
+        {
+            return PartialView(RightSidePath);
         }
 
         /****************Authentication********************/

@@ -1,6 +1,8 @@
 ﻿import { AdventureModel } from '../Model/AdventureModel.js'
 import { CardModel } from '../Model/CardModel.js'
 
+let baseUrl = document.getElementById('HiddenCurrentUrl').value;
+
 //GlobalVariables
 let CardDeckLimit = 50; //Amount of Cards first dealt out. It will increase every time this limit gets hit
 const DrawMoreCards = 50; //Amount to increase by when Card DeckLimit is hit
@@ -67,13 +69,13 @@ function RenderSearchAdventureCards() {
             {
                 alert('You have a limit of 5 tags')
                 clearTimeout(TypingTimer);
-                TypingTimer = setTimeout(doneTypingSearch, 3500);
+                TypingTimer = setTimeout(doneTypingSearch, 1500);
             }
             else
             {
                 LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue);
                 clearTimeout(TypingTimer);
-                TypingTimer = setTimeout(doneTypingSearch, 3500);
+                TypingTimer = setTimeout(doneTypingSearch, 1500);
             }
 
         });
@@ -91,11 +93,11 @@ function RenderSearchAdventureCards() {
             if (LeftSearchTag.length >= 5) {
                 alert('You have a limit of 5 tags')
                 clearTimeout(TypingTimer);
-                TypingTimer = setTimeout(doneTypingSearch, 3500);
+                TypingTimer = setTimeout(doneTypingSearch, 1500);
             }
             else {
                 LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue)
-                TypingTimer = setTimeout(doneTypingSearch, 3500);
+                TypingTimer = setTimeout(doneTypingSearch, 1500);
             }
 
             //Clear search bar and refocus on it
@@ -117,16 +119,31 @@ function doneTypingSearch() {
     let SearchTagArray = [];
 
     for (let i = 0; i < LeftSearchTagElementArray.length; i++) {
-        if (LeftSearchTagElementArray[i] != null) {
-            SearchTagArray.push(LeftSearchTagElementArray[i].getAttribute('tagcontent'));
-        }
-        else {
-            SearchTagArray.push(null);
-        }
+        SearchTagArray.push(LeftSearchTagElementArray[i].getAttribute('tagcontent'));
     }
 
-    AdventureModelOptions.GetFilteredList(SearchTagArray).then(function (Adventures) {
-        console.log(Adventures);
+    AdventureModelOptions.GetFilteredList(SearchTagArray).then(function (AdventuresDeck) {
+        console.log(AdventuresDeck);
+        $('#RightSection').load(baseUrl + 'Home/_RightSideIndexPartialView', function () {
+            CurrentCardGlobal = 0;
+            CardDeckLimit = 50;
+            cardInfoHolder = document.getElementById('cardInfoHolder')
+            console.log('Attach Listeners');
+            DealOutCards(CardDeckLimit, AdventuresDeck);//Deals out a set of cards.
+
+            RightSwipe = document.getElementById('RightSwipe');
+            LeftSwipe = document.getElementById('LeftSwipe');
+            RedoSwipe = document.getElementById('RedoSwipe');
+            InfoButton = document.getElementById('InfoButton');
+
+            //Add Listeners
+            RightClickAndSwipeListeners(AdventuresDeck);
+            LeftClickAndSwipeListeners(AdventuresDeck);
+            UndoSwipeActionListener(AdventuresDeck);
+            MoreInfoActionSwipeListener(AdventuresDeck)
+           
+        });
+        
     });
    
 
@@ -237,7 +254,7 @@ function RightSwipeAction(Cardlist) {
     if ((CurrentCardGlobal >= CardDeckLimit) && ((CurrentCardGlobal + DrawMoreCards) < Cardlist.length)) {
         CardDeckLimit = CardDeckLimit + DrawMoreCards;
         DealOutCards(CardDeckLimit, Cardlist)
-
+        
         //Remove current card element and move the class FrontCard to the next card in the list
 /*        console.log(Cardlist[CurrentCardGlobal]);
         console.log("Current Card Index: ", CurrentCardGlobal);*/
@@ -345,6 +362,7 @@ function LeftSwipeAction(Cardlist) {
 }
 
 function SwitchToNextCard() {
+    console.log('switching')
     let CardList = document.querySelectorAll('.card');
     CardModelOptions.LeftSwipeAnimation(CardList);
 
