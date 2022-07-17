@@ -175,3 +175,40 @@
 #SearchErrorMessage {
     color: #992915;
 }
+
+#LeftLocationTextBox {
+    margin: 0px;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    border-bottom: 2px solid #efefef;
+    outline: none;
+    background: #d9c595;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #992915;
+}
+
+    #LeftLocationTextBox:focus, textarea:focus, select:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        outline: none !important;
+        border-bottom: 2px solid #fff;
+    }
+
+#LeftLocationTextBox::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff !important;
+    font-size: 14px;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+    font-size: 14px;
+    opacity: 1; /* Firefox */
+}
+
+
+

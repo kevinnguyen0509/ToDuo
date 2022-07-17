@@ -63,6 +63,18 @@ export class AdventureModel {
         return result;
     }
 
+    async GetFilteredListWithLocation(TagArray, Location) {
+        const result = await $.ajax({
+            method: 'POST',
+            url: baseUrl + 'Json/GetFilteredListWithLocation',
+            data: { TagArray, Location },
+            success: function (Adventures) {
+                return Adventures;
+            }
+        });
+        return result;
+    }
+
     async GetAdventures() {
         const result = await $.ajax({
             method: 'POST',

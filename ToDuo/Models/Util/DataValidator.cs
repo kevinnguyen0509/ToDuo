@@ -11,10 +11,24 @@ namespace ToDuo.Models.Util
         {
             for(int i = 0; i < 5; i++)
             {
-                if (TagArrayFilter.Count < 5)
+                if(TagArrayFilter == null)
+                {
+                    TagArrayFilter = new List<string>();
+                    TagArrayFilter.Add(null);
+                    TagArrayFilter.Add(null);
+                    TagArrayFilter.Add(null);
+                    TagArrayFilter.Add(null);
+                    TagArrayFilter.Add(null);
+                    return TagArrayFilter;
+                }
+                else if (TagArrayFilter.Count < 5)
                 {
                     TagArrayFilter.Add(null);
 
+                }
+                else
+                {
+                    TagArrayFilter.Add(null);
                 }
             }
 

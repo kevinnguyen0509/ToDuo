@@ -26,6 +26,7 @@ let DownArrow = 40;
 let UpArrow = 38;
 let EnterButton = 13
 
+//Main Method that calls everything
 $(document).ready(function () {
     RenderShuffledAdventureCards();
     RenderSearchAdventureCards();
@@ -62,7 +63,7 @@ function RenderSearchAdventureCards() {
         let categoryContent = categoryChoice.getAttribute('categoryContent');
         categoryChoice.addEventListener('click', function () {
             let LeftSearchTag = document.querySelectorAll('.LeftSearchTag');
-            let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent=" ${categoryContent}">
+            let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag tagAppearAnimation" tagcontent=" ${categoryContent}">
                                     ${categoryContent} <i class="fa fa-tags   SearchTagIcon"></i>
                               </li>`
             if (LeftSearchTag.length >= 5)
@@ -74,9 +75,18 @@ function RenderSearchAdventureCards() {
             else
             {
                 LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue);
-                clearTimeout(TypingTimer);
-                TypingTimer = setTimeout(doneTypingSearch, 1500);
-                AttachRemoveTagCarDeckRefresh(LeftSearchTagWrapper);
+                let LeftLocationLblValue = document.getElementById('LeftLocationLbl').textContent;              
+                if (LeftLocationLblValue == 'Location') {
+                    clearTimeout(TypingTimer);
+                    TypingTimer = setTimeout(doneTypingSearch, 1500);
+                    AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper);
+                }
+                else {
+                    clearTimeout(TypingTimer);
+                    TypingTimer = setTimeout(doneTypingSearchWithLocation, 1500);
+                    AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper);
+                }
+
 
 
             }
@@ -84,10 +94,10 @@ function RenderSearchAdventureCards() {
         });
     })
 
-    LeftSearchTxt.addEventListener('keyup', function (e) {
-        
+    //Search Input box
+    LeftSearchTxt.addEventListener('keyup', function (e) {       
         let LeftSearchTag = document.querySelectorAll('.LeftSearchTag');
-        let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="${LeftSearchTxt.value}">
+        let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag tagAppearAnimation" tagcontent="${LeftSearchTxt.value}">
                                     ${LeftSearchTxt.value} <i class="fa fa-tags   SearchTagIcon"></i>
                               </li>`
 
@@ -100,10 +110,18 @@ function RenderSearchAdventureCards() {
             }
             else {
                 LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue)
-                TypingTimer = setTimeout(doneTypingSearch, 1500);
-                AttachRemoveTagCarDeckRefresh(LeftSearchTagWrapper);
+                let LeftLocationLblValue = document.getElementById('LeftLocationLbl').textContent;
+                if (LeftLocationLblValue == 'Location') {
+                    clearTimeout(TypingTimer);
+                    TypingTimer = setTimeout(doneTypingSearch, 1500);
+                    AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper);
+                }
+                else {
+                    clearTimeout(TypingTimer);
+                    TypingTimer = setTimeout(doneTypingSearchWithLocation, 1500);
+                    AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper);
+                }
             }
-
 
 
             //Clear search bar and refocus on it
@@ -116,11 +134,12 @@ function RenderSearchAdventureCards() {
     //if not done typing restart timer
     LeftSearchTxt.addEventListener('keydown', function (e) {
         clearTimeout(TypingTimer);
+        TypingTimer = setTimeout(doneTypingSearch, 1500);
     });
 }
 
 /**************This will filter the search************** */
-function doneTypingSearch() {
+export function doneTypingSearch() {
     let LeftSearchTagElementArray = document.querySelectorAll('.LeftSearchTag');
     let SearchTagArray = [];
 
@@ -153,15 +172,58 @@ function doneTypingSearch() {
     });
 }
 
-function AttachRemoveTagCarDeckRefresh(LeftSearchTagWrapper) {
+export function doneTypingSearchWithLocation() {
+    let LeftSearchTagElementArray = document.querySelectorAll('.LeftSearchTag');
+    let SearchTagArray = [];
+    let LeftLocationLblValue = document.getElementById('LeftLocationLbl').textContent;
+    for (let i = 0; i < LeftSearchTagElementArray.length; i++) {
+        SearchTagArray.push(LeftSearchTagElementArray[i].getAttribute('tagcontent'));
+    }
+
+    AdventureModelOptions.GetFilteredListWithLocation(SearchTagArray, LeftLocationLblValue).then(function (AdventuresDeck) {
+        console.log(AdventuresDeck);
+        $('#RightSection').load(baseUrl + 'Home/_RightSideIndexPartialView', function () {
+            CurrentCardGlobal = 0;
+            CardDeckLimit = 50;
+            cardInfoHolder = document.getElementById('cardInfoHolder')
+            console.log('Attach Listeners');
+            DealOutCards(CardDeckLimit, AdventuresDeck);//Deals out a set of cards.
+
+            RightSwipe = document.getElementById('RightSwipe');
+            LeftSwipe = document.getElementById('LeftSwipe');
+            RedoSwipe = document.getElementById('RedoSwipe');
+            InfoButton = document.getElementById('InfoButton');
+
+            //Add Listeners
+            RightClickAndSwipeListeners(AdventuresDeck);
+            LeftClickAndSwipeListeners(AdventuresDeck);
+            UndoSwipeActionListener(AdventuresDeck);
+            MoreInfoActionSwipeListener(AdventuresDeck)
+
+        });
+
+    });
+}
+
+function AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper) {
     let recentlyAddedTag = LeftSearchTagWrapper.lastChild
     recentlyAddedTag.addEventListener('click', function () {
         recentlyAddedTag.remove();
         let LeftSearchTagLength = document.querySelectorAll('.LeftSearchTag');
         let ListItemLength = LeftSearchTagLength.length;
+       
+
         if (ListItemLength > 0) {
-            clearTimeout();
-            setTimeout(doneTypingSearch, 1500);
+            let LeftLocationLblValue = document.getElementById('LeftLocationLbl').textContent;
+            if (LeftLocationLblValue == 'Location') {
+                clearTimeout();
+                setTimeout(doneTypingSearch, 1500);
+            }
+            else {
+                clearTimeout();
+                setTimeout(doneTypingSearchWithLocation, 1500);
+            }
+
         }
     });
 }

@@ -1,5 +1,8 @@
-﻿@{ 
-    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/LeftSearchSection.css"/>
+﻿@{
+    
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/LeftSearchSection.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Shared/Animations/TagsAnimation.css" />
+    
 
 }
 <div class="LeftNavBarBanner activeRed">
@@ -14,7 +17,7 @@
 @model ToDuo.Models.ViewModels.IndexVM
 <div id="NavCategoryContainer">
     <ul class="CategoryBackground">
-        <li class="activeRed">All Adventures <i class="fa fa-map-o CategoryListIcons" style="color:#fff;"></i></li>
+        <li class="activeRed" id="AllAdventureLbl">All Adventures <i class="fa fa-map-o CategoryListIcons" style="color:#fff;"></i></li>
     </ul>
 
     <div id="LeftSearchContainer" class="CategoryBackground">
@@ -24,20 +27,21 @@
         </div>
 
         <div id="LeftCategoriesContainer">
-            <h5 class="category0 roundRadius pointer categoryChoice" categoryContent ="Resturant">+ Resturant</h5>
-            <h5 class="category1 roundRadius pointer categoryChoice" categoryContent ="Home Decor">+ Home-Decor</h5>
-            <h5 class="category2 roundRadius pointer categoryChoice" categoryContent ="Activities">+ Activities</h5>
-            <h5 class="category3 roundRadius pointer categoryChoice" categoryContent ="Hiking">+ Hiking</h5>
-            <h5 class="category4 roundRadius pointer categoryChoice" categoryContent ="Recipes">+ Recipes</h5>
+            <h5 class="category0 roundRadius pointer categoryChoice" categoryContent="Restaurant">+ Restaurant</h5>
+            <h5 class="category1 roundRadius pointer categoryChoice" categoryContent="Home Decor">+ Home-Decor</h5>
+            <h5 class="category2 roundRadius pointer categoryChoice" categoryContent="Activities">+ Activities</h5>
+            <h5 class="category3 roundRadius pointer categoryChoice" categoryContent="Hiking">+ Hiking</h5>
+            <h5 class="category4 roundRadius pointer categoryChoice" categoryContent="Recipes">+ Recipes</h5>
 
         </div>
 
         <div id="LeftLocationContainer">
             <i id="LeftLocationIcon" class="fa fa-map-marker CategoryListIcons pointer"></i>
-            <h4 class="pointer">Location</h4>
+            <input type="text" id="LeftLocationTextBox" class="form-control GrowElementRight hide" placeholder="Adddress/City" />
+            <h4 id="LeftLocationLbl" class="pointer tagAppearAnimation">Location</h4>
         </div>
 
-       
+
 
         <div id="LeftTagContainer">
             <ul id="LeftSearchTagWrapper" class="">
@@ -45,25 +49,6 @@
                     You Are Only 5 Filters Max
                 </span>
                 <!--Comes from addAdventureModel.js-->
-@*                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
-                    outdoors <i class="fa fa-tags   SearchTagIcon"></i>
-                </li>
-
-                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
-                    Hiking <i class="fa fa-tags   SearchTagIcon"></i>
-                </li>
-
-                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
-                    Park <i class="fa fa-tags   SearchTagIcon"></i>
-                </li>
-
-                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
-                    Park <i class="fa fa-tags   SearchTagIcon"></i>
-                </li>
-
-                <li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag" tagcontent="outdoors">
-                    water <i class="fa fa-tags   SearchTagIcon"></i>
-                </li>*@
             </ul>
         </div>
 
@@ -74,7 +59,6 @@
     <div id="BoardAndRecentlySwipeContainer">
         <i class="fa fa-heart CategoryListIcons glow boardSwipeIcons" id="RencetlyAddedHeart" title="Recently Added"></i>
         <i class="fa fa-diamond CategoryListIcons boardSwipeIcons" id="RecentlyAddedDiamond" title="Add Something" data-toggle="modal" data-target="#AddAdventureModal"></i>
-      @*  <i class="fa fa-trello CategoryListIcons boardSwipeIcons" id="AddToSelectedBoards" title="Add To These Boards"></i>*@
     </div>
 
     <hr class="activeRed" />
@@ -84,3 +68,4 @@
     @Html.Partial("~/Views/Home/Dashboard/LeftSideBar/_RecentlyAdded.cshtml", Model)
 </div>
 
+<script type="module" src="~/Scripts/Custom/DashBoard/LeftSide/Search.js"></script>

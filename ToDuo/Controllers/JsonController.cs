@@ -66,5 +66,15 @@ namespace ToDuo.Controllers
 
             return Json(AdventureFilterResults, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult GetFilteredListWithLocation(List<string> TagArray, string Location)
+        {
+            AdventureModel adventureModel = new AdventureModel();
+            DataValidator dataValidator = new DataValidator();
+            TagArray = dataValidator.FormatTagArray(TagArray);
+            List<AdventureModel> AdventureFilterResults = adventureModel.GetFilteredListWithLocation(TagArray, Location);
+
+            return Json(AdventureFilterResults, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -145,6 +145,7 @@
     <Content Include="Content\Custom\Index\Dashboard.css" />
     <Content Include="Content\Custom\Index\LeftSearchSection.css" />
     <Content Include="Content\Custom\Shared\Animations\CardAnimations.css" />
+    <Content Include="Content\Custom\Shared\Animations\TagsAnimation.css" />
     <Content Include="Content\Custom\Shared\FormValidation.css" />
     <Content Include="Content\Custom\Shared\Loading.css" />
     <Content Include="Content\Custom\Shared\Modal\MoreInfoModal.css" />
@@ -178,6 +179,7 @@
     <Content Include="Scripts\Custom\Authentication\Model\SignupModel.js" />
     <Content Include="Scripts\Custom\Authentication\Views\Login.js" />
     <Content Include="Scripts\Custom\Authentication\Views\Signup.js" />
+    <Content Include="Scripts\Custom\DashBoard\LeftSide\Search.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Model\AdventureModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Model\CardModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Views\AddAdventureModel.js" />

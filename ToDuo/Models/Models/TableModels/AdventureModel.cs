@@ -30,6 +30,13 @@ namespace ToDuo.Models.Models.TableModels
             return AdventureFilterResults;
         }
 
+        public List<AdventureModel> GetFilteredListWithLocation(List<string> TagArray, string Location)
+        {
+            List<AdventureModel> AdventureFilterResults = getData.GetTagSearchAdventureWithLocation(TagArray, Location);
+            AdventureFilterResults = this.Shuffle(AdventureFilterResults);
+            return AdventureFilterResults;
+        }
+
         public List<AdventureModel> GetShuffledList()
         {
             List<AdventureModel> AdventureList = getData.GetShuffledAdventure();
