@@ -26,6 +26,7 @@ namespace ToDuo.Models.Models.TableModels
         public List<AdventureModel> GetFilteredList(List<string> TagArray)
         {
             List<AdventureModel> AdventureFilterResults = getData.GetTagSearchAdventure(TagArray);
+            AdventureFilterResults = this.Shuffle(AdventureFilterResults);
             return AdventureFilterResults;
         }
 
@@ -58,6 +59,11 @@ namespace ToDuo.Models.Models.TableModels
             return resultMessage;           
         }
 
+        /// <summary>
+        /// Shuffles an Array list
+        /// </summary>
+        /// <param name="AdventureList">Takes in a List of Adventure Models</param>
+        /// <returns>A Shuffled List Adventure models that was passed in</returns>
         private List<AdventureModel> Shuffle(List<AdventureModel> AdventureList)
         {
             Random rng = new Random();  

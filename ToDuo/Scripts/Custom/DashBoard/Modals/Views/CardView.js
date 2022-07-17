@@ -76,6 +76,9 @@ function RenderSearchAdventureCards() {
                 LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue);
                 clearTimeout(TypingTimer);
                 TypingTimer = setTimeout(doneTypingSearch, 1500);
+                AttachRemoveTagCarDeckRefresh(LeftSearchTagWrapper);
+
+
             }
 
         });
@@ -98,7 +101,10 @@ function RenderSearchAdventureCards() {
             else {
                 LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue)
                 TypingTimer = setTimeout(doneTypingSearch, 1500);
+                AttachRemoveTagCarDeckRefresh(LeftSearchTagWrapper);
             }
+
+
 
             //Clear search bar and refocus on it
             LeftSearchTxt.value = '';
@@ -145,8 +151,19 @@ function doneTypingSearch() {
         });
         
     });
-   
+}
 
+function AttachRemoveTagCarDeckRefresh(LeftSearchTagWrapper) {
+    let recentlyAddedTag = LeftSearchTagWrapper.lastChild
+    recentlyAddedTag.addEventListener('click', function () {
+        recentlyAddedTag.remove();
+        let LeftSearchTagLength = document.querySelectorAll('.LeftSearchTag');
+        let ListItemLength = LeftSearchTagLength.length;
+        if (ListItemLength > 0) {
+            clearTimeout();
+            setTimeout(doneTypingSearch, 1500);
+        }
+    });
 }
 
 function RightClickAndSwipeListeners(Cardlist) {
