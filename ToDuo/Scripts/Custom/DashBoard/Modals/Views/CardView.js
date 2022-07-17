@@ -63,7 +63,7 @@ function RenderSearchAdventureCards() {
         let categoryContent = categoryChoice.getAttribute('categoryContent');
         categoryChoice.addEventListener('click', function () {
             let LeftSearchTag = document.querySelectorAll('.LeftSearchTag');
-            let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag tagAppearAnimation" tagcontent=" ${categoryContent}">
+            let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag tagAppearAnimation" tagcontent=" ${categoryContent.trim()}">
                                     ${categoryContent} <i class="fa fa-tags   SearchTagIcon"></i>
                               </li>`
             if (LeftSearchTag.length >= 5)
@@ -97,7 +97,7 @@ function RenderSearchAdventureCards() {
     //Search Input box
     LeftSearchTxt.addEventListener('keyup', function (e) {       
         let LeftSearchTag = document.querySelectorAll('.LeftSearchTag');
-        let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag tagAppearAnimation" tagcontent="${LeftSearchTxt.value}">
+        let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag tagAppearAnimation" tagcontent="${LeftSearchTxt.value.trim()}">
                                     ${LeftSearchTxt.value} <i class="fa fa-tags   SearchTagIcon"></i>
                               </li>`
 
@@ -144,7 +144,7 @@ export function doneTypingSearch() {
     let SearchTagArray = [];
 
     for (let i = 0; i < LeftSearchTagElementArray.length; i++) {
-        SearchTagArray.push(LeftSearchTagElementArray[i].getAttribute('tagcontent'));
+        SearchTagArray.push(LeftSearchTagElementArray[i].getAttribute('tagcontent').trim());
     }
 
     AdventureModelOptions.GetFilteredList(SearchTagArray).then(function (AdventuresDeck) {
@@ -177,7 +177,7 @@ export function doneTypingSearchWithLocation() {
     let SearchTagArray = [];
     let LeftLocationLblValue = document.getElementById('LeftLocationLbl').textContent;
     for (let i = 0; i < LeftSearchTagElementArray.length; i++) {
-        SearchTagArray.push(LeftSearchTagElementArray[i].getAttribute('tagcontent'));
+        SearchTagArray.push(LeftSearchTagElementArray[i].getAttribute('tagcontent').trim());
     }
 
     AdventureModelOptions.GetFilteredListWithLocation(SearchTagArray, LeftLocationLblValue).then(function (AdventuresDeck) {
@@ -289,6 +289,9 @@ function MoreInfoActionSwipeListener(Cardlist) {
 
 
 /*********************Helpers*******************************/
+
+
+
 function MoreInfoAcions() {
     let frontCard = document.querySelector('.FrontCard');
     let cardImage = frontCard.getAttribute('cardImage');
