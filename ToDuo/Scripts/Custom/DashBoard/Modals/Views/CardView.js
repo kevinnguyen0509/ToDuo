@@ -7,7 +7,7 @@ let baseUrl = document.getElementById('HiddenCurrentUrl').value;
 let CardDeckLimit = 50; //Amount of Cards first dealt out. It will increase every time this limit gets hit
 const DrawMoreCards = 50; //Amount to increase by when Card DeckLimit is hit
 let CurrentCardGlobal = 0;//Current Index in card deck. 0 is the starting point
-
+const MiliSecondsToWait = 1000
 //Classes
 let AdventureModelOptions = new AdventureModel();
 let CardModelOptions = new CardModel();
@@ -70,7 +70,7 @@ function RenderSearchAdventureCards() {
             {
                 alert('You have a limit of 5 tags')
                 clearTimeout(TypingTimer);
-                TypingTimer = setTimeout(doneTypingSearch, 1500);
+                TypingTimer = setTimeout(doneTypingSearch, MiliSecondsToWait);
             }
             else
             {
@@ -78,12 +78,12 @@ function RenderSearchAdventureCards() {
                 let LeftLocationLblValue = document.getElementById('LeftLocationLbl').textContent;              
                 if (LeftLocationLblValue == 'Location') {
                     clearTimeout(TypingTimer);
-                    TypingTimer = setTimeout(doneTypingSearch, 1500);
+                    TypingTimer = setTimeout(doneTypingSearch, MiliSecondsToWait);
                     AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper);
                 }
                 else {
                     clearTimeout(TypingTimer);
-                    TypingTimer = setTimeout(doneTypingSearchWithLocation, 1500);
+                    TypingTimer = setTimeout(doneTypingSearchWithLocation, MiliSecondsToWait);
                     AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper);
                 }
 
@@ -106,19 +106,19 @@ function RenderSearchAdventureCards() {
             if (LeftSearchTag.length >= 5) {
                 alert('You have a limit of 5 tags')
                 clearTimeout(TypingTimer);
-                TypingTimer = setTimeout(doneTypingSearch, 1500);
+                TypingTimer = setTimeout(doneTypingSearch, MiliSecondsToWait);
             }
             else {
                 LeftSearchTagWrapper.insertAdjacentHTML('beforeend', tagSearchValue)
                 let LeftLocationLblValue = document.getElementById('LeftLocationLbl').textContent;
                 if (LeftLocationLblValue == 'Location') {
                     clearTimeout(TypingTimer);
-                    TypingTimer = setTimeout(doneTypingSearch, 1500);
+                    TypingTimer = setTimeout(doneTypingSearch, MiliSecondsToWait);
                     AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper);
                 }
                 else {
                     clearTimeout(TypingTimer);
-                    TypingTimer = setTimeout(doneTypingSearchWithLocation, 1500);
+                    TypingTimer = setTimeout(doneTypingSearchWithLocation, MiliSecondsToWait);
                     AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper);
                 }
             }
@@ -134,7 +134,7 @@ function RenderSearchAdventureCards() {
     //if not done typing restart timer
     LeftSearchTxt.addEventListener('keydown', function (e) {
         clearTimeout(TypingTimer);
-        TypingTimer = setTimeout(doneTypingSearch, 1500);
+        TypingTimer = setTimeout(doneTypingSearch, MiliSecondsToWait);
     });
 }
 
@@ -217,11 +217,11 @@ function AttachRemoveTagAndRefreshCards(LeftSearchTagWrapper) {
             let LeftLocationLblValue = document.getElementById('LeftLocationLbl').textContent;
             if (LeftLocationLblValue == 'Location') {
                 clearTimeout();
-                setTimeout(doneTypingSearch, 1500);
+                setTimeout(doneTypingSearch, MiliSecondsToWait);
             }
             else {
                 clearTimeout();
-                setTimeout(doneTypingSearchWithLocation, 1500);
+                setTimeout(doneTypingSearchWithLocation, MiliSecondsToWait);
             }
 
         }
