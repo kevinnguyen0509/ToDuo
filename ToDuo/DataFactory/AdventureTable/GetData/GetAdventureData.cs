@@ -26,7 +26,7 @@ namespace ToDuo.DataFactory.AdventureTable.GetData
 
 
             /*string SQL = "SELECT * FROM dbo.GeneralLiabilityClaims";*/
-            string SQL = "[dbo].[dbo.ssp_ToDuo_GetAllAdventures]";
+            string SQL = "[dbo].[ssp_ToDuo_GetUsersRecentAdventures]";
             SQLComm = new SqlCommand(SQL, SQLConn);
             SQLComm.CommandType = CommandType.StoredProcedure;
             SQLComm.Parameters.AddWithValue("@OwnerID", OwnerID);
