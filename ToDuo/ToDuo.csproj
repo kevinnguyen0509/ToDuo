@@ -152,6 +152,7 @@
     <Content Include="Content\Custom\Shared\Overlay.css" />
     <Content Include="Content\Custom\Shared\SharedClasses.css" />
     <Content Include="Content\Custom\Signup\Signup.css" />
+    <Content Include="Content\Custom\WebScraper\WebScraperMain.css" />
     <Content Include="Content\Images\AppImages\bar.jpg" />
     <Content Include="Content\Images\AppImages\cooking.jpg" />
     <Content Include="Content\Images\AppImages\CountryRoad.jpg" />
@@ -225,6 +226,7 @@
     <Content Include="Views\Home\Dashboard\Modals\_DetailsAdventure.cshtml" />
     <Content Include="Views\Home\Dashboard\LeftSideBar\_RecentlyAdded.cshtml" />
     <Content Include="Views\Home\Dashboard\Modals\_MoreInfoAdventureModal.cshtml" />
+    <Content Include="Views\Home\WebScraper\WebScraper.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

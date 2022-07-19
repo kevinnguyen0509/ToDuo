@@ -15,6 +15,7 @@ namespace ToDuo.Controllers
         public static string IndexPath = "~/Views/Home/Dashboard/Index.cshtml";
         public static string LeftSideRecentlyAddedPath = "~/Views/Home/Dashboard/LeftSideBar/_RecentlyAdded.cshtml";
         public static string RightSidePath = "~/Views/Home/Dashboard/RightSide/RightSection.cshtml";
+        public static string WebScraperPath = "~/Views/Home/WebScraper/WebScraper.cshtml";
         public ActionResult Index()
         {
             //Models
@@ -61,6 +62,12 @@ namespace ToDuo.Controllers
         public ActionResult Signup()
         {
             return View(SignupViewPath);
+        }
+
+        /****************WebScraper********************/
+        public ActionResult WebScraper()
+        {
+            return View(WebScraperPath);
         }
 
     }
