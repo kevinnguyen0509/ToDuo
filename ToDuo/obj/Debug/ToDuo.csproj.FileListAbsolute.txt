@@ -156,3 +156,6 @@ D:\GitProjects\ToDuo\ToDuo\obj\Debug\ToDuo.csproj.CoreCompileInputs.cache
 D:\GitProjects\ToDuo\ToDuo\obj\Debug\ToDuo.csproj.CopyComplete
 D:\GitProjects\ToDuo\ToDuo\obj\Debug\ToDuo.dll
 D:\GitProjects\ToDuo\ToDuo\obj\Debug\ToDuo.pdb
+D:\GitProjects\ToDuo\ToDuo\bin\HtmlAgilityPack.dll
+D:\GitProjects\ToDuo\ToDuo\bin\HtmlAgilityPack.pdb
+D:\GitProjects\ToDuo\ToDuo\bin\HtmlAgilityPack.xml

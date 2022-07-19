@@ -1,6 +1,9 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ToDuo.Models.BaseClasses;
@@ -76,5 +79,13 @@ namespace ToDuo.Controllers
 
             return Json(AdventureFilterResults, JsonRequestBehavior.AllowGet);
         }
+
+        /***************Web Scraper******************/
+
+
+/*        private async Task<JsonResult> GetYelpPage(string WebsiteAddress)
+        {
+
+        }*/
     }
 }

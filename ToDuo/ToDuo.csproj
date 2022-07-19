@@ -186,6 +186,8 @@
     <Content Include="Scripts\Custom\DashBoard\Modals\Views\AddAdventureModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Views\CardView.js" />
     <Content Include="Scripts\Custom\Validation\FormValidation.js" />
+    <Content Include="Scripts\Custom\WebScraper\Model\WebScrapeModel.js" />
+    <Content Include="Scripts\Custom\WebScraper\View\WebScraperMain.js" />
     <Content Include="Scripts\Default\bootstrap.js" />
     <Content Include="Scripts\Default\bootstrap.min.js" />
     <Content Include="fonts\FontAwesome.otf" />

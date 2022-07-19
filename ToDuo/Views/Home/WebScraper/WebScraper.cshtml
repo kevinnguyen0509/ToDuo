@@ -10,7 +10,7 @@
 
         <div class="col-md-5">
             <label class="label label-success">Website address:</label>
-            <input type="text" class="form-control" style="margin:0px !important;" placeholder="Website address" />
+            <input type="text" id="websiteInputtxt" class="form-control" style="margin:0px !important;" placeholder="Website address" />
         </div>
 
         <div class="col-md-1">
@@ -24,12 +24,12 @@
         </div>
 
         <div class="col-md-1" style="display: flex;">
-            <button type="button" class="btn btn-success">Web Scrape</button>
+            <button type="button" class="btn btn-success" id="WebScrapeBtn">Web Scrape</button>
         </div>
     </div>
 
     <div class="row col-md-12" style=" display: flex; ">
-        <div class="col-md-3">
+        <div class="col-lg-4 col-md-5">
             <div id="SwipeContentPartialView">
                 <div id="CardSwipeContainer" class="CardSwipeContainer">
                     <div id="cardInfoHolder">
@@ -64,7 +64,7 @@
             </div>
             <div class="col-md-12">
                 <label class="label label-info">Website</label>
-                <input type="text" class="form-control" style="margin:0px !important;" placeholder="Website address" />
+                <input type="text"  class="form-control" style="margin:0px !important;" placeholder="Website address" />
             </div>
 
             <div class="col-md-12">
@@ -79,7 +79,7 @@
 
             <div class="col-md-12">
                 <button type="button" class="btn btn-danger">Fail</button>
-                <button type="button" class="btn btn-success">Pass</button>
+                <button type="button" class="btn btn-success" id="passButton">Pass</button>
             </div>
         </div>
 
@@ -90,4 +90,4 @@
 
 </div>
 
-
+<script type="module" src="~/Scripts/Custom/WebScraper/View/WebScraperMain.js"></script>
