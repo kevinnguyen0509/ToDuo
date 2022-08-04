@@ -1,5 +1,4 @@
-﻿using HtmlAgilityPack;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -23,6 +22,14 @@ namespace ToDuo.Controllers
             AdventureModel.OwnerID = currentUser.ID;
             ResultMessage resultMessage = AdventureModel.SaveAdventure(AdventureModel);
             
+            return Json(resultMessage, JsonRequestBehavior.AllowGet);
+        }
+        //This is used only for webscrapes
+        public JsonResult AddAdventureScraper(AdventureModel AdventureModel)
+        {
+            AdventureModel.OwnerID = AdventureModel.OwnerID;
+            ResultMessage resultMessage = AdventureModel.SaveAdventure(AdventureModel);
+
             return Json(resultMessage, JsonRequestBehavior.AllowGet);
         }
 

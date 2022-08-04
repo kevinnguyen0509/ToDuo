@@ -67,6 +67,7 @@ namespace ToDuo.Controllers
         /****************WebScraper********************/
         public ActionResult WebScraper()
         {         
+
             return View(WebScraperPath);
         }
 

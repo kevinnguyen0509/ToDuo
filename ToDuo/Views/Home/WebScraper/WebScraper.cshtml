@@ -9,8 +9,8 @@
     <div class="row col-md-12">
 
         <div class="col-md-5">
-            <label class="label label-success">Website address:</label>
-            <input type="text" id="websiteInputtxt" class="form-control" style="margin:0px !important;" placeholder="Website address" />
+            <label class="label label-success">Website Image:</label>
+            <input type="text" id="websiteImageTxt" class="form-control" style="margin:0px !important;" placeholder="Website address" />
         </div>
 
         <div class="col-md-1">
@@ -20,7 +20,7 @@
 
         <div class="col-md-5">
             <label class="label label-primary">Tags:</label>
-            <input type="text" class="form-control" placeholder="Tags, park, seattle, etc.." />
+            <input id="ScraperTags" type="text" class="form-control" placeholder="Tags, park, seattle, etc.." />
         </div>
 
         <div class="col-md-1" style="display: flex;">
@@ -37,7 +37,7 @@
                         <div class="card" cardid="0" cardImage="https://media.timeout.com/images/105556548/750/422/image.jpg" cardtitle="Title"
                              carddescription="Description" cardlocation="Location" cardwebsite="Website"
                              cardtag="Tags">
-                            <img src="https://media.timeout.com/images/105556548/750/422/image.jpg" class="BannerImages swipeImage" />
+                            <img id="ScraperImage" src="https://media.timeout.com/images/105556548/750/422/image.jpg" class="BannerImages swipeImage" />
                             <div id="SwipeTitleContainer" class="SwipeTitleContainer">
                                 <h5 id="SwipeTitle" class="noMargins">Title Goes Here</h5>
                             </div>
@@ -60,25 +60,25 @@
         <div class="col-md-6">
             <div class="col-md-12">
                 <label class="label label-info">Title</label>
-                <input type="text" class="form-control" style="margin:0px !important;" placeholder="Title" />
+                <input id="ScraperTitle" type="text" class="form-control" style="margin:0px !important;" placeholder="Title" />
             </div>
             <div class="col-md-12">
                 <label class="label label-info">Website</label>
-                <input type="text"  class="form-control" style="margin:0px !important;" placeholder="Website address" />
+                <input id="ScraperWebsite" type="text"  class="form-control" style="margin:0px !important;" placeholder="Website address" />
             </div>
 
             <div class="col-md-12">
                 <label class="label label-info">Description</label>
-                <textarea class="form-control" cols="5" rows="5" placeholder="Description"></textarea>
+                <textarea id="ScraperDescription" class="form-control" cols="5" rows="5" placeholder="Description"></textarea>
             </div>
 
             <div class="col-md-12">
                 <label class="label label-info">Location</label>
-                <input type="text" class="form-control" style="margin:0px !important;" placeholder="Location/Address" />
+                <input id="ScraperLocation" type="text" class="form-control" style="margin:0px !important;" placeholder="Location/Address" />
             </div>
 
             <div class="col-md-12">
-                <button type="button" class="btn btn-danger">Fail</button>
+                <button type="button" class="btn btn-danger" id="failedButton">Fail</button>
                 <button type="button" class="btn btn-success" id="passButton">Pass</button>
             </div>
         </div>

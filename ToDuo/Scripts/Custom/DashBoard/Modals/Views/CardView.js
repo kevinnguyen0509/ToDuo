@@ -63,6 +63,7 @@ function RenderSearchAdventureCards() {
         let categoryContent = categoryChoice.getAttribute('categoryContent');
         categoryChoice.addEventListener('click', function () {
             let LeftSearchTag = document.querySelectorAll('.LeftSearchTag');
+            
             let tagSearchValue = `<li class="tagItemContainer tagTitle DetailTagItemIcon LeftSearchTag tagAppearAnimation" tagcontent=" ${categoryContent.trim()}">
                                     ${categoryContent} <i class="fa fa-tags   SearchTagIcon"></i>
                               </li>`
