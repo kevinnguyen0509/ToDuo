@@ -229,6 +229,7 @@
     <Content Include="Views\Home\Dashboard\LeftSideBar\_RecentlyAdded.cshtml" />
     <Content Include="Views\Home\Dashboard\Modals\_MoreInfoAdventureModal.cshtml" />
     <Content Include="Views\Home\WebScraper\WebScraper.cshtml" />
+    <Content Include="Views\Home\MyProfile\MyProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,6 +16,7 @@ namespace ToDuo.Controllers
         public static string LeftSideRecentlyAddedPath = "~/Views/Home/Dashboard/LeftSideBar/_RecentlyAdded.cshtml";
         public static string RightSidePath = "~/Views/Home/Dashboard/RightSide/RightSection.cshtml";
         public static string WebScraperPath = "~/Views/Home/WebScraper/WebScraper.cshtml";
+        public static string MyProfilePath = "~/Views/Home/MyProfile/MyProfile.cshtml";
         public ActionResult Index()
         {
             //Models
@@ -51,6 +52,25 @@ namespace ToDuo.Controllers
         public ActionResult _RightSideIndexPartialView()
         {
             return PartialView(RightSidePath);
+        }
+
+        /****************My Profile********************/
+        public ActionResult MyProfile()
+        {
+            //Models
+            HttpCookie CurrentUserCookie = Request.Cookies["ToDuoUserCookie"];
+            AdventureModel adventureModel = new AdventureModel();
+
+            if (CurrentUserCookie == null)
+                return RedirectToAction("Login");
+            //Cookie Info
+            int OwnerID = Int32.Parse(CurrentUserCookie.Values["ID"]);
+
+            IndexVM IndexVM = new IndexVM
+            {
+                AdventureList = adventureModel.GetList(OwnerID)
+            };
+            return PartialView(MyProfilePath, IndexVM);
         }
 
         /****************Authentication********************/
