@@ -3,18 +3,47 @@
     ViewBag.Title = "MyProfile";
     Layout = "~/Views/Shared/_Layout.cshtml";
     <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/Dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/MyProfile/MyProfile.css" />
 }
 }
 
 <div id="BodyContent" class="sectionContainer">
 
 
-    <div id="LeftNavBar">
-        @* @Html.Partial("~/Views/Home/Dashboard/LeftSideBar/LeftSideMenu.cshtml", Model)*@
+    <div id="LeftNavBar" class="container">
+        <ul>
+            <li class="LeftIconOptionContainer activeLeftIcon"><i class="fa fa-group LeftSideOptionIcon"></i>My Friends</li>
+            <li class="LeftIconOptionContainer "><i class="fa fa-exchange LeftSideOptionIcon"></i>Liked Swipes</li>
+            <li class="LeftIconOptionContainer "><i class="fa fa-trello LeftSideOptionIcon"></i>My Boards</li>
+            <li class="LeftIconOptionContainer "><i class="fa fa-product-hunt LeftSideOptionIcon"></i>My profile</li>
+        </ul>
     </div>
 
     <div id="RightSection">
-       @* @Html.Partial("~/Views/Home/Dashboard/RightSide/RightSection.cshtml")*@
+        <div id="RightSideContentContainer" class="col-md-10">
+            <div id="RightSideContent">
+
+            </div>
+        </div>
+
+        <div id="RightSideContentSearchContainer" class="col-md-2">
+            <div id="RightSideSearchContent">
+                <div id="SearchBarHolder" class="col-md-12">
+                    <input type="text" id="RightSearchBar" class="form-control" placeholder="Search..." />
+                    <i class="fa fa-search RightSideSearchIcon"></i>
+                </div>
+
+                <div id="" class="col-md-12">
+                    <h4 class="bold rightSideHeading">Friends</h4>
+                    <ul>
+                        <li class="RightIconOptionContainer activeLeftIcon"><i class="fa fa-group LeftSideOptionIcon"></i>My Friends</li>
+                        <li class="RightIconOptionContainer "><i class="fa fa-exchange LeftSideOptionIcon"></i>Liked Swipes</li>
+                        <li class="RightIconOptionContainer "><i class="fa fa-trello LeftSideOptionIcon"></i>My Boards</li>
+                        <li class="RightIconOptionContainer "><i class="fa fa-product-hunt LeftSideOptionIcon"></i>My profile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
 

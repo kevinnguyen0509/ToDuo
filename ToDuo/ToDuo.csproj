@@ -144,6 +144,7 @@
     <Content Include="Content\Custom\Index\AddModal.css" />
     <Content Include="Content\Custom\Index\Dashboard.css" />
     <Content Include="Content\Custom\Index\LeftSearchSection.css" />
+    <Content Include="Content\Custom\MyProfile\MyProfile.css" />
     <Content Include="Content\Custom\Shared\Animations\CardAnimations.css" />
     <Content Include="Content\Custom\Shared\Animations\TagsAnimation.css" />
     <Content Include="Content\Custom\Shared\FormValidation.css" />

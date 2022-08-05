@@ -1,0 +1,73 @@
+﻿#LeftNavBar {
+    background: #FFFFFF;
+    border-radius: 5px 0px 0px 5px;
+    color: #cccbcb;
+    padding: 5px !important;
+    padding-top: 20px;
+
+}
+
+#RightSection {
+    background: #F9F9FB;
+    border-radius: 0px 5px 5px 0px;
+    
+}
+
+#BodyContent {
+    margin-top: 50px;
+    height: 700px;
+}
+
+.LeftIconOptionContainer{
+    padding: 15px 3px;
+    height: 100%;
+}
+
+.LeftSideOptionIcon {
+    margin-right: 3px;
+}
+
+.activeLeftIcon {
+    color: #FC905F;
+}
+
+#RightSideContentContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+#RightSideContent{
+    background: #FFFFFF;
+    width: 95%;
+    height: 95%;
+}
+
+#RightSideContentSearchContainer {
+    background: #FFFFFF;
+    height: 100%;
+    padding: 2% 0px;
+}
+
+#SearchBarHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#RightSearchBar {
+    font-size: 16px;
+}
+
+.RightSideSearchIcon{
+    margin-left: -20px;
+    color: #cac8c8;
+    font-size: 18px;
+}
+
+.rightSideHeading{
+    color:#DDDDDD;
+}
