@@ -53,6 +53,12 @@ namespace ToDuo.Models.Users
             return resultMessage;
         }
 
+        public List<User> GetTopTwentyUsers()
+        {
+            List<User> listOfTopTwentyUsers = GetData.GetTopTwentyUsers();
+            return listOfTopTwentyUsers;
+        }
+
         public void CreateCookie90Days(User User)
         {
             HttpCookie CurrentUserCookie = new HttpCookie("ToDuoUserCookie");

@@ -75,11 +75,11 @@ a {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #992915;
+    background: #C6A477;
     border-radius: 10px;
 }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: #b14431;
+        background: #C6A477;
     }

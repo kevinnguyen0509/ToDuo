@@ -484,6 +484,7 @@ hr {
 
 #DetailAddAdventureDescriptionTxt {
     resize:vertical;
+    height: 90px;
 }
 
 .AddTagsContainer {

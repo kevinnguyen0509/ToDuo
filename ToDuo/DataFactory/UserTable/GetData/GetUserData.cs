@@ -55,5 +55,45 @@ namespace ToDuo.DataFactory.GetData
 
             return userData;
         }
+
+
+        public List<User> GetTopTwentyUsers()
+        {
+
+            List<User> userList= new List<User>();
+
+            SqlConnection SQLConn = new SqlConnection();
+            SqlCommand SQLComm = new SqlCommand();
+            SqlDataReader SQLRec;
+
+            // Configure the ConnectionString to access the database content
+            SQLConn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ToDuoConnection"].ConnectionString;
+            SQLConn.Open();
+
+
+            /*string SQL = "SELECT * FROM dbo.GeneralLiabilityClaims";*/
+            string SQL = "[dbo].[ssp_ToDuo_GetTopTwentyUsers]";
+            SQLComm = new SqlCommand(SQL, SQLConn);
+            SQLComm.CommandType = CommandType.StoredProcedure;
+
+            SQLRec = SQLComm.ExecuteReader();
+
+            if (SQLRec.HasRows)
+            {
+                while (SQLRec.Read())
+                {
+                    userList.Add(new User
+                    {
+                        ID = SQLRec.GetInt32(SQLRec.GetOrdinal("ID")),
+                        Firstname = SQLRec.IsDBNull(SQLRec.GetOrdinal("FirstName")) ? "Anonymous" : SQLRec.GetString(SQLRec.GetOrdinal("FirstName")),
+                        LastName =  SQLRec.IsDBNull(SQLRec.GetOrdinal("LastName")) ? "" : SQLRec.GetString(SQLRec.GetOrdinal("LastName")),
+                    });
+                }
+            }
+            SQLRec.Close();
+            SQLConn.Close();
+
+            return userList;
+        }
     }
 }

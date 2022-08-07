@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ToDuo.Models.Models.TableModels;
+using ToDuo.Models.Users;
 using ToDuo.Models.ViewModels;
 
 namespace ToDuo.Controllers
@@ -59,18 +60,17 @@ namespace ToDuo.Controllers
         {
             //Models
             HttpCookie CurrentUserCookie = Request.Cookies["ToDuoUserCookie"];
-            AdventureModel adventureModel = new AdventureModel();
+            User user = new User();
 
             if (CurrentUserCookie == null)
                 return RedirectToAction("Login");
-            //Cookie Info
-            int OwnerID = Int32.Parse(CurrentUserCookie.Values["ID"]);
+            
 
-            IndexVM IndexVM = new IndexVM
+            MyProfileVM MyProfileVM = new MyProfileVM()
             {
-                AdventureList = adventureModel.GetList(OwnerID)
+                TopTwentyUsers = user.GetTopTwentyUsers()
             };
-            return PartialView(MyProfilePath, IndexVM);
+            return PartialView(MyProfilePath, MyProfileVM);
         }
 
         /****************Authentication********************/
