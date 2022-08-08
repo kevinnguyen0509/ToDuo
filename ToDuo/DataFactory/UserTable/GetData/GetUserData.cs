@@ -95,5 +95,48 @@ namespace ToDuo.DataFactory.GetData
 
             return userList;
         }
+
+        public List<User> GetMyInnerCircle(int UserID)
+        {
+
+            List<User> UsersInnerCircle = new List<User>();
+
+            SqlConnection SQLConn = new SqlConnection();
+            SqlCommand SQLComm = new SqlCommand();
+            SqlDataReader SQLRec;
+
+            // Configure the ConnectionString to access the database content
+            SQLConn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ToDuoConnection"].ConnectionString;
+            SQLConn.Open();
+
+
+            /*string SQL = "SELECT * FROM dbo.GeneralLiabilityClaims";*/
+            string SQL = "[dbo].[ssp_ToDuo.GetMyInnerCircle]";
+            SQLComm = new SqlCommand(SQL, SQLConn);
+            SQLComm.CommandType = CommandType.StoredProcedure;
+            SQLComm.Parameters.AddWithValue("@UserID", UserID);
+            SQLRec = SQLComm.ExecuteReader();
+
+            if (SQLRec.HasRows)
+            {
+                while (SQLRec.Read())
+                {
+                    UsersInnerCircle.Add(new User
+                    {
+                        ID =  SQLRec.GetInt32(SQLRec.GetOrdinal("ID")),
+                        Firstname = SQLRec.IsDBNull(SQLRec.GetOrdinal("FirstName")) ? "Anonymous" : SQLRec.GetString(SQLRec.GetOrdinal("FirstName")),
+                        LastName = SQLRec.IsDBNull(SQLRec.GetOrdinal("LastName")) ? "" : SQLRec.GetString(SQLRec.GetOrdinal("LastName")),
+                        FriendPosition = SQLRec.GetString(SQLRec.GetOrdinal("FriendPosition")),
+                        SortOrder = SQLRec.GetInt32(SQLRec.GetOrdinal("SortOrder")),
+
+                        
+                    });
+                }
+            }
+            SQLRec.Close();
+            SQLConn.Close();
+
+            return UsersInnerCircle;
+        }
     }
 }

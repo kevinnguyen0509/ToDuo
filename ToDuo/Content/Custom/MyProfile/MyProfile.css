@@ -172,13 +172,16 @@
     align-items: center;
 }
 
-.friendAddBtn {
-    background:  #ABD1DC;
+.friendAddBtn,
+.ModalFriendAddBtn {
+    background: #ABD1DC;
 }
-.friendAddBtn:hover,
-.friendAddBtn:visited{
-    color: #fff;
-}
+    .friendAddBtn:hover,
+    .friendAddBtn:visited,
+    .ModalFriendAddBtn:hover,
+    .ModalFriendAddBtn:visited{
+        color: #fff;
+    }
 
 .modal-title {
     font-weight: bold;

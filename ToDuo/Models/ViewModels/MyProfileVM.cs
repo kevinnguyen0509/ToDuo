@@ -9,5 +9,6 @@ namespace ToDuo.Models.ViewModels
     public class MyProfileVM
     {
         public List<User> TopTwentyUsers { get; set; }
+        public List<User> InnerCircle { get; set; }
     }
 }

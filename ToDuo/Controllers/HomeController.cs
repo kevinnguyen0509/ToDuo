@@ -64,11 +64,12 @@ namespace ToDuo.Controllers
 
             if (CurrentUserCookie == null)
                 return RedirectToAction("Login");
-            
+
 
             MyProfileVM MyProfileVM = new MyProfileVM()
             {
-                TopTwentyUsers = user.GetTopTwentyUsers()
+                TopTwentyUsers = user.GetTopTwentyUsers(),
+                InnerCircle = user.GetInnerCircle()
             };
             return PartialView(MyProfilePath, MyProfileVM);
         }

@@ -16,9 +16,24 @@ namespace ToDuo.Models.Users
         public int ID { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Image { get; set; }
+        public string FriendPosition { get; set; }
+        public int SortOrder { get; set; }
         public string PartnerID { get; set; }
         public string Firstname { get; set; }
         public string LastName { get; set; }
+        public string FriendOne { get; set; }
+        public string FriendTwo { get; set; }
+        public string FriendThree { get; set; }
+        public string FriendFour { get; set; }
+        public string FriendFive { get; set; }
+        public string FriendSix { get; set; }
+        public string FriendSeven { get; set; }
+        public string FriendEight { get; set; }
+        public string FriendNine { get; set; }
+        public string FriendTen { get; set; }
+
+
 
         public User GetUserIfExists(string Email)
         {
@@ -59,6 +74,15 @@ namespace ToDuo.Models.Users
             return listOfTopTwentyUsers;
         }
 
+        public List<User> GetInnerCircle()
+        {
+            User user = GetLoggedInUserCookie();
+            int UserID = user.ID;
+
+            List<User> CompletCircleList = CreateInnerCircleList(UserID);
+            return CompletCircleList;
+        }
+
         public void CreateCookie90Days(User User)
         {
             HttpCookie CurrentUserCookie = new HttpCookie("ToDuoUserCookie");
@@ -66,6 +90,42 @@ namespace ToDuo.Models.Users
             CurrentUserCookie.Values.Add("PartnerID", User.PartnerID == null? "0" : User.PartnerID);
             CurrentUserCookie.Expires = DateTime.Now.AddDays(90);
             HttpContext.Current.Response.Cookies.Add(CurrentUserCookie);
+        }
+
+        private List<User> CreateInnerCircleList(int UserID)
+        {
+            List<User> InnerCircleList = GetData.GetMyInnerCircle(UserID);
+            List<User> CompletCircleList = new List<User>();
+            User[] tempInnerCircleArray = new User[11];
+
+
+            //Add innercirclefriends from Database to proper temp array slots
+            for (int i = 0; i < InnerCircleList.Count; i++)
+            {
+                tempInnerCircleArray[InnerCircleList[i].SortOrder] = InnerCircleList[i];
+            }
+
+            //Add completed list into the array
+            for (int i = 0; i < tempInnerCircleArray.Length; i++)
+            {
+                if(tempInnerCircleArray[i] == null)
+                {
+                    CompletCircleList.Add(new User
+                    {
+                        ID = -1,
+                        Firstname = "Slot",
+                        LastName = "Open",
+                        SortOrder = i
+
+                    });
+                }
+                else
+                {
+                    CompletCircleList.Add(tempInnerCircleArray[i]);
+                }       
+            }
+            return CompletCircleList;
+
         }
     }
 }
