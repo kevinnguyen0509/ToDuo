@@ -64,5 +64,67 @@ namespace ToDuo.DataFactory.SaveData
 
             return resultMessage;
         }
+
+        public ResultMessage UpdateFriendSlots(string[] FriendsArray, int UserID)
+        {
+
+            ResultMessage resultMessage = new ResultMessage();
+
+            SqlConnection SQLConn = new SqlConnection();
+            SqlCommand SQLComm = new SqlCommand();
+            SqlDataReader SQLRec;
+
+            // Configure the ConnectionString to access the database content
+            SQLConn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ToDuoConnection"].ConnectionString;
+            SQLConn.Open();
+
+
+            /*string SQL = "SELECT * FROM dbo.GeneralLiabilityClaims";*/
+            string SQL = "[dbo].[ssp_ToDuo_UpdateFriendSlots]";
+            SQLComm = new SqlCommand(SQL, SQLConn);
+            SQLComm.CommandType = CommandType.StoredProcedure;
+            SQLComm.Parameters.AddWithValue("@UserID", UserID);
+            SQLComm.Parameters.AddWithValue("@PartnerID", FriendsArray[0]);
+            SQLComm.Parameters.AddWithValue("@FriendOne", FriendsArray[1]);
+            SQLComm.Parameters.AddWithValue("@FriendTwo", FriendsArray[2]);
+            SQLComm.Parameters.AddWithValue("@FriendThree", FriendsArray[3]);
+            SQLComm.Parameters.AddWithValue("@FriendFour", FriendsArray[4]);
+            SQLComm.Parameters.AddWithValue("@FriendFive", FriendsArray[5]);
+            SQLComm.Parameters.AddWithValue("@FriendSix", FriendsArray[6]);
+            SQLComm.Parameters.AddWithValue("@FriendSeven", FriendsArray[7]);
+            SQLComm.Parameters.AddWithValue("@FriendEight", FriendsArray[8]);
+            SQLComm.Parameters.AddWithValue("@FriendNine", FriendsArray[9]);
+            SQLComm.Parameters.AddWithValue("@FriendTen", FriendsArray[10]);
+
+            try
+            {
+                SQLRec = SQLComm.ExecuteReader();
+                if (SQLRec.Read())
+                {
+                    resultMessage.ReturnMessage = SQLRec.GetString(SQLRec.GetOrdinal("ReturnMessage"));
+                    resultMessage.ReturnStatus = SQLRec.GetString(SQLRec.GetOrdinal("ReturnStatus"));
+                    resultMessage.NewId = SQLRec.GetInt32(SQLRec.GetOrdinal("NewId"));
+                }
+                else
+                {
+                    resultMessage.ReturnMessage = SQLRec.GetString(SQLRec.GetOrdinal("ReturnMessage"));
+                    resultMessage.ReturnStatus = SQLRec.GetString(SQLRec.GetOrdinal("ReturnStatus"));
+                    resultMessage.NewId = SQLRec.GetInt32(SQLRec.GetOrdinal("NewId"));
+                }
+                SQLRec.Close();
+            }
+            catch (Exception e)
+            {
+                resultMessage.ReturnMessage = e.Message;
+                resultMessage.ReturnStatus = "Failed";
+                resultMessage.NewId = -1;
+            }
+            finally
+            {
+                SQLConn.Close();
+            }
+
+            return resultMessage;
+        }
     }
 }

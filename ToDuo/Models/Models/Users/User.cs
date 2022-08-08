@@ -83,6 +83,16 @@ namespace ToDuo.Models.Users
             return CompletCircleList;
         }
 
+        public ResultMessage UpdateFriendSlots(string[] FriendsArray)
+        {
+            User user = GetLoggedInUserCookie();
+            int UserID = user.ID;
+
+            ResultMessage resultMessage = SaveUserData.UpdateFriendSlots(FriendsArray, UserID);
+            return resultMessage;
+
+        }
+
         public void CreateCookie90Days(User User)
         {
             HttpCookie CurrentUserCookie = new HttpCookie("ToDuoUserCookie");

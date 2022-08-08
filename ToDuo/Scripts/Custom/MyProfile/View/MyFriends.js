@@ -1,4 +1,8 @@
-﻿
+﻿import { FriendsModel } from '../Model/FriendsModel.js'
+
+let baseUrl = document.getElementById('HiddenCurrentUrl').value;
+let FriendsModelOption = new FriendsModel();
+
 let AddSomeoneSlotClicked;
 let friendidclicked;
 
@@ -31,12 +35,11 @@ function attachModalListeners() {
             //Create Array with original slots filled from DB
             for (let i = 0; i < friendAddBtns.length; i++) {
                 if (friendAddBtns[i].getAttribute('friendid') == -1) {
-                    NewFriendArray.push(null);
+                    NewFriendArray.push("-1");
                 }
                 else {//Add Friend ID
                     NewFriendArray.push(friendAddBtns[i].getAttribute('friendid'))
-                }
-                
+                }          
             }
 
             //Add friend to the slot that was clicked
@@ -45,11 +48,16 @@ function attachModalListeners() {
                     NewFriendArray[i] = friendidclicked;
                 }
             }
-            console.log(NewFriendArray)
-
-            
-
-
+            let AddToInnerCircle = FriendsModelOption.AddFriendToSlot(NewFriendArray);
+            AddToInnerCircle.then(function (Result) {
+                if (Result.ReturnStatus == 'Success') {
+                    $('#MiddleSectionContent').load(baseUrl + 'Home/MiddleSectionContainer')
+                }
+                else {
+                    alert(Result.ReturnMessage);
+                }
+               
+            })
         });       
     }
 

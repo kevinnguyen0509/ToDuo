@@ -187,6 +187,7 @@
     <Content Include="Scripts\Custom\DashBoard\Modals\Model\CardModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Views\AddAdventureModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Views\CardView.js" />
+    <Content Include="Scripts\Custom\MyProfile\Model\FriendsModel.js" />
     <Content Include="Scripts\Custom\MyProfile\View\MyFriends.js" />
     <Content Include="Scripts\Custom\Validation\FormValidation.js" />
     <Content Include="Scripts\Custom\WebScraper\Model\WebScrapeModel.js" />
@@ -236,10 +237,10 @@
     <Content Include="Views\Home\MyProfile\Middle\Card.cshtml" />
     <Content Include="Views\Home\MyProfile\Modals\SearchFriendModal.cshtml" />
     <Content Include="Views\Home\MyProfile\Middle\SearchModalFriendCard.cshtml" />
+    <Content Include="Views\Home\MyProfile\Middle\MiddleSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\Custom\MyProfile\Model\" />
     <Folder Include="Views\Home\MyProfile\Left\" />
     <Folder Include="Views\Home\MyProfile\Right\" />
     <Folder Include="Views\Json\" />

@@ -18,6 +18,7 @@ namespace ToDuo.Controllers
         public static string RightSidePath = "~/Views/Home/Dashboard/RightSide/RightSection.cshtml";
         public static string WebScraperPath = "~/Views/Home/WebScraper/WebScraper.cshtml";
         public static string MyProfilePath = "~/Views/Home/MyProfile/MyProfile.cshtml";
+        public static string MyProfileMiddleSectionPath = "~/Views/Home/MyProfile/Middle/MiddleSection.cshtml";
         public ActionResult Index()
         {
             //Models
@@ -72,6 +73,24 @@ namespace ToDuo.Controllers
                 InnerCircle = user.GetInnerCircle()
             };
             return PartialView(MyProfilePath, MyProfileVM);
+        }
+
+        public ActionResult MiddleSectionContainer()
+        {
+            //Models
+            HttpCookie CurrentUserCookie = Request.Cookies["ToDuoUserCookie"];
+            User user = new User();
+
+            if (CurrentUserCookie == null)
+                return RedirectToAction("Login");
+
+
+            MyProfileVM MyProfileVM = new MyProfileVM()
+            {
+                TopTwentyUsers = user.GetTopTwentyUsers(),
+                InnerCircle = user.GetInnerCircle()
+            };
+            return PartialView(MyProfileMiddleSectionPath, MyProfileVM);
         }
 
         /****************Authentication********************/

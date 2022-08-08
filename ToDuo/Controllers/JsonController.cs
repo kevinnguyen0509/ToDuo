@@ -82,9 +82,17 @@ namespace ToDuo.Controllers
             AdventureModel adventureModel = new AdventureModel();
             DataValidator dataValidator = new DataValidator();
             TagArray = dataValidator.FormatTagArray(TagArray);
+
             List<AdventureModel> AdventureFilterResults = adventureModel.GetFilteredListWithLocation(TagArray, Location);
 
             return Json(AdventureFilterResults, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult AddFriendToSlot(string[] FriendsArray)
+        {
+            User user = new User();
+            ResultMessage resultMessage = user.UpdateFriendSlots(FriendsArray);
+            return Json(resultMessage, JsonRequestBehavior.AllowGet);
         }
 
         /***************Web Scraper******************/

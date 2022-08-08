@@ -25,13 +25,9 @@
         <div id="RightSideContentContainer" class="col-md-10">
             <div id="RightSideContent" class="row">
                 <div class="col-md-12"><h4 id="MiddleLabel">Friends</h4></div>
-                <div class="col-md-12" id="MiddelSectionContent">
+                <div class="col-md-12" id="MiddleSectionContent">
                     <!--FriendCards-->
-
-                    @for (int i = 0; i < 11; i++)
-                    {
-                        @Html.Partial("~/Views/Home/MyProfile/Middle/Card.cshtml", @Model.InnerCircle[i])
-                    }
+                    @Html.Partial("~/Views/Home/MyProfile/Middle/MiddleSection.cshtml", Model)
 
 
                 </div>
