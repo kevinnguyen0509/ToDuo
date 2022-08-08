@@ -3,9 +3,19 @@
     animation: SwipeRightAnimation .5s forwards;
 }
 
+.SwipeRightFeedbackAnimation {
+    visibility: visible;
+    animation: SwipeRightFeedbackAnimation .6s forwards;
+}
+
 .SwipeLeftAnimation {
     visibility: visible;
     animation: SwipeLeftAnimation .5s forwards;
+}
+
+.SwipeLeftFeedbackAnimation {
+    visibility: visible;
+    animation: SwipeLeftFeedbackAnimation .6s forwards;
 }
 
 .FrontCard {
@@ -27,7 +37,7 @@
     }
 }
 
-@keyframes SwipeRightAnimation {
+@keyframes SwipeRightAnimation  {
     0% {
         transform: rotate(0deg);
         right: 0px;
@@ -43,6 +53,22 @@
     }
 }
 
+@keyframes SwipeRightFeedbackAnimation {
+    0% {
+        top: 75px;
+        right: 0px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        right: -150px;
+        opacity: 0;
+    }
+}
+
+
+
 @keyframes SwipeLeftAnimation {
     0% {
         transform: rotate(0deg);
@@ -55,6 +81,20 @@
         transform: rotate(-20deg);
         top: 50px;
         right: 150px;
+        opacity: 0;
+    }
+}
+
+@keyframes SwipeLeftFeedbackAnimation {
+    0% {
+        top: 75px;
+        left: 0px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: -150px;
         opacity: 0;
     }
 }

@@ -1,5 +1,6 @@
 ﻿@{ 
     <link rel="stylesheet" type="text/css" href="~/Content/Custom/Shared/Animations/CardAnimations.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/RightSection.css" />
 }
 
 <div id="RightSectionBanner">
@@ -46,6 +47,16 @@
                 <div id="cardInfoHolder">
                     <!--Comes from CardView.js-->
                 </div>
+                <div id="SwipeFeedback">
+                    <div id="RightSwipeFeedbackContainer" class="SwipeRightFeedbackAnimation hide">
+                        <h1 id="RightSwipeLbl">Sounds Good!</h1>
+                    </div>
+
+                    <div id="LeftSwipeFeedbackContainer" class="SwipeLeftFeedbackAnimation hide">
+                        <h1 id="LeftSwipeLbl">Nope!</h1>
+                    </div>
+                </div>
+
                 <div id="btnContainer">
                     <div class="SmallCircleButton redo" id="RedoSwipe"><i class="fa fa-undo SmallCircleIcon"></i></div>
                     <div class="LargeCircleButton cancelBtn" id="LeftSwipe"><i class="fa fa-ban LargeCircleIcon"></i></div>

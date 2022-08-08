@@ -47,7 +47,7 @@ function RenderShuffledAdventureCards(){
        LeftClickAndSwipeListeners(ShuffledAdventures);
        UndoSwipeActionListener(ShuffledAdventures);
        MoreInfoActionSwipeListener(ShuffledAdventures)
-       console.log(ShuffledAdventures);
+       //console.log(ShuffledAdventures);
        
         
     });
@@ -234,7 +234,11 @@ function RightClickAndSwipeListeners(Cardlist) {
     //Listens to Add Button Click
     RightSwipe.addEventListener('click', function () {
         RightSwipeAction(Cardlist);
-        setTimeout(function () {  }, 500);
+        let RightSwipeFeedbackContainer = document.getElementById('RightSwipeFeedbackContainer')
+        RightSwipeFeedbackContainer.classList.remove('hide')
+        setTimeout(function () {
+            RightSwipeFeedbackContainer.classList.add('hide');
+        }, 600);
     });
 
     //Listens to Right Arrow Swipe
@@ -248,6 +252,11 @@ function RightClickAndSwipeListeners(Cardlist) {
 function LeftClickAndSwipeListeners(Cardlist) {
     LeftSwipe.addEventListener('click', function () {
         LeftSwipeAction(Cardlist);
+        let LeftSwipeFeedbackContainer = document.getElementById('LeftSwipeFeedbackContainer');
+        LeftSwipeFeedbackContainer.classList.remove('hide')
+        setTimeout(function () {
+            LeftSwipeFeedbackContainer.classList.add('hide');
+        }, 600);
     });
 
     //Listens to Right Arrow Swipe

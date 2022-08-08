@@ -84,15 +84,15 @@ function CreateCard(Card) {
     let HtmlCardString = `<div class="card" cardid="${CardModel.ID}" cardImage="${CardModel.ImageURL}" cardtitle="${CardModel.Title}" 
                                             carddescription="${CardModel.Description}" cardlocation="${CardModel.Location}" cardwebsite="${CardModel.WebsiteUrl}"
                                             cardtag="${CardModel.Tags}">
-                        <img src="${Card.ImageURL}" class="BannerImages swipeImage" />
-                        <div id="SwipeTitleContainer" class="SwipeTitleContainer">
-                            <h5 id="SwipeTitle" class="noMargins">${CardModel.Title}</h5>
-                        </div>
+                            <img src="${Card.ImageURL}" class="BannerImages swipeImage" />
+                            <div id="SwipeTitleContainer" class="SwipeTitleContainer">
+                                <h5 id="SwipeTitle" class="noMargins">${CardModel.Title}</h5>
+                            </div>
 
-                        <div id="SwipeDetailsContainer" class="SwipeDetailsContainer">
-                            <i class="fa fa-map-marker SwipeIcons"> ${CardModel.Location}</i>
-                        </div>
-                    </div>`
+                            <div id="SwipeDetailsContainer" class="SwipeDetailsContainer">
+                                <i class="fa fa-map-marker SwipeIcons"> ${CardModel.Location}</i>
+                            </div>
+                        </div>`
 
     return HtmlCardString;
 }
