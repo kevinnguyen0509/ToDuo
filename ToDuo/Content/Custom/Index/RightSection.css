@@ -39,3 +39,70 @@
     text-align: center;
     transform: rotate(-40deg)
 }
+
+#MatchBannerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 900;
+    padding: 10px 0px;
+}
+#MatchTitleContainer {
+    margin-bottom: 15px;
+}
+#MatchContentContainer{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#MatchAdventureContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+.AdventureTitleLbl{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#MatchAdventureLblContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#MatchClosebtn{
+    margin-top: 10px;
+}
+.MatchPictureContainer {
+    border: 4px solid #fff;
+}
+
+.MatchTitle{
+    text-align: center;
+}
+#MatchFriendContainer {
+    display: flex;
+    flex-wrap:wrap;
+    max-width: 200px;
+}
+
+.MatchFriendImageContainer{
+    display: flex;
+    
+    width: 50px;
+    height: 50px;
+}
+
+.MatchFriendsNameLbl {
+    margin-left: 10px;
+}

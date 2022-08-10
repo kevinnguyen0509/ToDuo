@@ -28,6 +28,11 @@ let EnterButton = 13
 
 //Main Method that calls everything
 $(document).ready(function () {
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
     RenderShuffledAdventureCards();
     RenderSearchAdventureCards();
 
@@ -250,6 +255,7 @@ function RightClickAndSwipeListeners(Cardlist) {
 }
 
 function GetInnerCircleAdventureMatches() {
+
     let AdventureID = document.querySelector('.FrontCard').getAttribute('cardid');
     AdventureModelOptions.GetInnerCircleAdventureMatches(AdventureID).then(function (UserMatchAdventuresModel) {
         if (UserMatchAdventuresModel.length > 0) {
