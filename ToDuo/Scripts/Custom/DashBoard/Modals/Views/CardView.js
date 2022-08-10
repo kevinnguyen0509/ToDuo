@@ -249,9 +249,21 @@ function RightClickAndSwipeListeners(Cardlist) {
     });
 }
 
+function GetInnerCircleAdventureMatches() {
+    let AdventureID = document.querySelector('.FrontCard').getAttribute('cardid');
+    AdventureModelOptions.GetInnerCircleAdventureMatches(AdventureID).then(function (UserMatchAdventuresModel) {
+        if (UserMatchAdventuresModel.length > 0) {
+            console.log(UserMatchAdventuresModel);
+        }
+
+    });
+}
+
 function LeftClickAndSwipeListeners(Cardlist) {
     LeftSwipe.addEventListener('click', function () {
-        LeftSwipeAction(Cardlist);
+        GetInnerCircleAdventureMatches();
+
+        LeftSwipeAction(Cardlist);      
         let LeftSwipeFeedbackContainer = document.getElementById('LeftSwipeFeedbackContainer');
         LeftSwipeFeedbackContainer.classList.remove('hide')
         setTimeout(function () {
@@ -454,7 +466,7 @@ function LeftSwipeAction(Cardlist) {
 }
 
 function SwitchToNextCard() {
-    console.log('switching')
+    //console.log('switching')
     let CardList = document.querySelectorAll('.card');
     CardModelOptions.LeftSwipeAnimation(CardList);
 
@@ -506,3 +518,4 @@ function DealOutCards(CardDeckLimit, CardDeckList) {
     CardModelOptions.attachFrontAndBackCards(CardList);
     
 }
+

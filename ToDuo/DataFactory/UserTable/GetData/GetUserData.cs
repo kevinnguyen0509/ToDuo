@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using ToDuo.Models.Models.Users;
 using ToDuo.Models.Users;
 
 namespace ToDuo.DataFactory.GetData
@@ -130,6 +131,55 @@ namespace ToDuo.DataFactory.GetData
                         SortOrder = SQLRec.GetInt32(SQLRec.GetOrdinal("SortOrder")),
 
                         
+                    });
+                }
+            }
+            SQLRec.Close();
+            SQLConn.Close();
+
+            return UsersInnerCircle;
+        }
+
+        /// <summary>
+        /// This will get all users that match on the right swipe that are friends
+        /// </summary>
+        /// <param name="UserID"></param>
+        /// <returns>List of matches</returns>
+        public List<UserMatchAdventures> GetInnerCircleMatches(int UserID, int AdventureID)
+        {
+            
+            List<UserMatchAdventures> UsersInnerCircle = new List<UserMatchAdventures>();
+            User user = new User();
+            SqlConnection SQLConn = new SqlConnection();
+            SqlCommand SQLComm = new SqlCommand();
+            SqlDataReader SQLRec;
+
+            // Configure the ConnectionString to access the database content
+            SQLConn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ToDuoConnection"].ConnectionString;
+            SQLConn.Open();
+
+
+            /*string SQL = "SELECT * FROM dbo.GeneralLiabilityClaims";*/
+            string SQL = "[dbo].[ssp_ToDuo_CheckInnerCirlceForMatches]";
+            SQLComm = new SqlCommand(SQL, SQLConn);
+            SQLComm.CommandType = CommandType.StoredProcedure;
+            SQLComm.Parameters.AddWithValue("@UserID", UserID);
+            SQLComm.Parameters.AddWithValue("@AdventureID", AdventureID);
+            SQLRec = SQLComm.ExecuteReader();
+
+            if (SQLRec.HasRows)
+            {
+                while (SQLRec.Read())
+                {
+                    UsersInnerCircle.Add(new UserMatchAdventures
+                    {
+                        ID = SQLRec.GetInt32(SQLRec.GetOrdinal("ID")),
+                        Firstname = SQLRec.IsDBNull(SQLRec.GetOrdinal("FirstName")) ? "Anonymous" : SQLRec.GetString(SQLRec.GetOrdinal("FirstName")),
+                        LastName = SQLRec.IsDBNull(SQLRec.GetOrdinal("LastName")) ? "" : SQLRec.GetString(SQLRec.GetOrdinal("LastName")),
+                        AdventureTitle = SQLRec.GetString(SQLRec.GetOrdinal("Title")),
+                        Image = SQLRec.GetString(SQLRec.GetOrdinal("ImageURL")),
+
+
                     });
                 }
             }

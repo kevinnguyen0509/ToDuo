@@ -66,10 +66,6 @@ export class CardModel {
         for (let i = 0; i < CardList.length; i++) {
             CardList[i].remove();
         }
-/*        CardList[1].classList.remove('FrontCard');
-        CardList[1].classList.add('SwipeLeftAnimation');
-        setTimeout(function () { CardList[1].remove() }, 500);
-        CardList[0].classList.add('FrontCard');*/
     }
 
 

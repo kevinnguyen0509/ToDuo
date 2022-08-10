@@ -19,8 +19,7 @@ function attachAddSomeoneListeners() {
             AddSomeoneSlotClicked = friendAddBtns[i].getAttribute('currentfriendPostion');
             console.log('Slot Position', AddSomeoneSlotClicked);
         })       
-    }
-    
+    }  
 }
 
 //This figures out which slot you are adding a friend to.

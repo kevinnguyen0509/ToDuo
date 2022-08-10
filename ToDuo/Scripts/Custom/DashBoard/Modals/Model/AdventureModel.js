@@ -87,6 +87,18 @@ export class AdventureModel {
         return result;
     }
 
+    async GetInnerCircleAdventureMatches(AdventureID) {
+        const result = await $.ajax({
+            method: 'POST',
+            url: baseUrl + 'Json/GetInnerCircleAdventureMatches',
+            data: { AdventureID },
+            success: function (UserMatchAdventuresModelList) {
+                return UserMatchAdventuresModelList;
+            }
+        });
+        return result;
+    }
+
     async GetAdventures() {
         const result = await $.ajax({
             method: 'POST',

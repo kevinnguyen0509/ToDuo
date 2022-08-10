@@ -84,17 +84,17 @@ namespace ToDuo.DataFactory.SaveData
             SQLComm = new SqlCommand(SQL, SQLConn);
             SQLComm.CommandType = CommandType.StoredProcedure;
             SQLComm.Parameters.AddWithValue("@UserID", UserID);
-            SQLComm.Parameters.AddWithValue("@PartnerID", FriendsArray[0]);
-            SQLComm.Parameters.AddWithValue("@FriendOne", FriendsArray[1]);
-            SQLComm.Parameters.AddWithValue("@FriendTwo", FriendsArray[2]);
-            SQLComm.Parameters.AddWithValue("@FriendThree", FriendsArray[3]);
-            SQLComm.Parameters.AddWithValue("@FriendFour", FriendsArray[4]);
-            SQLComm.Parameters.AddWithValue("@FriendFive", FriendsArray[5]);
-            SQLComm.Parameters.AddWithValue("@FriendSix", FriendsArray[6]);
-            SQLComm.Parameters.AddWithValue("@FriendSeven", FriendsArray[7]);
-            SQLComm.Parameters.AddWithValue("@FriendEight", FriendsArray[8]);
-            SQLComm.Parameters.AddWithValue("@FriendNine", FriendsArray[9]);
-            SQLComm.Parameters.AddWithValue("@FriendTen", FriendsArray[10]);
+            SQLComm.Parameters.AddWithValue("@PartnerID", FriendsArray[0] == "-1" ? FriendsArray[0] = null : FriendsArray[0]);
+            SQLComm.Parameters.AddWithValue("@FriendOne", FriendsArray[1] == "-1" ? FriendsArray[1] = null : FriendsArray[1]);
+            SQLComm.Parameters.AddWithValue("@FriendTwo", FriendsArray[2] == "-1" ? FriendsArray[2] = null : FriendsArray[2]);
+            SQLComm.Parameters.AddWithValue("@FriendThree", FriendsArray[3] == "-1" ? FriendsArray[3] = null : FriendsArray[3]);
+            SQLComm.Parameters.AddWithValue("@FriendFour", FriendsArray[4] == "-1" ? FriendsArray[4] = null : FriendsArray[4]);
+            SQLComm.Parameters.AddWithValue("@FriendFive", FriendsArray[5] == "-1" ? FriendsArray[5] = null : FriendsArray[5]);
+            SQLComm.Parameters.AddWithValue("@FriendSix", FriendsArray[6] == "-1" ? FriendsArray[6] = null : FriendsArray[6]);
+            SQLComm.Parameters.AddWithValue("@FriendSeven", FriendsArray[7] == "-1" ? FriendsArray[7] = null : FriendsArray[7]);
+            SQLComm.Parameters.AddWithValue("@FriendEight", FriendsArray[8] == "-1" ? FriendsArray[8] = null : FriendsArray[8]);
+            SQLComm.Parameters.AddWithValue("@FriendNine", FriendsArray[9] == "-1" ? FriendsArray[9] = null : FriendsArray[9]);
+            SQLComm.Parameters.AddWithValue("@FriendTen", FriendsArray[10] == "-1" ? FriendsArray[0] = null : FriendsArray[10]);
 
             try
             {

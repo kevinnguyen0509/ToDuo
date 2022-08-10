@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using ToDuo.Models.BaseClasses;
 using ToDuo.Models.Models.TableModels;
+using ToDuo.Models.Models.Users;
 using ToDuo.Models.Users;
 using ToDuo.Models.Util;
 
@@ -95,12 +96,19 @@ namespace ToDuo.Controllers
             return Json(resultMessage, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetInnerCircleAdventureMatches(int AdventureID)
+        {
+            UserMatchAdventures matchAdventures = new UserMatchAdventures();
+            List <UserMatchAdventures> InnerCircleMatches = matchAdventures.GetInnerCircleAdventureMatches(AdventureID);
+            return Json(InnerCircleMatches, JsonRequestBehavior.AllowGet);
+        }
+
         /***************Web Scraper******************/
 
 
-/*        private async Task<JsonResult> GetYelpPage(string WebsiteAddress)
-        {
+        /*        private async Task<JsonResult> GetYelpPage(string WebsiteAddress)
+                {
 
-        }*/
+                }*/
     }
 }
