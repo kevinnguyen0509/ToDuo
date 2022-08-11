@@ -20,7 +20,9 @@
     padding: 0px 10px;
 }
 
-
+.categoryChoice{
+    margin: 2px !important;
+}
 
 
 #LeftLocationIcon, #LeftSearchIcon {

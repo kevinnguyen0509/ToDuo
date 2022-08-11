@@ -1,5 +1,6 @@
 ﻿@{ 
     <link rel="stylesheet" type="text/css" href="~/Content/Custom/Shared/Animations/CardAnimations.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Shared/Animations/MatchAdventureAnimation.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/RightSection.css" />
 }
 
@@ -43,70 +44,28 @@
 
     <div id="RightSectionBottomContainer">
 
-        <div id="MatchBannerContainer">
-            <div id="MatchTitleContainer" class="text-center">
+        <div id="MatchBannerContainer" class="hide">
+            <div id="MatchTitleContainer" class="text-center SlideInFromAbove ">
                 <h3 class="noMargins">What A Great Idea!</h3>
-                <h5 class="noMargins">(Your friends think so too!)</h5>
+                <h5 class="noMargins">(Your friends Had The Same Idea!)</h5>
             </div>
-            <div id="MatchContentContainer">
+            <div id="MatchContentContainer ">
                 <div id="MatchAdventureContainer">
-                    <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer">
-                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/AUShduE0AnOH5Rs_gOVAfA/o.jpg" class="BannerImages ProfilePicture" />
+                    <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer RollInLeft" id="MatchPictureContainer">
+                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/AUShduE0AnOH5Rs_gOVAfA/o.jpg" id="MatchAdventurePicture" class="BannerImages ProfilePicture" />
                     </div>
-                    <div id="MatchFriendContainer">
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
-
-                        <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="Kevin Nguyen">
-                            <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
-                        </div>
+                    <div id="MatchFriendContainer" class="RollInRight">
+                        <!--Comes from MatchAdventureModel.js-->
 
                     </div>
 
 
                 </div>
 
-                <div id="MatchAdventureLblContainer">
+                <div id="MatchAdventureLblContainer" >
                     <h3 class="noMargins MatchTitle" id="MatchTitleLbl">KING Mini Golf Park</h3>
-                    <h5 class="noMargins MatchTitle">(Added To your matches!)</h5>
-                    <button type="button" class="btn btn-info" id="MatchClosebtn">Close</button>
+                    <h5 class="noMargins MatchTitle delayFadeIn">(Added To Your Matches!)</h5>
+                    <button type="button" class="btn btn-info " id="MatchClosebtn">Close</button>
 
                 </div>
             </div>

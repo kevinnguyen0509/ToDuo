@@ -1,5 +1,6 @@
 ﻿import { AdventureModel } from '../Model/AdventureModel.js'
 import { CardModel } from '../Model/CardModel.js'
+import { MatchedAdventureModel } from '../Model/MatchedAdventureModel.js'
 
 let baseUrl = document.getElementById('HiddenCurrentUrl').value;
 
@@ -11,6 +12,7 @@ const MiliSecondsToWait = 1000
 //Classes
 let AdventureModelOptions = new AdventureModel();
 let CardModelOptions = new CardModel();
+let MatchedAdventureModelOptions = new MatchedAdventureModel();
 
 //Elements
 let cardInfoHolder = document.getElementById('cardInfoHolder')
@@ -35,11 +37,21 @@ $(document).ready(function () {
 
     RenderShuffledAdventureCards();
     RenderSearchAdventureCards();
+    closeMatchModel();
 
 });
 
 
 /*********************Functions*******************************/
+
+function closeMatchModel() {
+    document.getElementById('MatchClosebtn').addEventListener('click', function () {
+        let MatchBannerContainer = document.getElementById('MatchBannerContainer');
+        MatchBannerContainer.classList.add('hide');
+    });
+
+}
+
 function RenderShuffledAdventureCards(){
    AdventureModelOptions.GetShuffledAdventures().then(function (ShuffledAdventures) {
 
@@ -259,6 +271,7 @@ function GetInnerCircleAdventureMatches() {
     let AdventureID = document.querySelector('.FrontCard').getAttribute('cardid');
     AdventureModelOptions.GetInnerCircleAdventureMatches(AdventureID).then(function (UserMatchAdventuresModel) {
         if (UserMatchAdventuresModel.length > 0) {
+            MatchedAdventureModelOptions.ShowMatchedAdventure(UserMatchAdventuresModel);
             console.log(UserMatchAdventuresModel);
         }
 
