@@ -31,9 +31,10 @@ function AttachMatchedSwipeListener() {
 //Listeners
 function MatchSwipeListenerAction() {
     //Change the MiddleSectionContent to Show All User's Liked Swipes
-
+    
     $('#MiddleSectionContent').load(baseUrl + 'Home/MyLikedSwipes', null, function () {
         GetUsersRightSwipeAdventures();
+        document.getElementById('MiddleLabel').textContent = "My Match Swipes"
     });
 
 }
