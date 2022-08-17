@@ -11,14 +11,34 @@
     #992915 - brown red
     #b14431 - light brown red
 */
+.modal-dialog {
+    width: 700px !important;
+}
 
+#ModalDetailDragAndDropImageContainer{
+    height: 400px !important;
+}
+#infopostlbl{
+    color: #FFFFFF !important;
+}
+
+.ProfilePictureContainer{
+    width: 50px !important;
+    height: 50px !important;
+}
+.MatchUserProfiePicture {
+    border-radius: 200px !important;
+}
 #LeftNavBar {
     background: #FFFFFF;
     border-radius: 5px 0px 0px 5px;
     color: #cccbcb;
     padding: 5px !important;
     padding-top: 20px;
+}
 
+#LeftNavBar {
+    background: #C6A477
 }
 
 #RightSection {
@@ -36,6 +56,7 @@
 .LeftIconOptionContainer{
     padding: 15px 3px;
     height: 100%;
+    color: #FFFFFF;
 }
 
 .LeftSideOptionIcon {
@@ -212,4 +233,6 @@ span{
     color: #fff;
 }
 
-
+.LeftIconOptionContainer {
+    cursor: pointer;
+}

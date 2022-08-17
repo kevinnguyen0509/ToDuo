@@ -19,6 +19,7 @@ namespace ToDuo.Controllers
         public static string WebScraperPath = "~/Views/Home/WebScraper/WebScraper.cshtml";
         public static string MyProfilePath = "~/Views/Home/MyProfile/MyProfile.cshtml";
         public static string MyProfileMiddleSectionPath = "~/Views/Home/MyProfile/Middle/MiddleSection.cshtml";
+        public static string MyLikedSwipesPath = "~/Views/Home/MyProfile/Middle/MyLikedSwipes/MyLikedSwipes.cshtml";
         public ActionResult Index()
         {
             //Models
@@ -91,6 +92,11 @@ namespace ToDuo.Controllers
                 InnerCircle = user.GetInnerCircle()
             };
             return PartialView(MyProfileMiddleSectionPath, MyProfileVM);
+        }
+
+        public ActionResult MyLikedSwipes()
+        {
+            return PartialView(MyLikedSwipesPath);
         }
 
         /****************Authentication********************/

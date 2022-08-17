@@ -37,7 +37,7 @@ $(document).ready(function () {
 
     RenderShuffledAdventureCards();
     RenderSearchAdventureCards();
-    closeMatchModel();
+    
 
 });
 
@@ -52,7 +52,8 @@ function closeMatchModel() {
 
 }
 
-function RenderShuffledAdventureCards(){
+function RenderShuffledAdventureCards() {
+    
    AdventureModelOptions.GetShuffledAdventures().then(function (ShuffledAdventures) {
 
        //Set up Cards to swipe
@@ -65,7 +66,7 @@ function RenderShuffledAdventureCards(){
        UndoSwipeActionListener(ShuffledAdventures);
        MoreInfoActionSwipeListener(ShuffledAdventures)
        //console.log(ShuffledAdventures);
-       
+       closeMatchModel();
         
     });
 }
@@ -183,7 +184,8 @@ export function doneTypingSearch() {
             RightClickAndSwipeListeners(AdventuresDeck);
             LeftClickAndSwipeListeners(AdventuresDeck);
             UndoSwipeActionListener(AdventuresDeck);
-            MoreInfoActionSwipeListener(AdventuresDeck)
+            MoreInfoActionSwipeListener(AdventuresDeck);
+            closeMatchModel();
            
         });
         
@@ -216,7 +218,8 @@ export function doneTypingSearchWithLocation() {
             RightClickAndSwipeListeners(AdventuresDeck);
             LeftClickAndSwipeListeners(AdventuresDeck);
             UndoSwipeActionListener(AdventuresDeck);
-            MoreInfoActionSwipeListener(AdventuresDeck)
+            MoreInfoActionSwipeListener(AdventuresDeck);
+            closeMatchModel();
 
         });
 
@@ -250,6 +253,7 @@ function RightClickAndSwipeListeners(Cardlist) {
 
     //Listens to Add Button Click
     RightSwipe.addEventListener('click', function () {
+        GetInnerCircleAdventureMatches();
         RightSwipeAction(Cardlist);
         let RightSwipeFeedbackContainer = document.getElementById('RightSwipeFeedbackContainer')
         RightSwipeFeedbackContainer.classList.remove('hide')
@@ -261,6 +265,7 @@ function RightClickAndSwipeListeners(Cardlist) {
     //Listens to Right Arrow Swipe
     document.addEventListener('keyup', function (e) {
         if (e.keyCode == RightArrow) { //If Right Arrow is pressed
+            GetInnerCircleAdventureMatches();
             RightSwipeAction(Cardlist);
         }
     });
@@ -280,7 +285,7 @@ function GetInnerCircleAdventureMatches() {
 
 function LeftClickAndSwipeListeners(Cardlist) {
     LeftSwipe.addEventListener('click', function () {
-        GetInnerCircleAdventureMatches();
+        
 
         LeftSwipeAction(Cardlist);      
         let LeftSwipeFeedbackContainer = document.getElementById('LeftSwipeFeedbackContainer');

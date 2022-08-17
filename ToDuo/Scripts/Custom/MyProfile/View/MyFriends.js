@@ -17,7 +17,7 @@ function attachAddSomeoneListeners() {
     for (let i = 0; i < friendAddBtns.length; i++) {
         friendAddBtns[i].addEventListener('click', function () {
             AddSomeoneSlotClicked = friendAddBtns[i].getAttribute('currentfriendPostion');
-            console.log('Slot Position', AddSomeoneSlotClicked);
+           /* console.log('Slot Position', AddSomeoneSlotClicked);*/
         })       
     }  
 }

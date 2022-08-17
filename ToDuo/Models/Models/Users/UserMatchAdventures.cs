@@ -20,5 +20,14 @@ namespace ToDuo.Models.Models.Users
             
             return InnerCircleMatches;
         }
+
+        public List<UserMatchAdventures> GetInnerCircleAdventureUserMatches(int AdventureID)
+        {
+            GetUserData getUserData = new GetUserData();
+            User user = this.GetLoggedInUserCookie();
+            List<UserMatchAdventures> InnerCircleMatches = getUserData.GetInnerCircleAdventureUserMatches(user.ID, AdventureID);
+
+            return InnerCircleMatches;
+        }
     }
 }

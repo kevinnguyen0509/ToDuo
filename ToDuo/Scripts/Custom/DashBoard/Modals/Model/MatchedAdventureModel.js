@@ -14,6 +14,18 @@ export class MatchedAdventureModel {
         CreateMatchFriendContainer(UserMatchAdventuresModelList, MatchFriendContainer);
         MatchBannerContainer.classList.remove('hide');
     }
+    RenderMatchUsers(UserMatchAdventuresModelList, MatchFriendContainer) {
+        MatchFriendContainer.innerHTML = '';
+        
+        for (let i = 0; i < UserMatchAdventuresModelList.length; i++) {
+            let FriendCard = `<div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="${UserMatchAdventuresModelList[i].Firstname} ${UserMatchAdventuresModelList[i].LastName}">
+                                    <img src="/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture MatchUserProfiePicture" />
+                                </div>`;
+            MatchFriendContainer.insertAdjacentHTML('beforeend', FriendCard)
+        }
+
+        
+    }
 }
 
 
@@ -26,3 +38,4 @@ function CreateMatchFriendContainer(UserMatchAdventuresModelList, MatchFriendCon
         MatchFriendContainer.insertAdjacentHTML('afterbegin', FriendCard)
     }
 }
+

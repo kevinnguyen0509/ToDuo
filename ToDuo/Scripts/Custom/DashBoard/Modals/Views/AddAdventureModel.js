@@ -144,6 +144,7 @@ export function AddRecentlyAddedListener() {
         RecentlyAddedImgContainer[i].addEventListener('click', function () {
             TagsArray = [];
             
+            
             let DetailSaveAdventuresBtn = document.getElementById('DetailSaveAdventuresBtn');
             let ItemID = RecentlyAddedImgContainer[i].getAttribute('itemid');      
             let ownerid = RecentlyAddedImgContainer[i].getAttribute('ownerid');

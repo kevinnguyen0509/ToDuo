@@ -110,6 +110,8 @@ export class AdventureModel {
         return result;
     }
 
+
+
     resetAdventureForm() {
         let AddAdventureTitleTxt = document.getElementById('AddAdventureTitleTxt');
         let AddAdventureDescriptionTxt = document.getElementById('AddAdventureDescriptionTxt');

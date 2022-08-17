@@ -147,8 +147,10 @@
     <Content Include="Content\Custom\Index\Dashboard.css" />
     <Content Include="Content\Custom\Index\LeftSearchSection.css" />
     <Content Include="Content\Custom\Index\RightSection.css" />
+    <Content Include="Content\Custom\MyProfile\AdventureCard.css" />
     <Content Include="Content\Custom\MyProfile\MyProfile.css" />
     <Content Include="Content\Custom\Shared\Animations\CardAnimations.css" />
+    <Content Include="Content\Custom\Shared\Animations\MatchAdventureAnimation.css" />
     <Content Include="Content\Custom\Shared\Animations\TagsAnimation.css" />
     <Content Include="Content\Custom\Shared\FormValidation.css" />
     <Content Include="Content\Custom\Shared\Loading.css" />
@@ -187,11 +189,16 @@
     <Content Include="Scripts\Custom\DashBoard\LeftSide\Search.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Model\AdventureModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Model\CardModel.js" />
+    <Content Include="Scripts\Custom\DashBoard\Modals\Model\MatchedAdventureModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Views\AddAdventureModel.js" />
     <Content Include="Scripts\Custom\DashBoard\Modals\Views\CardView.js" />
     <Content Include="Scripts\Custom\MyProfile\Model\FriendsModel.js" />
+    <Content Include="Scripts\Custom\MyProfile\Model\MyRightSwipes.js" />
     <Content Include="Scripts\Custom\MyProfile\View\MyFriends.js" />
+    <Content Include="Scripts\Custom\MyProfile\View\MyLikedSwipes.js" />
+    <Content Include="Scripts\Custom\MyProfile\View\MyMatches.js" />
     <Content Include="Scripts\Custom\Validation\FormValidation.js" />
+    <Content Include="Scripts\Custom\Validation\StringFormatter.js" />
     <Content Include="Scripts\Custom\WebScraper\Model\WebScrapeModel.js" />
     <Content Include="Scripts\Custom\WebScraper\View\WebScraperMain.js" />
     <Content Include="Scripts\Default\bootstrap.js" />
@@ -240,6 +247,7 @@
     <Content Include="Views\Home\MyProfile\Modals\SearchFriendModal.cshtml" />
     <Content Include="Views\Home\MyProfile\Middle\SearchModalFriendCard.cshtml" />
     <Content Include="Views\Home\MyProfile\Middle\MiddleSection.cshtml" />
+    <Content Include="Views\Home\MyProfile\Middle\MyLikedSwipes\MyLikedSwipes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

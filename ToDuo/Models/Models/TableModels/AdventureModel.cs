@@ -16,6 +16,25 @@ namespace ToDuo.Models.Models.TableModels
         SaveAdventureData saveData = new SaveAdventureData();
         GetAdventureData getData = new GetAdventureData();
 
+        public List<AdventureModel> GetUsersRightSwipeAdventures()
+        {
+            User CurrentUser = new User();
+            CurrentUser = CurrentUser.GetLoggedInUserCookie();
+            int OwnerID = CurrentUser.ID;
+
+            List<AdventureModel> Adventures = getData.GetUsersRightSwipeAdventures(OwnerID);
+            return Adventures;
+        }
+
+        public List<AdventureModel> GETInnerCirlceAdventureMatches()
+        {
+            User CurrentUser = new User();
+            CurrentUser = CurrentUser.GetLoggedInUserCookie();
+            int OwnerID = CurrentUser.ID;
+
+            List<AdventureModel> Adventures = getData.GETInnerCirlceAdventureMatches(OwnerID);
+            return Adventures;
+        }
         public List<AdventureModel> GetList(int OwnerID)
         {
             

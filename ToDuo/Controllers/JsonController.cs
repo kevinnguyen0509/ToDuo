@@ -103,6 +103,28 @@ namespace ToDuo.Controllers
             return Json(InnerCircleMatches, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetInnerCircleAdventureUserMatches(int AdventureID)
+        {
+            UserMatchAdventures matchAdventures = new UserMatchAdventures();
+            List<UserMatchAdventures> InnerCircleMatches = matchAdventures.GetInnerCircleAdventureUserMatches(AdventureID);
+            return Json(InnerCircleMatches, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetUsersRightSwipeAdventures()
+        {
+            AdventureModel AdventureModel = new AdventureModel();
+            List<AdventureModel> AdventureModelSwipeList = AdventureModel.GetUsersRightSwipeAdventures();
+            return Json(AdventureModelSwipeList, JsonRequestBehavior.AllowGet);
+        }
+
+        //Gets the match Adventures
+        public JsonResult GETInnerCirlceAdventureMatches()
+        {
+            AdventureModel AdventureModel = new AdventureModel();
+            List<AdventureModel> AdventureModelSwipeList = AdventureModel.GETInnerCirlceAdventureMatches();
+            return Json(AdventureModelSwipeList, JsonRequestBehavior.AllowGet);
+        }
+
         /***************Web Scraper******************/
 
 
