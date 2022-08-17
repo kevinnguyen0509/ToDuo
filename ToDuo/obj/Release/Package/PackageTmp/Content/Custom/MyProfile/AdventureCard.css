@@ -1,0 +1,55 @@
+﻿/*
+    https://www.pinterest.com/pin/305681893460042013/
+    #7097A8 Gothic
+    #ABD1DC Aqua island
+    #d9c595 Pancho
+    #ECD59F Pancho - light
+    #C6A477 Laser
+    #F6F0F0 SmokeyWhite background
+    #eeeeee Section colors
+    #242834 - Navy
+    #992915 - brown red
+    #b14431 - light brown red
+*/
+
+.AllMyAdventureCards{
+    padding: 0px;
+    border-radius: 5px;
+    margin: 25px;
+    height: 200px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+
+
+.BannerImages {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.card-body{
+    padding: 5px;
+    color: #605e5e;
+    align-items: flex-start;
+   
+}
+
+#LikeSwipeContainer{
+    height: 700px;
+    overflow-y: auto;
+}
+.card-text {
+    margin-bottom: 3px;
+    font-weight: bolder;
+}
+.calendarIcon{
+    margin-right: 3px;
+}
+.card-text-Time {
+    display: flex;
+    color: #7097A8;
+    margin-top: 3px;
+    font-size: 10px;
+    justify-content: flex-start;
+}
+

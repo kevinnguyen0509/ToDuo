@@ -16,13 +16,20 @@ export class MatchedAdventureModel {
     }
     RenderMatchUsers(UserMatchAdventuresModelList, MatchFriendContainer) {
         MatchFriendContainer.innerHTML = '';
-        
-        for (let i = 0; i < UserMatchAdventuresModelList.length; i++) {
-            let FriendCard = `<div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="${UserMatchAdventuresModelList[i].Firstname} ${UserMatchAdventuresModelList[i].LastName}">
+        if (UserMatchAdventuresModelList.length != 0) {
+            for (let i = 0; i < UserMatchAdventuresModelList.length; i++) {
+                let FriendCard = `<div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer MatchFriendImageContainer" data-toggle="tooltip" data-placement="top" title="${UserMatchAdventuresModelList[i].Firstname} ${UserMatchAdventuresModelList[i].LastName}">
                                     <img src="/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture MatchUserProfiePicture" />
                                 </div>`;
-            MatchFriendContainer.insertAdjacentHTML('beforeend', FriendCard)
+                MatchFriendContainer.insertAdjacentHTML('beforeend', FriendCard)
+            }
+
         }
+
+        else {
+            MatchFriendContainer.insertAdjacentHTML('beforeend', '<h4>No Friends Displayed. You must of Removed them from your circle :(</h4>')
+        }
+
 
         
     }

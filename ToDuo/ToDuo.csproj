@@ -208,6 +208,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Properties\PublishProfiles\ToDuo - Web Deploy.pubxml" />
     <None Include="Scripts\Default\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Default\jquery-3.4.1.js" />
     <Content Include="Scripts\Default\jquery-3.4.1.min.js" />

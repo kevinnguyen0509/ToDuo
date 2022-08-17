@@ -1,0 +1,31 @@
+﻿@model ToDuo.Models.ViewModels.MyProfileVM
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="SearchFriendModalContainer">
+                    <input type="text" id="FriendModalSearchBar" class="form-control" placeholder="Who are we searching for? " />
+                    <i class="fa fa-search RightSideSearchIcon"></i>
+                </div>
+
+            </div>
+            <div class="modal-body">
+
+                <!--Friend Search Options-->
+                @foreach (var friend in Model.TopTwentyUsers)
+                {
+                    @Html.Partial("~/Views/Home/MyProfile/Middle/SearchModalFriendCard.cshtml", friend)
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn closeBtn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+

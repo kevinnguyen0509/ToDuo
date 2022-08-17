@@ -1,0 +1,28 @@
+﻿@model ToDuo.Models.ViewModels.IndexVM
+
+@{
+    ViewBag.Title = "Home Page";
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/Dashboard.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+}
+
+<div id="BodyContent" class="sectionContainer">
+
+
+    <div id="LeftNavBar">
+        @Html.Partial("~/Views/Home/Dashboard/LeftSideBar/LeftSideMenu.cshtml", Model)
+    </div>
+
+    <div id="RightSection">
+        @Html.Partial("~/Views/Home/Dashboard/RightSide/RightSection.cshtml")
+    </div>
+
+
+
+    @Html.Partial("~/Views/Home/Dashboard/Modals/AddAdventure.cshtml")
+    @Html.Partial("~/Views/Home/Dashboard/Modals/_DetailsAdventure.cshtml")
+    @Html.Partial("~/Views/Home/Dashboard/Modals/_MoreInfoAdventureModal.cshtml")
+
+
+</div>
+

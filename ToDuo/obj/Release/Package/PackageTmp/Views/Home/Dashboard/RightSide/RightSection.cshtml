@@ -1,0 +1,104 @@
+﻿@{ 
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Shared/Animations/CardAnimations.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Shared/Animations/MatchAdventureAnimation.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/RightSection.css" />
+}
+
+<div id="RightSectionBanner">
+    <div id="RightBannerTop" class="RightSectionFontColor"><h4>What Are We Planning Today?</h4></div>
+    <div id="RightBannerMiddle" class="RightSectionFontColor">
+        <div class="ImgHeaderContainer">
+            <img src="~/Content/Images/AppImages/RoadMap.jpg" class="BannerImages" />
+        </div>
+        <div class="ImgHeaderContainer">
+            <img src="~/Content/Images/AppImages/CountryRoad.jpg" class="BannerImages" />
+        </div>
+
+        <div class="ImgHeaderContainer">
+            <img src="~/Content/Images/AppImages/bar.jpg" class="BannerImages" />
+        </div>
+        <div class="ImgHeaderContainer">
+            <img src="~/Content/Images/AppImages/hotel.jpg" class="BannerImages" />
+        </div>
+
+        <div class="ImgHeaderContainer">
+            <img src="~/Content/Images/AppImages/FarmHouse.jpeg" class="BannerImages" />
+        </div>
+
+
+        <div class="ImgHeaderContainer">
+            <img src="~/Content/Images/AppImages/Cruise.jpg" class="BannerImages" />
+        </div>
+
+        <div class="ImgHeaderContainer">
+            <img src="~/Content/Images/AppImages/DarkSushi.jpg" class="BannerImages" />
+        </div>
+
+        <div class="ImgHeaderContainer">
+            <img src="~/Content/Images/AppImages/Glamping.jpg" class="BannerImages" />
+        </div>
+
+
+    </div>
+    <div id="RightBannerBottom" class="RightSectionFontColor"><h4 style="margin: 0px;">Use the Arrow Keys To Swipe Too!</h4></div>
+
+    <div id="RightSectionBottomContainer">
+
+        <div id="MatchBannerContainer" class="hide">
+            <div id="MatchTitleContainer" class="text-center SlideInFromAbove ">
+                <h3 class="noMargins">What A Great Idea!</h3>
+                <h5 class="noMargins">(Your friends Had The Same Idea!)</h5>
+            </div>
+            <div id="MatchContentContainer ">
+                <div id="MatchAdventureContainer">
+                    <div class="ImgHeaderContainer ProfilePictureContainer MatchPictureContainer RollInLeft" id="MatchPictureContainer">
+                        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/AUShduE0AnOH5Rs_gOVAfA/o.jpg" id="MatchAdventurePicture" class="BannerImages ProfilePicture" />
+                    </div>
+                    <div id="MatchFriendContainer" class="RollInRight">
+                        <!--Comes from MatchAdventureModel.js-->
+
+                    </div>
+
+
+                </div>
+
+                <div id="MatchAdventureLblContainer" >
+                    <h3 class="noMargins MatchTitle" id="MatchTitleLbl">KING Mini Golf Park</h3>
+                    <h5 class="noMargins MatchTitle delayFadeIn">(Added To Your Matches!)</h5>
+                    <button type="button" class="btn btn-info " id="MatchClosebtn">Close</button>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="SwipeContentPartialView">
+            <div id="CardSwipeContainer" class="CardSwipeContainer">
+                <div id="cardInfoHolder">
+                    <!--Comes from CardView.js-->
+                </div>
+                <div id="SwipeFeedback">
+                    <div id="RightSwipeFeedbackContainer" class="SwipeRightFeedbackAnimation hide">
+                        <h1 id="RightSwipeLbl">Sounds Good!</h1>
+                    </div>
+
+                    <div id="LeftSwipeFeedbackContainer" class="SwipeLeftFeedbackAnimation hide">
+                        <h1 id="LeftSwipeLbl">Nope!</h1>
+                    </div>
+                </div>
+
+                <div id="btnContainer">
+                    <div class="SmallCircleButton redo" id="RedoSwipe"><i class="fa fa-undo SmallCircleIcon"></i></div>
+                    <div class="LargeCircleButton cancelBtn" id="LeftSwipe"><i class="fa fa-ban LargeCircleIcon"></i></div>
+                    <div class="LargeCircleButton addBtn" id="RightSwipe"><i class="fa fa-heart LargeCircleIcon"></i></div>
+                    <div class="SmallCircleButton info" id="InfoButton"><i class="fa fa-info SmallCircleIcon "></i></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script type="module" src="~/Scripts/Custom/DashBoard/Modals/Views/CardView.js"></script>

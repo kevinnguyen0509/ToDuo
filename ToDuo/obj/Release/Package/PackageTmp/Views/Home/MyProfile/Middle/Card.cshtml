@@ -1,0 +1,11 @@
+﻿@model ToDuo.Models.Users.User
+<div class="col-xs-12 col-sm-6 col-md-3 cardContainer">
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top cardImage" src="~/Content/Images/AppImages/NoProfilePicture.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Firstname @Model.LastName</h5>
+            <p class="card-text"></p>
+            <a href="#" class="btn friendAddBtn" data-toggle="modal" data-target="#exampleModal" friendid="@Model.ID" currentfriendPostion="@Model.SortOrder">Add Someone!</a>
+        </div>
+    </div>
+</div>

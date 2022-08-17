@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "WebScraper";
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/Dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/WebScraper/WebScraperMain.css" />
+}
+
+<div id="BodyContent" class="sectionContainer" style="height: 800px; width: 100%; padding: 20px;">
+    <div class="row col-md-12">
+
+        <div class="col-md-5">
+            <label class="label label-success">Website Image:</label>
+            <input type="text" id="websiteImageTxt" class="form-control" style="margin:0px !important;" placeholder="Website address" />
+        </div>
+
+        <div class="col-md-1">
+            <label class="label label-primary">Pages to Loop</label>
+            <input type="text" class="form-control" placeholder="Pages" />
+        </div>
+
+        <div class="col-md-5">
+            <label class="label label-primary">Tags:</label>
+            <input id="ScraperTags" type="text" class="form-control" placeholder="Tags, park, seattle, etc.." />
+        </div>
+
+        <div class="col-md-1" style="display: flex;">
+            <button type="button" class="btn btn-success" id="WebScrapeBtn">Web Scrape</button>
+        </div>
+    </div>
+
+    <div class="row col-md-12" style=" display: flex; ">
+        <div class="col-lg-4 col-md-5">
+            <div id="SwipeContentPartialView">
+                <div id="CardSwipeContainer" class="CardSwipeContainer">
+                    <div id="cardInfoHolder">
+                        <!--Comes from CardView.js-->
+                        <div class="card" cardid="0" cardImage="https://media.timeout.com/images/105556548/750/422/image.jpg" cardtitle="Title"
+                             carddescription="Description" cardlocation="Location" cardwebsite="Website"
+                             cardtag="Tags">
+                            <img id="ScraperImage" src="https://media.timeout.com/images/105556548/750/422/image.jpg" class="BannerImages swipeImage" />
+                            <div id="SwipeTitleContainer" class="SwipeTitleContainer">
+                                <h5 id="SwipeTitle" class="noMargins">Title Goes Here</h5>
+                            </div>
+
+                            <div id="SwipeDetailsContainer" class="SwipeDetailsContainer">
+                                <i class="fa fa-map-marker SwipeIcons"> 123 seattle, WA 98050</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="btnContainer">
+                        <div class="SmallCircleButton redo" id="RedoSwipe"><i class="fa fa-undo SmallCircleIcon"></i></div>
+                        <div class="LargeCircleButton cancelBtn" id="LeftSwipe"><i class="fa fa-ban LargeCircleIcon"></i></div>
+                        <div class="LargeCircleButton addBtn" id="RightSwipe"><i class="fa fa-heart LargeCircleIcon"></i></div>
+                        <div class="SmallCircleButton info" id="InfoButton"><i class="fa fa-info SmallCircleIcon "></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <label class="label label-info">Title</label>
+                <input id="ScraperTitle" type="text" class="form-control" style="margin:0px !important;" placeholder="Title" />
+            </div>
+            <div class="col-md-12">
+                <label class="label label-info">Website</label>
+                <input id="ScraperWebsite" type="text"  class="form-control" style="margin:0px !important;" placeholder="Website address" />
+            </div>
+
+            <div class="col-md-12">
+                <label class="label label-info">Description</label>
+                <textarea id="ScraperDescription" class="form-control" cols="5" rows="5" placeholder="Description"></textarea>
+            </div>
+
+            <div class="col-md-12">
+                <label class="label label-info">Location</label>
+                <input id="ScraperLocation" type="text" class="form-control" style="margin:0px !important;" placeholder="Location/Address" />
+            </div>
+
+            <div class="col-md-12">
+                <button type="button" class="btn btn-danger" id="failedButton">Fail</button>
+                <button type="button" class="btn btn-success" id="passButton">Pass</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+<script type="module" src="~/Scripts/Custom/WebScraper/View/WebScraperMain.js"></script>

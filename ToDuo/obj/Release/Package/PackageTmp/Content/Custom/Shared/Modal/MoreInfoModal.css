@@ -1,0 +1,73 @@
+﻿/*
+    https://www.pinterest.com/pin/305681893460042013/
+    #7097A8 Gothic
+    #ABD1DC Aqua island
+    #d9c595 Pancho
+    #ECD59F Pancho - light
+    #C6A477 Laser
+    #F6F0F0 SmokeyWhite background
+    #eeeeee Section colors
+    #242834 - Navy
+    #992915 - brown red
+    #b14431 - light brown red
+*/
+
+#InfoAdventureTitleLbl {
+    margin-top: 0px;
+    
+    
+}
+#infopostlbl,
+.txtLbls{
+    color: #7097A8;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 5px;
+        
+}
+
+.AddTagsContainer{
+    justify-content: flex-start;
+}
+
+#infoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+#infoLink:before,
+.fa-globe {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ABD1DC;
+}
+
+.TagAddIcon{
+    margin-left: 0px;
+}
+
+.icons {
+    margin-right: 5px;
+}
+
+.InfoModalText {
+    color: #992915;
+    font-weight: 700;
+    border-bottom: 2px solid #d9c595;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+
+
+
+#ModalRightSideContainer {
+    padding-top: 0px;
+    padding-left: 15px;
+}
+
+#ModalInfoDragAndDropImageContainer {
+    height: 385px;
+}
+

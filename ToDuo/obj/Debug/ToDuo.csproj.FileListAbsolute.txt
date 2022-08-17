@@ -151,7 +151,6 @@ D:\GitProjects\ToDuo\ToDuo\bin\System.Web.WebPages.Razor.xml
 D:\GitProjects\ToDuo\ToDuo\bin\Newtonsoft.Json.xml
 D:\GitProjects\ToDuo\ToDuo\bin\Antlr3.Runtime.pdb
 D:\GitProjects\ToDuo\ToDuo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\GitProjects\ToDuo\ToDuo\obj\Debug\ToDuo.csproj.AssemblyReference.cache
 D:\GitProjects\ToDuo\ToDuo\obj\Debug\ToDuo.csproj.CoreCompileInputs.cache
 D:\GitProjects\ToDuo\ToDuo\obj\Debug\ToDuo.csproj.CopyComplete
 D:\GitProjects\ToDuo\ToDuo\obj\Debug\ToDuo.dll

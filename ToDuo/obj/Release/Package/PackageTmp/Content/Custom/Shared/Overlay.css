@@ -1,0 +1,31 @@
+﻿/*
+    #f8f9fd - component background - color
+    #3547ac - Medium Purple
+    #3546aa - Hover Purple
+    #dce2f4 - light Purple
+    #f1582f - orange
+    #ffffff - background
+    #0e1455 - text Deep purple color
+
+*/
+
+
+html{
+    position: relative !important;
+}
+
+#LoadingOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background: rgb(39 37 37 / 0.75);
+    width: 100%;
+    height: 100%;
+    z-index: 800;
+    color: #ffffff;
+    font-weight: bolder;
+    text-align: center;
+}
+

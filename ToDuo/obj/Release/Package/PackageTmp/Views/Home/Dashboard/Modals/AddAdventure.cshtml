@@ -1,0 +1,81 @@
+﻿    
+@{ 
+    <link rel="stylesheet" type="text/css" href="~/Content/Custom/Index/AddModal.css" />
+}
+    <!-- Modal -->
+<div class="modal fade" id="AddAdventureModal" tabindex="-1" role="dialog" aria-labelledby="AddAdventureModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="/Json/AddAdventure" method="post" id="AdventureForm">
+                <div class="modal-header" style="border-bottom: none;">
+
+                    <button type="submit" id="SaveAdventuresBtn" class="btn">Add ToDuoList</button>
+
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="ModalContentContainer">
+                        <div class="ModalLeftSide">
+                            <div id="ModalDragAndDropImageContainer">
+                                <i class="fa fa-camera-retro " id="DragAndDropModalIcon" title="Adventure Place Holder"></i>
+                                <h4 id="uploadText">Paste Image Address Below!</h4>
+
+                            </div>
+                            <div class="AddTagsContainer">
+                                <input type="text" class="form-control descriptionsModal" placeholder="Paste image URL from website Here" id="AddAdventureImageTxt" name="ImageURL" />
+                                <i class="fa fa-globe-asia CategoryListIcons TagAddIcon"></i>
+                            </div>
+                        </div>
+
+                        <div class="ModalRightSide">
+                            <input type="text" class="form-control" placeholder="Add Your Title" id="AddAdventureTitleTxt" name="Title" />
+                            <div class="PersonWhoAddedContainer">
+                                <div class="thumbnailProfilePicture">
+                                    <img src="~/Content/Images/AppImages/NoProfilePicture.jpg" class="BannerImages ProfilePicture" />
+                                </div>
+                                <div class="PersonWhoAddedDetails noMargins">
+                                    <h6 class="noMargins bold">Kevin Nguyen</h6>
+                                    <p class="noMargins">10 boards</p>
+                                    <p class="noMargins">04/17/2022</p>
+                                </div>
+                            </div>
+                            <textarea rows="1" class="form-control descriptionsModal" placeholder="Any Description About this?" id="AddAdventureDescriptionTxt" name="Description"></textarea>
+
+                            <div class="col-md-12 AddTagsContainer">
+                                <input type="text" class="form-control descriptionsModal" placeholder="Add A Website URL for more Info" id="AddAdventureWebsiteTxt" name="WebsiteUrl" />
+                                <i class="fa fa-globe CategoryListIcons TagAddIcon"></i>
+                            </div>
+
+
+                            <div class="col-md-6 AddTagsContainer">
+                                <input type="text" class="form-control descriptionsModal" placeholder="Address" id="AddAdventureLocationTxt" name="Location" />
+                                <i class="fa fa-map-marker CategoryListIcons TagAddIcon"></i>
+                            </div>
+
+                            <div class="col-md-6 AddTagsContainer">
+                                <input type="text" class="form-control descriptionsModal" placeholder="Tags: Seattle, Parks, FoodTrucks, etc..." id="AddAdventureTagsTxt" name="Tags" />
+                                <i class="fa fa-tags CategoryListIcons TagAddIcon"></i>
+                            </div>
+
+                            <div class="col-md-12 taglblContainer">
+                                <ul id="TagWrapper">
+                                    <!--Comes from addAdventureModel.js-->
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script type="module" src="~/Scripts/Custom/DashBoard/Modals/Views/AddAdventureModel.js"></script>

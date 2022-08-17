@@ -127,11 +127,13 @@ function attachEditAdventureListener() {
             AddAdventureTagsTxt.value = tagString;
             AdventureModelOptions.UpdateAdventure(DetailsAdventureForm, ItemID).then(function (resultMessage) {
                 if (resultMessage.ReturnStatus == 'Success') {
-                    $('#DetailsAdventureModal').modal('toggle');
-                    LikedSwipeListenerAction();
+                    $('#DetailsAdventureModal').modal('hide');
+                    
+                    //LikedSwipeListenerAction();
                     tagString = ''; //Erases tags stored in string that was sent off
                     TagsArray = [];//Erases old tags from last save
                 }
+                
             });
 
         }
